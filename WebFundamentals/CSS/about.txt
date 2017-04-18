@@ -1,0 +1,139 @@
+CASCADING STYLE SHEET
+
+validate css
+https://validator.w3.org/nu/?doc=http%3A%2F%2Fmruanova.com%2F
+
+CSS Reset
+Here is a great explanation of what CSS resets are, why we use them, and some examples:
+http://perishablepress.com/a-killer-collection-of-global-css-reset-styles/
+
+Normalize
+A widely used alternative to CSS resets is normalize.css.  
+Normalize.css also covers HTML5 elements. 
+Find more information about what it does and why it might be preferable to CSS resets here:
+https://github.com/necolas/normalize.css/
+
+overflow hidden
+height auto
+
+.clear{
+	clear: both;
+}
+
+position fixed -> for navigation toolbar always visible
+
+aside css
+
+10 CSS selectors you shouldn’t code without
+
+https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/
+
+Every time we use CSS, we use selectors. 
+But despite this, CSS selectors are one of the more neglected parts of the specification.
+We talk about the big transformations in CSS3 but all too often forget the basics. 
+Good use of selectors makes our day-to-day coding simpler and more elegant. 
+Today I’m going to cover the 10 selectors that often slip our minds, 
+but are both effective and highly useful.
+ 
+*
+The * selector may be the one you remember most easily but  it’s often underused. 
+What it does is style everything on the page 
+and it’s great for creating a reset and also for creating some page defaults 
+like the font family and size you wish to have.
+* {
+   margin: 0;
+   padding: 0;
+   font-family: helvetica, arial, sans-serif;
+   font-size: 16px;
+}
+ 
+A + B
+This selector is called an adjacent selector and what it does is selects the element that is immediately after the first element. 
+If you wanted to select the first div after our header you would type:
+header + div {
+   margin-top: 50px;
+}
+ 
+A > B
+This selector will only select the direct children unlike A B that will select any level children of A. 
+This selector is recommended for when you are working with first level children of a parent element. 
+For example if you want to select the first level list items in an unordered list that looks like this:
+<ul>
+	<li>List Item With ul
+		<ul>
+			<li>Sub list item</li>
+			<li>Sub list item</li>
+			<li>Sub list item</li>
+		</ul>
+	</li>
+	<li>List Item</li>
+	<li>List Item</li>
+</ul>
+You would use this selector because the usual A B selector will also selected the list items inside the nested unordered list
+ul > li {
+   background: black;
+   color: white;
+}
+ 
+A[HREF*=”EXAMPLE”]
+This is a really good selector for when you want to style a particular link in a different way, 
+whatever is in quotes will be matched against the href of the link. For example to style all links to facebook with the color blue you would use: 
+a[href*="facebook"] {
+   color: blue;
+}
+There is also a version without the * that matches the exact url that you can use for exact links.
+ 
+A:NOT(B)
+This selector if particularly useful because of it’s negation clause that allows you to select any group of elements that do not match what you place in B. 
+If you want to select every div except the footer you just need: 
+div:not(.footer) {
+   margin-bottom: 40px;
+}
+ 
+A:FIRST-CHILD  / A:LAST-CHILD 
+The first-child and last-child allow us to select the first and last child of the parent element. 
+This can be a great help when it comes to list items and removing the margin-right or borders. 
+To remove the border in the first list item and the margin in the last list item you need:
+ul li:first-child {  
+   border: none;  
+}     
+ul li:last-child {  
+   margin-right: 0px;
+}     
+ 
+A:NTH-CHILD(N)
+The nth-child is a simple way for you to select any child of an element by its order. 
+If for example you wanted the third list item in an unordered list this would be the way to go:
+ul li:nth-child(3) {
+   background: #ccc;
+}
+We can use nth-child to select every multiplier of a number by using the variable n , 
+for example if we put 3n it would select the list item number 3, 6, 9, 12 and so forth.
+ 
+A:NTH-LAST-CHILD(N)
+The nth-last-child works like the nth-child but instead of counting form the first list item it starts counting from the last, 
+so if you use it with the number two it will select the list item that comes before the last one and its usage is just like the nth-child selector:
+ul li:nth-last-child(2) {
+   background: #ccc;
+}
+ 
+A:NTH-OF-TYPE(N)
+This selector does exactly what you think it does; it sees what type of element you placed on it and it selects, 
+for example, the third element on your page that matches what you typed. For selecting the third paragraph in a div you would use:
+div p:nth-of-type(3) {
+   font-style: italic;
+}
+ 
+A:VISITED
+Ever noticed that when you search for something on google the pages you have already seen appear in a different color ? That is exactly what visited does. 
+This is a great addition for the users but it’s sometimes forgotten and by my experience it’s comes in handy every time I search google.
+a:visited {
+   color: blue;
+}
+ 
+FINAL THOUGHTS
+In my experience using these kinds of selectors when coding can save us a lot of time and also avoid the need for a lot of ID’s cluttering up our markup. 
+And this is just the beginning of CSS selectors, there are plenty more selectors that are really handy but sometimes forgotten.
+ 
+
+

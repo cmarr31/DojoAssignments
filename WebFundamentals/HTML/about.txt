@@ -1,0 +1,16 @@
+WEB FUNDAMENTALS 
+
+HTML
+
+http://www.lipsum.com/
+
+https://www.w3schools.com/html/html5_new_elements.asp
+
+https://www.w3schools.com/html/html5_semantic_elements.asp
+
+https://code.visualstudio.com/docs/editor/userdefinedsnippets
+
+https://developer.chrome.com/devtools chrome element inspector
+
+http://www.savvyclutch.com/
+

@@ -1,0 +1,81 @@
+WEB FUNDAMENTALS 
+ABOUT
+
+algorithm alchemy floor size tile height width
+
+mysqlinstallerconsole.exe mysql intaller is running in community mode
+hackernews
+ios
+objective-c
+xcode
+https://www.dgx.io/       digixdao
+
+https://en.wikipedia.org/wiki/List_of_DOS_commands
+
+http://www.wikihow.com/Create-and-Delete-Files-and-Directories-from-Windows-Command-Prompt
+
+http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html
+
+dir /b /s
+cls clear screen
+cd -> change directory
+dir -> list files and folders in current directory
+cd [folder_name] 
+cd..
+cd \ and cd / will change the current directory to the root directory of your computer. 
+md [folder name] will make a new directory named  newFolder. 
+rd / s [folder name removes dir]
+copy "from" "to"
+copy NUL index.html
+del file.txt
+move
+ren
+/s : Copies directories and subdirectories, unless they are empty.
+/e : Copies all subdirectories, even if they are empty.
+/i : If Source is a directory or contains wildcards and Destination does not exist, xcopy assumes destination specifies a directory name and creates a new directory. Then, xcopy copies all specified files into the new directory. By default, xcopy prompts you to specify whether Destination is a file or a directory.
+Opening the current directory in File Explorer
+start .
+C:\Users\Jonathan\JonathanBenAmmi>start .
+
+C:\Users\mau>cd
+C:\Users\mau>dir
+C:\Users\mau>cd desktop
+C:\Users\mau\Desktop>md test
+C:\Users\mau\Desktop>cd test
+C:\Users\mau\Desktop\test>NUL> index.html
+C:\Users\mau\Desktop\test>NUL> styles.css
+C:\Users\mau\Desktop\test>copy index.html index_2.html
+C:\Users\mau\Desktop\test>del styles.css
+C:\Users\mau\Desktop\test>cd..
+C:\Users\mau\Desktop>md destination
+C:\Users\mau\Desktop>move "c:\users\mau\desktop\test\index_2.html" "c:\users\mau\desktop\destination"
+C:\Users\mau\Desktop>cd destination
+C:\Users\mau\Desktop\destination>dir
+C:\Users\mau\Desktop\destination>cd..
+C:\Users\mau\Desktop>cd test
+C:\Users\mau\Desktop\test>dir
+C:\Users\mau\Desktop\test>cd..
+C:\Users\mau\Desktop>rd /s destination
+
+C:\Users\mau\Desktop\DojoAssignments>dir /b /s
+C:\Users\mau\Desktop\DojoAssignments\iOS
+C:\Users\mau\Desktop\DojoAssignments\MEAN
+C:\Users\mau\Desktop\DojoAssignments\netCore
+C:\Users\mau\Desktop\DojoAssignments\Python
+C:\Users\mau\Desktop\DojoAssignments\Ruby
+C:\Users\mau\Desktop\DojoAssignments\WebFundamentals
+C:\Users\mau\Desktop\DojoAssignments\iOS\about.txt
+C:\Users\mau\Desktop\DojoAssignments\MEAN\about.txt
+C:\Users\mau\Desktop\DojoAssignments\netCore\about.txt
+C:\Users\mau\Desktop\DojoAssignments\Python\about.txt
+C:\Users\mau\Desktop\DojoAssignments\Ruby\about.txt
+C:\Users\mau\Desktop\DojoAssignments\WebFundamentals\about.txt
+C:\Users\mau\Desktop\DojoAssignments\WebFundamentals\CSS
+C:\Users\mau\Desktop\DojoAssignments\WebFundamentals\Git
+C:\Users\mau\Desktop\DojoAssignments\WebFundamentals\HTML
+C:\Users\mau\Desktop\DojoAssignments\WebFundamentals\JavaScript
+C:\Users\mau\Desktop\DojoAssignments\WebFundamentals\CSS\about.txt
+C:\Users\mau\Desktop\DojoAssignments\WebFundamentals\Git\about.txt
+C:\Users\mau\Desktop\DojoAssignments\WebFundamentals\HTML\about.txt
+C:\Users\mau\Desktop\DojoAssignments\WebFundamentals\HTML\indentation.html
+C:\Users\mau\Desktop\DojoAssignments\WebFundamentals\JavaScript\about.txt

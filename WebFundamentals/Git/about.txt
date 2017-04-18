@@ -1,0 +1,214 @@
+WEB FUNDAMENTALS 
+GIT
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+git init - initialize the repository.
+git add . - add all the files that were changed since the last back up to the staging area.
+git status - shows you all the files that were changed since the last backup and which ones are already added to the staging area.
+git commit -m "..." - commits the changes to the repository.
+git checkout ____ - switches to the branch name provided in your git repository. This will create a new branch if the name provided doesn't exist.
+git branch - shows all of your git branches and marks the one you are currently on.
+git log - shows all the backups created in the repository.
+git blame ____ - shows who wrote which line of code or in other words who is to be blamed for that particular line of code.
+git remote add origin ____ - tells git to add a remote place called 'origin' to a remote URL ___.
+git push - pushes the changes in your local repository to the remote repository.
+git pull - pulls the changes in a remote repository to your own local repository.
+git clone ___ - clones a remote repository in ___ to your own local folder.
+
+C:\>git
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+C:\Users\mau\Desktop>cd dojoassignments
+C:\Users\mau\Desktop\DojoAssignments>git init
+C:\Users\mau\Desktop\DojoAssignments>git add .
+C:\Users\mau\Desktop\DojoAssignments>git commit -m "add dojo assignments"
+C:\Users\mau\Desktop\DojoAssignments>git remote add origin https://github.com/mruanova/DojoAssignments.git
+C:\Users\mau\Desktop\DojoAssignments>git push -u origin master
+C:\Users\mau\Desktop\DojoAssignments>copy NUL readme.md
+C:\Users\mau\Desktop\DojoAssignments>git add readme.md
+C:\Users\mau\Desktop\DojoAssignments>git status
+C:\Users\mau\Desktop\DojoAssignments>git commit -m "add read me"
+C:\Users\mau\Desktop\DojoAssignments>git push -u origin master
+
+C:\Users\mau>cd desktop
+C:\Users\mau\Desktop>md gittest
+C:\Users\mau\Desktop>cd gittest
+C:\Users\mau\Desktop\gittest>git init
+C:\Users\mau\Desktop\gittest>copy NUL index.html
+C:\Users\mau\Desktop\gittest>copy NUL styles.css
+C:\Users\mau\Desktop\gittest>copy NUL aboutMe.txt
+C:\Users\mau\Desktop\gittest>git add aboutMe.txt
+C:\Users\mau\Desktop\gittest>git add index.html
+C:\Users\mau\Desktop\gittest>git add styles.css
+C:\Users\mau\Desktop\gittest>git commit -m "updated about me"
+C:\Users\mau\Desktop\gittest>git commit -m "updated about me again"
+C:\Users\mau\Desktop\gittest>git add aboutMe.txt
+C:\Users\mau\Desktop\gittest>git commit -m "updated once more"
+C:\Users\mau\Desktop\gittest>git status
+C:\Users\mau\Desktop\gittest>git commit -m "added favorite movie"
+C:\Users\mau\Desktop\gittest>git add aboutMe.txt
+C:\Users\mau\Desktop\gittest>git log
+C:\Users\mau\Desktop\gittest>git log -p
+C:\Users\mau\Desktop\gittest>git revert -n db7f6302ff5c85378f1c224e6e739dc2e4aded92
+C:\Users\mau\Desktop\gittest>git revert -n 71f852a56980e5e4a30ad6db3c612833fb5c3a8a
+C:\Users\mau\Desktop\gittest>git revert -n HEAD
+C:\Users\mau\Desktop\gittest>git reset 5b391e4a3a667ef5f32dced49e7b9af65a789ce4 --hard
+C:\Users\mau\Desktop\gittest>git reset 71f852a56980e5e4a30ad6db3c612833fb5c3a8a --hard
+C:\Users\mau\Desktop\gittest>git add aboutMe.txt
+C:\Users\mau\Desktop\gittest>git commit -m "added favorite book"
+C:\Users\mau\Desktop\gittest>
+
+git config --global user.name "Mauricio Ruanova-Hurtado"
+git config --global user.email mruanova@yahoo.com
+git config --global --list
+git config --global color.ui "auto
+
+git init
+git commit -m "added new files and update existing one"
+git status
+git add aboutMe.txt
+git log -p
+git diff --stat 5b391e4a3a667ef5f32dced49e7b9af65a789ce4
+git revert -n HEAD
+git revert -n 540ecb7 
+git revert -n 71f852a56980e5e4a30ad6db3c612833fb5c3a8a
+git reset 71f852a56980e5e4a30ad6db3c612833fb5c3a8a --hard
+
+GIT BASH
+
+vim cheat sheet
+https://vim.rtorr.com/
+https://en.wikipedia.org/wiki/GNU
+https://en.wikipedia.org/wiki/GNU_nano
+https://www.nano-editor.org/
+http://guides.beanstalkapp.com/version-control/git-on-windows.html
+guides.beanstalkapp.com
+http://www.vim.org/download.php
+
+(Mac/Linux/Bash) - Navigate to the Dojo Assignments directory. 
+Use the command ls -R then copy the result and save it to a file called assignments.txt 
+and upload it below
+
+pwd -> print working directory
+
+cd Web\ Fun
+or
+cd "Web Fun"
+
+mau@mau-laptop MINGW64 ~
+$ pwd
+/c/Users/mau
+
+mau@mau-laptop MINGW64 ~
+$ cd Desktop
+
+mau@mau-laptop MINGW64 ~/Desktop
+$ cd Codingdojo
+
+mau@mau-laptop MINGW64 ~/Desktop/Codingdojo
+$ vi notes.txt
+
+mau@mau-laptop MINGW64 ~/Desktop/Codingdojo
+$
+
+ESC
+:x
+
+vim save and quit
+
+mau@mau-laptop MINGW64 ~
+$ cd Desktop
+
+mau@mau-laptop MINGW64 ~/Desktop
+$ ls -R
+.:
+assignments.txt  CodingDojo/       'Git Bash.lnk'*  notes.txt
+bash.txt         desktop.ini       git.txt          Slack.lnk*
+binarysearch.js  DojoAssignments/  i.txt            test/
+
+./CodingDojo:
+DOS.txt  WebFundamentals/
+
+./CodingDojo/WebFundamentals:
+bacon.html   canvas.html       fake_blog.html    hello_world.html
+basic1.html  common-tags.html  form_label1.html  my_registration_form.html
+basic2.html  div_span.html     form_label2.html  snippet.html
+
+./DojoAssignments:
+iOS/  MEAN/  netCore/  Python/  Ruby/  WebFundamentals/
+
+./DojoAssignments/iOS:
+about.txt
+
+./DojoAssignments/MEAN:
+about.txt
+
+./DojoAssignments/netCore:
+about.txt
+
+./DojoAssignments/Python:
+about.txt
+
+./DojoAssignments/Ruby:
+about.txt
+
+./DojoAssignments/WebFundamentals:
+about.txt  CSS/  Git/  HTML/  JavaScript/
+
+./DojoAssignments/WebFundamentals/CSS:
+about.txt
+
+./DojoAssignments/WebFundamentals/Git:
+about.txt
+
+./DojoAssignments/WebFundamentals/HTML:
+about.txt  indentation.html
+
+./DojoAssignments/WebFundamentals/JavaScript:
+about.txt
+
+./test:
+index.html
+
+mau@mau-laptop MINGW64 ~/Desktop
+$ 
