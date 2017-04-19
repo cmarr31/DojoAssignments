@@ -2,6 +2,9 @@ WEB FUNDAMENTALS
 
 HTML
 
+https://en.wikipedia.org/wiki/Firebug_(software)
+https://getfirebug.com/downloads
+
 http://www.lipsum.com/
 
 https://www.w3schools.com/html/html5_new_elements.asp

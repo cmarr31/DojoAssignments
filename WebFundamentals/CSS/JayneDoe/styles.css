@@ -1,0 +1,57 @@
+a{
+    color: black;
+}
+.box {
+    display: inline-block;
+    width: 280px;
+    vertical-align: top;
+}
+.about{
+    width: 380px;
+}
+.wrapper{
+    width: 920px;
+}
+.photo{
+    display: inline-block;
+    border: 5px solid silver;
+}
+.main_content{
+    background-color: rebeccapurple;
+    padding: 15px 15px 15px 15px;
+}
+.name{
+    float: left;
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: bold;
+}
+.summary{
+    float: right;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+.category{
+    color: white;
+    background-color: mediumpurple;
+}
+.cb{
+    clear:both;
+}
+.button{
+    background-color: green;
+    color:white;
+    font-weight: bold;
+    box-shadow: 2px 2px 0 0;
+    border-radius: 10px;
+}
+.img380{
+    width: 380px;
+}
+.img280{
+    width: 280px;
+}
+.img40{
+    width: 40px;
+}
