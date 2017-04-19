@@ -1,25 +1,40 @@
+body{    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 a{
     color: black;
 }
-.box {
-    display: inline-block;
-    width: 280px;
-    vertical-align: top;
-    background-color: silver;
-}
-.about{
-    width: 475px;
+p{
+    font-size: 12px;
+    padding: 10px 10px 10px 10px;
+    margin: 0 0 0 0;
 }
 .wrapper{
-    width: 920px;
+    width: 970px;
+}
+.header{
+    background-color: #F8F8F8;
+}
+.main_content{
+    background: linear-gradient(to right, #1D0D11 , #6F5964, #1D0D11);
+    padding: 20px 5px 5px 25px;
+}
+.box {
+    display: inline-block;
+    width: 290px;
+    height: 555px;
+    vertical-align: top;
+    background: linear-gradient(to right, white , #6F5964);
+    margin: 10px 15px 10px 0;
+}
+.about{
+    width: 500px;
+    height: 260px;
 }
 .photo{
     display: inline-block;
     border: 5px solid silver;
-}
-.main_content{
-    background-color: rebeccapurple;
-    padding: 25px 25px 25px 25px;
+    margin: 10px 15px 10px 0;
 }
 .name{
     float: left;
@@ -30,32 +45,60 @@ a{
 .summary{
     float: right;
     font-size: 18px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
 .category{
     color: white;
-    background-color: mediumpurple;
+    font-weight: bold;
+    background: linear-gradient(180deg, darkgray, gray, darkgray);
+    padding: 10px 10px 10px 10px;
 }
 .cb{
     clear:both;
 }
 .button{
-    background-color: green;
+    background-color: #407D61;
+    box-shadow: 2px 2px 5px black;;
+    border-radius: 5px;
+    padding: 5px;
+    width: 110px;
+    margin: 5px 0 0 90px;
+    text-align: center;
+}
+.label{
     color:white;
     font-weight: bold;
-    box-shadow: 2px 2px 0 0;
-    border-radius: 10px;
+    font-size: 12px;
+    text-decoration: none;
 }
 .img380{
     width: 380px;
 }
-.img280{
-    width: 280px;
+.img290{
+    width: 290px;
 }
 .img20{
     width: 20px;
 }
 .img40{
     width: 40px;
+    padding: 5px;
+}
+.description{
+    height: 150px;
+}
+.icons{
+    padding: 5px;
+}
+.fs14{
+    font-size: 14px;
+}
+.footer{
+    font-size: 12px;
+    text-align: center;
+}
+.link{
+    height: 20px;
+    vertical-align: top;
+    display: inline-block;
 }

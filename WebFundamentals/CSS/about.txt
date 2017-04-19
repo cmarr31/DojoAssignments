@@ -1,5 +1,7 @@
 CASCADING STYLE SHEET
 
+http://html-color-codes.info/colors-from-image/
+
 validate css
 https://validator.w3.org/nu/?doc=http%3A%2F%2Fmruanova.com%2F
 

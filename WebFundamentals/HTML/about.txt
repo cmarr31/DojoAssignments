@@ -17,3 +17,8 @@ https://developer.chrome.com/devtools chrome element inspector
 
 http://www.savvyclutch.com/
 
+https://validator.w3.org/nu/#file
+
+Error: Element ul not allowed as child of element ul in this context. (Suppressing further errors from this subtree.)
+
+Document checking completed. No errors or warnings to show.
