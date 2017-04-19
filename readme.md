@@ -6,6 +6,8 @@ MySQL Workbench - https://dev.mysql.com/downloads/workbench/
 
 NodeJS - https://nodejs.org/en/
 
+http://codepen.io/
+
 Installation
 To edit code, you'll need to install a text editor of your choice:
 

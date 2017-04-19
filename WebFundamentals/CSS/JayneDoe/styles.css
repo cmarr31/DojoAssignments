@@ -5,9 +5,10 @@ a{
     display: inline-block;
     width: 280px;
     vertical-align: top;
+    background-color: silver;
 }
 .about{
-    width: 380px;
+    width: 475px;
 }
 .wrapper{
     width: 920px;
@@ -18,7 +19,7 @@ a{
 }
 .main_content{
     background-color: rebeccapurple;
-    padding: 15px 15px 15px 15px;
+    padding: 25px 25px 25px 25px;
 }
 .name{
     float: left;
@@ -51,6 +52,9 @@ a{
 }
 .img280{
     width: 280px;
+}
+.img20{
+    width: 20px;
 }
 .img40{
     width: 40px;
