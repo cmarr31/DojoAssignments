@@ -1,0 +1,10 @@
+NET CORE
+
+entity framework
+https://www.linkedin.com/learning/learning-entity-framework-6-1-3?trk=profileSelf_d_flagship3_profile_view_base_learningFeedm014%3Aa001_506475_learning
+
+linq
+https://www.linkedin.com/learning/linq-with-c-sharp-essential-training?trk=profileSelf_d_flagship3_profile_view_base_learningFeedm014%3Aa001_397357_learning
+
+mvc
+https://www.linkedin.com/learning/asp-dot-net-mvc-4-essential-training?trk=profileSelf_d_flagship3_profile_view_base_learningFeedm014%3Aa001_109762_learning

@@ -3,6 +3,7 @@ https://github.com/rasbt/pydata-chicago2016-ml-tutorial
 
 R
 https://en.wikipedia.org/wiki/R_(programming_language)
+http://www.r-tutor.com
 
 AI Grant
 https://nat.org/aigrant-get-5-000-for-your-open-source-ai-project-1118dd7db083?gi=af8060704a84
@@ -12,3 +13,5 @@ https://en.wikipedia.org/wiki/Pandas_(software)
 
 scikit
 https://github.com/scikit-learn/scikit-learn
+
+http://pythontutor.com/visualize.html#mode=edit

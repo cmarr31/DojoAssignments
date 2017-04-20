@@ -120,6 +120,8 @@ git revert -n 540ecb7
 git revert -n 71f852a56980e5e4a30ad6db3c612833fb5c3a8a
 git reset 71f852a56980e5e4a30ad6db3c612833fb5c3a8a --hard
 
+http://stackoverflow.com/questions/10904339/github-fatal-remote-origin-already-exists
+
 GIT BASH
 
 vim cheat sheet

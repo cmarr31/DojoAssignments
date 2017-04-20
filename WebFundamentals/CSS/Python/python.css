@@ -1,0 +1,109 @@
+body{
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+a{
+    color:white;
+}
+img{
+    width: 350px;
+}
+.tablist{
+    background-color: cornflowerblue;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 20px;
+    overflow: hidden;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.tab {
+    float: left;
+    padding: 15px;
+}
+.arrow{
+    font-size: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    color:yellow;
+}
+.size{
+    color:yellow;
+}
+.quote{
+    font-size: 14px;
+    font-style:italic;
+    color:yellow;
+}
+.toolbar{
+    width: 85%;
+    margin-left:80px;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 5px;
+}
+.wrapper{
+    width:920px;
+    background-color: #2b597c;
+    text-align: center;
+}
+.logo{
+    float: left;
+}
+.search{
+    float:right; 
+    vertical-align: top;
+}
+.form1{
+    background-color: gray; 
+    padding: 15px; 
+    margin-right: 10px;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 5px;
+}
+.go{
+    background-color: #2b597c; 
+    color: white;
+}
+.clearboth{
+    clear: both;
+}
+.navigation{
+    display: inline-block; 
+    width: 250px;
+    text-align: center;
+}
+.main{
+    display: inline-block; 
+    width: 560px; 
+    vertical-align: top;
+    text-align: center;
+}
+.content{
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+.box{    
+    border-top: 4px solid #75a8d3;
+    display: inline-block; 
+    width: 250px; 
+    vertical-align: top;
+    margin-top: 5px;
+}
+.footer{
+    text-align: center;
+    padding: 25px 0 5px 0; 
+}
+.blue{
+    color: #75a8d3;
+}
+.website{
+    font-size: 14px;
+    padding-right: 20px;
+    color: #75a8d3;
+}
+.copyright{
+    color: #75a8d3;
+    padding-bottom: 5px;
+}

@@ -1,9 +1,20 @@
 CASCADING STYLE SHEET
 
+1. Be careful about having too many divs. You have a few empty divs and divs with less than 2 direct children.
+2. It is okay to user `<br>` but better to style the space using padding or margin in CSS. 
+This is better practice because designs can change. 
+You shouldn’t have to hunt down HTML tags and change them too. 
+HTML for content, CSS for visuals.
+3. Make use of your Parent Child Sibling (PCS) relationships. 
+Instead of giving each of them images below a class you could have referenced them in the CSS by referring to the parent div. 
+`div.icons img {}`
+
+color code picker
+https://www.colorcodepicker.com/
 http://html-color-codes.info/colors-from-image/
 
 validate css
-https://validator.w3.org/nu/?doc=http%3A%2F%2Fmruanova.com%2F
+https://validator.w3.org/nu/#file
 
 CSS Reset
 Here is a great explanation of what CSS resets are, why we use them, and some examples:
@@ -17,10 +28,6 @@ https://github.com/necolas/normalize.css/
 
 overflow hidden
 height auto
-
-.clear{
-	clear: both;
-}
 
 position fixed -> for navigation toolbar always visible
 
