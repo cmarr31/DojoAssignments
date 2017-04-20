@@ -9,7 +9,7 @@ a{
 img{
     width: 350px;
 }
-.tablist{
+.toolbar ul{
     background-color: cornflowerblue;
     list-style-type: none;
     margin: 0;
@@ -18,7 +18,7 @@ img{
     border-radius: 5px;
     font-size: 20px;
 }
-.tab {
+.toolbar li {
     float: left;
     padding: 15px;
 }
@@ -54,7 +54,7 @@ img{
     float:right; 
     vertical-align: top;
 }
-.form1{
+.search form{
     background-color: gray; 
     padding: 15px; 
     margin-right: 10px;
