@@ -1,12 +1,21 @@
 CASCADING STYLE SHEET
 
-1. Be careful about having too many divs. You have a few empty divs and divs with less than 2 direct children.
+Browser Compatibility
+Different browsers may give default attributes to HTML elements, causing sites to look different based on the version of the browser or whether you're seeing the site in IE, Firefox, Chrome, etc.  For example in Internet Explorer, an H1 element may have certain margin and padding causing your site to look one way, while Chrome and Firefox may give the H1 a slightly different margin/padding.  These differences can cause a headache, especially if you're trying to make your site look consistent throughout different browsers/versions.
+To solve many cross-browser issues, it's encouraged that you use 'RESET' and 'NORMALIZE' (discussed below) and, basically, define what the default attributes should be (instead of relying on the default values that come with the browser).  In fact, technical recruiters love to ask you about this and see if you know how to make your site look consistent throughout different browsers.  When they ask you this, you should be able to explain (with confidence) what reset/normalizing means and why they are used.  You should also tell them that in addition to this, it's important to validate your HTML/CSS often, as validating the HTML/CSS gives insight on how you can fix issues that may lead to cross-browser compatibility issues (and often, invalid HTML/CSS can lead to weird behavior as the browser may not 'fix' invalid HTML/CSS quite the right way).
+CSS Reset
+Here is a great explanation of what CSS resets are, why we use them, and some examples:
+http://perishablepress.com/a-killer-collection-of-global-css-reset-styles/
+Normalize
+A widely used alternative to CSS resets is normalize.css.  Normalize.css also covers HTML5 elements. Find more information about what it does and why it might be preferable to CSS resets here:
+https://github.com/necolas/normalize.css/
 
+VANESSA
+1. Be careful about having too many divs. You have a few empty divs and divs with less than 2 direct children.
 2. It is okay to user `<br>` but better to style the space using padding or margin in CSS. 
 This is better practice because designs can change. 
 You shouldn’t have to hunt down HTML tags and change them too. 
 HTML for content, CSS for visuals.
-
 3. Make use of your Parent Child Sibling (PCS) relationships. 
 Instead of giving each of them images below a class you could have referenced them in the CSS by referring to the parent div. 
 `div.icons img {}`
@@ -18,25 +27,12 @@ http://html-color-codes.info/colors-from-image/
 validate css
 https://validator.w3.org/nu/#file
 
-CSS Reset
-Here is a great explanation of what CSS resets are, why we use them, and some examples:
-http://perishablepress.com/a-killer-collection-of-global-css-reset-styles/
-
-Normalize
-A widely used alternative to CSS resets is normalize.css.  
-Normalize.css also covers HTML5 elements. 
-Find more information about what it does and why it might be preferable to CSS resets here:
-https://github.com/necolas/normalize.css/
-
 overflow hidden
 height auto
-
 position fixed -> for navigation toolbar always visible
-
 aside css
 
 10 CSS selectors you shouldn’t code without
-
 https://www.webdesignerdepot.com/2013/08/10-css-selectors-you-shouldnt-code-without/
 
 Every time we use CSS, we use selectors. 
@@ -145,3 +141,42 @@ a:visited {
 FINAL THOUGHTS
 In my experience using these kinds of selectors when coding can save us a lot of time and also avoid the need for a lot of ID’s cluttering up our markup. 
 And this is just the beginning of CSS selectors, there are plenty more selectors that are really handy but sometimes forgotten.
+
+Extra Goodies
+Lorem Ipsums
+You've probably heard about Lorem Ipsum, the filler text of choice for many designers. Here are some untraditional Ipsums that might brighten your day. Feel free to pick and use whichever tickles your fancy! 
+
+Faux Latin is a dead language - (Excerpts from classic novels!) http://www.fillerati.com/
+Real gibberish - http://randomtextgenerator.com/
+Online dating Ipsum - http://laurenhallden.com/datingipsum/
+A delicious Ipsum - http://cupcakeipsum.com/
+Beer Ipsum - http://breue.com/beer_ipsum
+Arrested Development Ipsum - http://bluthipsum.com/
+Futurama Ipsum - http://chrisvalleskey.com/fillerama/
+Hipster Ipsum - http://hipsteripsum.me/
+Bacon Ipsum - http://baconipsum.com/
+Samuel L. Ipsum - http://slipsum.com/ (NSFW)
+Gangsta Ipsum - http://lorizzle.nl/
+
+Images and Backgrounds
+Placeholder images for all your needs: http://lorempixel.com/
+Because the internet needs more cats: http://placekitten.com/
+Icon CSS Toolkit: https://fortawesome.github.io/Font-Awesome/
+Free hi-res images: http://unsplash.com/
+Backgrounds: http://subtlepatterns.com/
+Various freebies including icons: http://www.webdesignerdepot.com/category/freebies/
+Speaking of icons, you can use this site to generate CSS for sprite sheets: http://www.spritecow.com/
+Color Schemes
+Very flexible, very useful: http://colorschemedesigner.com/
+Ever think "Oh man, I love the colors in this photo!"? So have I: http://www.degraeve.com/color-palette/index.php
+Similar to above: http://www.cssdrive.com/imagepalette/
+Other Tools
+Cropper - Allows designer to measure pixels and crop images easily: http://cropper.codeplex.com/
+Just Color Picker - Free portable color picker/editor: http://annystudio.com/software/colorpicker/#jcp-download
+New Trends
+Take these with a grain of salt - remember that trends come and go but good design is forever!
+http://www.awwwards.com/6-web-design-trends-you-must-know-for-2015-2016.html
+
+Text to HTML
+This nifty tool will take your text files and add HTML markdown. Use it with caution and always double check the output!
+http://daringfireball.net/projects/markdown/
