@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Document Object Model</title>
+</head>
+<body>
+    The Document Object Model
+</body>
+    <script>
+        console.log("The Document Object Model");
+        xxx();
+        /* The Document Object Model
+        */
+        function xxx()
+        {
+            console.log(document.body);
+            var body = document.body;
+            // this is more fun if it's a random page with stuff already on it (like the learning platform for example).
+            body. innerHTML = "Hello World";
+            var bod = document.body;
+            for (var i = 0; i < 10; i ++){
+                bod. innerHTML += "<p>This has gone through the loop completely: " +i+ " times</p>";
+            }
+            var paragraphs = document.getElementsByTagName('p');
+            console.log(paragraphs);
+            for (var i = 0; i < paragraphs.length; i ++){
+                console.log(paragraphs[i].addEventListener);
+                paragraphs[i].addEventListener('click', function(){
+                    this.style.background='blue';
+                });
+            }
+        };
+    </script>
+</html>

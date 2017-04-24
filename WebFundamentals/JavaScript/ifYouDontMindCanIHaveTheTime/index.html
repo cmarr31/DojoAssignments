@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if You Don't Mind, Can I Have The Time?</title>
+</head>
+<body>
+    if You Don't Mind, Can I Have The Time?
+    <script>
+        "use strict";
+        /* if You Don't Mind, Can I Have The Time?
+        If minutes less than 30, "just after" the hour, more than 30, "almost" the next hour
+        AM / PM, "in the morning", "in the evening",
+        */      
+        var HOUR = 0;
+        HOUR = prompt("Hours:1-12");
+        console.log(HOUR);
+        var MINUTE = 0;
+        MINUTE = prompt("Minutes:0-59");
+        console.log(MINUTE);
+        var PERIOD = "";
+        PERIOD = prompt("AM/PM");
+        console.log(PERIOD);
+        var time;
+        if(MINUTE<30)
+        {
+            time = "It's just after " + HOUR;
+        }
+        else if(MINUTE>30)
+        {
+            time = "It's almost " + (++HOUR);
+        }
+        else{
+            time = "It's " + HOUR;
+        }
+        if(PERIOD=="AM")
+        {
+            time+=" in the morning";
+        }
+        else if(PERIOD=="PM")
+        {
+            time+=" in the evening";
+        }
+        console.log(time);
+    </script>
+</body>
+</html>

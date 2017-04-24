@@ -1,5 +1,135 @@
 WEB FUNDAMENTALS 
-
 JAVASCRIPT
 
-http://mruanova.com/JavaScriptBasics
+https://repl.it/
+
+Math Library
+A library is a related set of functions and values that have been grouped together under a common name. 
+Traditionally this is done for less common functions, so they can be excluded from a certain minimized version of a language 
+(e.g.: if we want a micro-JavaScript for some future Apple Ring™). 
+Looking back now, it seems incredible that a language without math functions would be useful. 
+Nonetheless, JavaScript has grouped certain numerical functions and values into the Math library. 
+When using these, put Math. before it (just like when using log() from the console. library!). 
+Note that libraries are not limited to just functions. 
+They can also include values such as Math.PI. 
+right now however, we will focus on four functions in this library: 
+random(), floor(), ceil() and trunc().
+The first, Math.random(), returns a randomly generated decimal number between 0 and 1. 
+It can theoretically return zero, but it cannot return one: for this reason, you can think of it as returning some number between zero and 'almost-one'. 
+The other three functions are related: they accept a decimal number and return an integer. 
+Given an integer, all three leave it unchanged. Otherwise, floor is a pessimist, ceil is an optimist, and trunc is a simplifier. 
+Math.floor() makes negative numbers more negative and positive less positive. 
+Conversely, Math.ceil() makes positives more positive and negatives less negative. 
+Math.trunc() drops any fraction, moving the number towards zero.
+Math.floor(2.718) and Math.trunc(2.718) both return 2, but Math.ceil(2.718) returns 3.
+Math.floor(-3.1416) is -4; both Math.trunc(-3.1416) and Math.ceil(-3.1416) are -3.
+Naturally, Math.ceil(42) == Math.trunc(42) == Math.floor(42) == 42
+One last idea. What if you want a random integer as low as 51 and as high as 100? 
+Math.random() is "from 0 to almost-one". 
+Math.random() * 50, then, is "from 0 to almost-50". 
+Let's turn those decimal ranges into integers: 
+Math.trunc(Math.random() * 50) is "50 possible integers from 0 to 49". 
+Let's add an offset, so we start at 51: Math.trunc(Math.random() * 50)+51 is perfect. 
+Whew!
+
+Using Modulo to Extract a Digit
+If variable myBigNum contained a big number, how would you get the value of the ‘hundreds’ digit? 
+(To review, the hundreds digit of 32768 is ‘7’, since it is thirty-two thousand, seven hundred sixty-eight.) 
+First, you might myBigNum = myBigNum / 100, to shift the decimal point to exactly where you want (result: 327.68). 
+Then, Math.floor(myBigNum) could remove any decimal leftovers (result: 327). Finally, you could use % to extract only the ‘ones’ digit. 
+What is % and how does it work?
+The % (modulo) operator often goes with / (divide). Basically, % divides first number evenly by second, and returns remainder. 
+Example: 255 % 20 is 15, and 16 % 2 is 0. And … 327 % 10 becomes the 7 we want. Putting it all together, we print the ‘hundreds’ digit like this:
+console.log(Math.floor(myBigNum / 100) % 10);
+Let’s decode this. Formulas are computed inside out; so start with the division inside the parentheses. Once we’ve done that, our formula is simplified:
+console.log(Math.floor(327.68) % 10);
+Then comes the floor call. After evaluating that, our formula is:
+console.log(327 % 10);
+And finally, comes the modulo operation, after which we have this!
+console.log(7);
+
+Debugging Your JavaScript Code
+This is an extremely important topic, so repeat these steps until you understand them well. 
+There are various ways to test and debug your JavaScript code, using artificial environments such as JSbin or plugins for your code editor. 
+However, we prefer to use the real-world JavaScript environment that truly matters — the browsers'. 
+This way, you can use all the features of your development environment, and test your code in a way that doesn’t just emulate the real-world environment: 
+it is the real-world environment. Here are steps for one possible way to create/test your code in this manner:
+1  Go to Sublime/Atom, create a new file with the HTML file extension, and save it.
+2  Within that file, type html and hit [tab]. Sublime/Atom will create the basic HTML tags for you.
+3  Within the <head> section, type script and again hit [tab], to create <script> tags. 
+   You can delete the other attributes inside the <script> tag, as well as the <style> and even <body> tags; 
+   you don’t need those if all you are doing is writing/testing JavaScript.
+4  As the very first line after the <script> tag, always include "use strict"; (including the semicolon).
+5  Now write your JS code as you wish. Remember to save as you go, of course.
+6  When you are ready to test your code (which should be early and often), right-click on the Sublime/Atom file and select “Open in Browser”.
+7  Your default browser will open a window. We prefer Chrome for testing JS, but any browser is fine. 
+   Within that window, open the Developer Console (the MacOS key sequence is cmd-opt-J).
+8  Type JS into the console such as returnGreaterThanSecond([1,3,5,7,9,11,15]) or var arr=[];returnGreaterThanSecond(arr) or printOdds() to exercise your code.
+9  To change or add to your code, cmd-tab back to Sublime/Atom, make your change, then Save.
+10 Switch back to browser and Refresh, returning to step 8. 
+You will soon memorize the quick-key sequence for saving in Sublime/Atom, returning to the browser and refreshing (cmd-s, cmd-tab, cmd-r).
+Ultimately, your JavaScript code will run in the browser JS runtime environment, rather than an artificial environment such as JSbin. 
+They produce slightly different results sometimes, so why bother?
+
+'Truthy' and 'Falsey'
+JavaScript is well-known for its ‘loose’ treatment of data types. 
+In actuality, JavaScript considers almost everything an object, since almost every possible value has a set of methods attached (valueOf, toString, etc). 
+That said, typeof returns six possible values, suggesting that there are six top-level data types: boolean, number, string, object, function, and undefined. 
+(A seventh, introduced in ES6, is left as an exercise for the reader.) JavaScript converts values between data types, as needed. 
+For example, if() converts a value to a boolean, to decide which way to branch.
+Most values are considered something, and if converted to a boolean they equate to true. 
+Only six values are considered nothing: false, 0, NaN, "", null, undefined; these six are “falsey” because when converted to a boolean, they equate to false. 
+All other values are “truthy”, including all objects, functions, non-0 numbers (e.g.: -Infinity), and non-empty strings (including "0" and "false"). 
+In your conditional statements, you might combine values by using operators such as + or / or && or ||.  
+Note that these operators do not automatically convert a value to a boolean, 
+although after using these operators you might commonly convert the result to a boolean. 
+From what you have learned so far, only the following will automatically convert a value to a boolean: 
+1) the comparison operators (>, <, >=, <=, ==, ===), 
+2) the negation ( ! ) operator, and 
+3) the input to if( ) and while( )  (as well as the second of the three inputs to a for( ) loop). 
+
+The Document Object Model
+When an HTML (or XML) file is interpreted by a browser, 
+it also generates what we call the Document Object Model (DOM) – a representation of the entire web page as objects. 
+We can manipulate these objects with JavaScript.
+W3 Schools has a list of some of the methods and properties of an HTML document: http://www.w3schools.com/jsref/dom_obj_document.asp
+You can think of the document as a big container, inside of which sits information (properties) and instructions (methods). 
+You can access these objects – for example, the body – by calling  document.bodyin the console. 
+In other instances, fetching the object requires you to use a built-in method such as getElementsByTagName ( e.g. document.getElementsByTagName('div')). 
+This will return an array of DOM elements.
+Each specific element also has a  wealth of methods to exploit.
+Open up Chrome and a JavaScript console. Let’s play with the DOM a little bit:
+
+Try this in the console:
+console.log(document.body);
+Next, try this:
+
+var body = document.body;
+// this is more fun if it's a random page with stuff already on it (like the learning platform for example).
+body. innerHTML = "Hello World";
+Awesome ---- we are manipulating the DOM using JavaScript. Good work!
+
+Let’s try this:
+
+var bod = document.body;
+for (var i = 0; i < 10; i ++){
+  bod. innerHTML += "<p>This has gone through the loop completely: " +i+ " times</p>";
+}
+Lastly, these DOM elements can listen for events. After we’ve placed all the p-tags into the body (using the above loop), 
+let’s put an event listener on them!
+
+var paragraphs = document.getElementsByTagName('p');
+console.log(paragraphs);
+for (var i = 0; i < paragraphs.length; i ++){
+  console.log(paragraphs[i].addEventListener);
+  paragraphs[i].addEventListener('click', function(){
+    this.style.background='blue';
+  });
+}
+Unfortunately, that was a bit tedious (the interface to access and manipulate the DOM is widely viewed as clunky), 
+and it'd be great if there was a more streamlined way to get the job done (more on this later).
+
+This is exactly where front-end frameworks or libraries come in handy. 
+By layering some functionality atop regular JavaScript, the DOM becomes much easier to manipulate. 
+That means faster development and, hopefully, a better end product. In the MEAN stack, we'll learn about one of these: AngularJS. 
+But before that, let's play with jQuery.

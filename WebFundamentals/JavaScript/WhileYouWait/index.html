@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>while you wait</title>
+</head>
+<body>
+    while you wait
+    <script>
+        "use strict";
+        console.log("while you wait");
+        var daysUntilMyBirthday = 60;
+        countDownUnitlBirthday(daysUntilMyBirthday);
+        /*
+        For every day, print how many days left.
+        If it's more than 30 days, print a sad message.
+        If it's less than 30 days, print a message that sound excited!
+        If it's less than 5 days, SCREAM IT!
+        ONCE IT'S YOUR BIRTHDAY HAVE PARTY!
+        60 days until my birthday. Such a long time... :(
+        59 days until my birthday. Such a long time... :(
+        58 days until my birthday. Such a long time... :(
+        2 DAYS UNTIL MY BIRTHDAY!!!
+        1 DAY UNTIL MY BIRTHDAY!!!
+        ♪ღ♪*•.¸¸¸.•*¨¨*•.¸¸¸.•*•♪ღ♪¸.•*¨¨*•.¸¸¸.•*•♪ღ♪•*
+        ♪ღ♪░H░A░P░P░Y░ B░I░R░T░H░D░A░Y░░♪ღ♪
+        *•♪ღ♪*•.¸¸¸.•*¨¨*•.¸¸¸.•*•♪¸.•*¨¨*•.¸¸¸.•*•♪ღ♪•«
+        */
+        function countDownUnitlBirthday(daysUntilMyBirthday)
+        {
+            while (daysUntilMyBirthday>=0) 
+            {
+                if(daysUntilMyBirthday==0)
+                {
+                    console.log("♪ღ♪*•.¸¸¸.•*¨¨*•.¸¸¸.•*•♪ღ♪¸.•*¨¨*•.¸¸¸.•*•♪ღ♪•*");
+                    console.log("♪ღ♪░H░A░P░P░Y░ B░I░R░T░H░D░A░Y░░♪ღ♪");
+                    console.log("*•♪ღ♪*•.¸¸¸.•*¨¨*•.¸¸¸.•*•♪¸.•*¨¨*•.¸¸¸.•*•♪ღ♪•«");
+                }
+                if(daysUntilMyBirthday<=5)
+                {
+                    console.log(daysUntilMyBirthday + " DAYS UNTIL MY BIRTHDAY!!!");
+                }
+                else if(daysUntilMyBirthday<=30)
+                {
+                    console.log(daysUntilMyBirthday + " days until my birthday. I'm excited :)");
+                }
+                else
+                {
+                    console.log(daysUntilMyBirthday + " days until my birthday. Such a long time... :(");
+                }   
+                daysUntilMyBirthday--;    
+            }
+        };
+    </script>
+</body>
+</html>

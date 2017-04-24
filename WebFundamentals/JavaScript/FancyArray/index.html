@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fancy Array</title>
+</head>
+<body>
+    Fancy Array
+    <script>
+        "use strict";
+        console.log("Fancy Array");
+        fancy(" -> ");
+        /* Fancy Array
+Normally, if you print an array such as ["James", "Jill", "Jane", "Jack"], you will see the following:
+
+[ "James", "Jill", "Jane", "Jack" ]
+Let's make it look fancy! Write a function that will make it print like:
+
+0 -> James
+1 -> Jill
+2 -> Jane
+3 -> Jack
+Bonus (Only If You Have Time):
+
+Let the user pass in the symbol that will print (ex: "->", "=>", "::", "-----")
+Have an extra parameter reversed. If the user passes true, print the elements in reverse order
+        */
+        function fancy(symbol) {
+            var a = [ "James", "Jill", "Jane", "Jack" ];
+            for (var index = 0; index < a.length; index++) {
+                console.log(index + symbol + a[index]);
+            }
+        };
+    </script>
+</body>
+</html>

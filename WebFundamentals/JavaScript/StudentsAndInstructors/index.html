@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Students and Instructors</title>
+</head>
+<body>
+    Students and Instructors
+    <script>
+        "use strict";
+        console.log("Students and Instructors");
+        /*  Students and Instructors
+            Given the following array of objects:
+            Create a program that outputs:
+            Michael Jordan
+            John Rosales
+            Mark Guillen
+            KB Tonel
+        */
+        var students = [ 
+            {first_name:  'Michael', last_name : 'Jordan'},
+            {first_name : 'John', last_name : 'Rosales'},
+            {first_name : 'Mark', last_name : 'Guillen'},
+            {first_name : 'KB', last_name : 'Tonel'}
+        ]
+        function print() {
+            students.forEach(function(element) {                
+                console.log(element.first_name + " " + element.last_name);
+            }, this);
+        };
+        print();
+    </script>
+</body>
+</html>
