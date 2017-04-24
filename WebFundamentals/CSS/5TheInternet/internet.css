@@ -74,8 +74,8 @@
 .background-orange{
     background-color: #cbad04;
 }
-.background-aqua{
-    background-color: aqua;
+.background-blue{
+    background-color: blue;
 }
 #navigation hr{
     margin: 20px 0 20px 0;
@@ -122,13 +122,14 @@
 }
 #content-right span{
     font-size:25px;
+    font-weight: bold;
     color:aqua;
 }
 #content-middle{
     width:582px;
 }
 #content-middle span{
-    color:aqua;
+    color:blue;
 }
 .width210px{
     width:210px;
