@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Functions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <style>
+        body{
+            background-color: cornflowerblue;
+        }
+        div{
+            display:inline-block;
+            vertical-align: top;
+            height: 150px;
+            width: 150px;
+            background-color: yellow;
+            margin-top:5px;
+            padding: 5px;
+        }
+        #red{
+            display: none;
+            background-color: red;
+            position: absolute;
+        }
+        .shadow{
+            box-shadow: 5px 5px 5px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="click">.click will alert when clicked</div>
+    <div id="hide">.hide will hide all other yellow boxes</div>
+    <div id="show">.show will show all hidden boxes</div>
+    <div id="toggle">.toggle will toggle the red box</div>
+    <div id="slideDown">.slideDown will slide down the red box</div>
+    <div id="slideUp">.slideUp will slide up the red box</div>
+    <div id="slideToggle">.slideToggle will slie toggle the red box</div>
+    <div id="fadeIn">.fadeIn will fade in the red box</div>
+    <div id="fadeOut">.fadeOut will fade out the red box</div>
+    <div id="addClass">.addClass will add the class shadow to the red bos</div>
+    <div id="before">.before will add some text before the red box </div>
+    <div id="after">.after will add some text after the red box</div>
+    <div id="append">.append will append some text inside the red box</div>
+    <div id="html">.html will replace the text inside the red box with some html</div>
+    <div id="attr">.attr will add an attribute to the red box, in this case the class shadow</div>
+    <div id="val">.val will replace the values inside the spans located in the red box</div>
+    <div id="text">.text will replace the text inside the red box</div>
+    <div id="data">.data will alert the data inside the input in the red box</div>
+    <div id="red"><h1>red</h1></div>
+    <script>
+        "use strict";
+        /*  Assignment: jQuery Functions
+
+            Create a web page that uses the following jQuery functions: Don't randomly start writing jQuery and find elements to attach jQuery code to. 
+            Think about what each function could be useful for! 
+            This is an assignment that previous students have often reverted back to so as to brush up on their jQuery in later weeks! 
+            Use the mockup as motivation, but feel free to embellish!
+
+            Do not spend more than 4-8 hours on this assignment.
+
+            Important: Sometimes students spend too much time going through the documentation that it prevents them from actually building things. 
+            Skim through the documentation quickly and casually play around to get familiar with only the following jQuery methods. 
+            Once you have spent 4-5 hours on this assignment, 
+            move on as you'll get to learn more about how you can use these jQuery methods to build some amazing things later on.  
+            The wireframe on the right shows only 3 functions being tested.  
+            In this assignment, we want you to add more and test all 18 jQuery functions shown below. */
+        $(document).ready(function () {
+            console.log("jQuery Functions");
+            //document.getElementById("demo").innerHTML = 5 + 6;
+            $("#click").click(
+                function()
+                {
+                    window.alert("click");
+                }
+            );
+            $("#hide").click(
+                function()
+                {
+                    $("#click").hide();
+                    $("#hide").hide();
+                    //$("#show").hide();
+                    $("#toggle").hide();
+                    $("#slideDown").hide();
+                    $("#slideUp").hide();
+                    $("#slideToggle").hide();
+                    $("#fadeIn").hide();
+                    $("#fadeOut").hide();
+                    $("#addClass").hide();
+                    $("#before").hide();
+                    $("#after").hide();
+                    $("#append").hide();
+                    $("#html").hide();
+                    $("#attr").hide();
+                    $("#val").hide();
+                    $("#text").hide();
+                    $("#data").hide();
+                }
+            );
+            $("#show").click(
+                function()
+                {
+                    $("#click").show();
+                    $("#hide").show();
+                    $("#show").show();
+                    $("#toggle").show();
+                    $("#slideDown").show();
+                    $("#slideUp").show();
+                    $("#slideToggle").show();
+                    $("#fadeIn").show();
+                    $("#fadeOut").show();
+                    $("#addClass").show();
+                    $("#before").show();
+                    $("#after").show();
+                    $("#append").show();
+                    $("#html").show();
+                    $("#attr").show();
+                    $("#val").show();
+                    $("#text").show();
+                    $("#data").show();
+                }
+            );
+            $("#toggle").click(
+                function()
+                {
+                    $("#red").toggle("slow");
+                }
+            );
+            $("#slideDown").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").slideDown("slow");
+                }
+            );
+            $("#slideUp").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").slideUp("slow");
+                }
+            );
+            $("#slideToggle").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").slideToggle("slow");
+                }
+            );
+            $("#fadeIn").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").fadeIn("slow");
+                }
+            );
+            $("#fadeOut").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").fadeOut("slow");
+                }
+            );
+            $("#addClass").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").addClass("shadow");
+                }
+            );
+            $("#before").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").before("<p>BEFORE</p>");
+                }
+            );
+            $("#after").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").after("<p>AFTER</p>");
+                }
+            );
+            $("#append").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").append("<p>append</p>");
+                }
+            );
+            $("#html").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").html("<p>html</p>");
+                }
+            );
+            $("#attr").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").attr("class","shadow");
+                }
+            );
+            $("#val").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").html("<input id='some' type='text'' value='some text'>");
+                    window.alert($("#some").val());
+                }
+            );
+            $("#text").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").text("<p>this text includes the tags because text</p>");
+                }
+            );
+            $("#data").click(
+                function()
+                {
+                    $("#red").toggle();
+                    $("#red").html("The values stored were <span></span> and <span></span>");
+                    $( "#red" ).data( "test", { first: 16, last: "pizza!" } );
+                    $( "span:first" ).text( $( "#red" ).data( "test" ).first );
+                    $( "span:last" ).text( $( "#red" ).data( "test" ).last );
+                }
+            );
+        });
+    </script>
+</body>
+</html>
