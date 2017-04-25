@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Users</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <style>
+        body{
+            background-color: cornflowerblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h3{
+            color:white;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px black;
+        }
+        #header{
+            display: flex;
+            width:600px;
+            background-color: white;
+            font-weight: bold;
+            padding: 2px;
+        }
+        #header span{
+            flex:1;
+            justify-content: space-around;
+        }
+        #users div{
+            display: flex;
+            width:600px;
+            background-color: white;
+            font-size: 12px;
+            padding: 2px;
+        }
+        #users span{
+            flex:1;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <h3>Users</h3>
+    <div id="header">
+        <span>First Name</span>
+        <span>Last Name</span>
+        <span>Email Address</span>
+        <span>Contact #</span>
+    </div>
+    <div id="users">
+    </div>
+    <form>
+        <h3>Add User</h3>
+        <p>First Name : <input name="first_name" value="Mauricio"></p>
+        <p>Last Name : <input name="last_name" value="Ruanova Hurtado"></p>        
+        <p>Email Address : <input name="email" value="mruanova@outlook.com"></p>
+        <p>Contact No. : <input name="phone" value="312-000-9999"></p>
+        <button>Add User</button>
+    </form>
+    <script>
+        "use strict";
+        /*  Assignment: Add Users
+            Create a blank table which has First Name, Last Name, Email and Contact Number as table headings. 
+            Have a form at the bottom which will be used to append items to the table. 
+            Make sure that each form field appends to its proper row/column in the table. */
+        $(document).ready(function () {
+            console.log("Add Users");
+            $("form").submit(function(){
+                console.log("serialize=" + $(this).serialize());
+                var first_name = $(this)[0].children[1].children['0'].value;
+                var last_name = $(this)[0].children[2].children['0'].value;
+                var email = $(this)[0].children[3].children['0'].value;
+                var phone = $(this)[0].children[4].children['0'].value;
+                var tag = "<div>"
+                    + "<span>" + first_name + "</span>"
+                    + "<span>" + last_name + "</span>"
+                    + "<span>" + email + "</span>"
+                    + "<span>" + phone + "</span>"
+                    + "</div>";
+                $("#users").append(tag);
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
