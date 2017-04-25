@@ -18,11 +18,18 @@
             background-color: yellow;
             margin-top:5px;
             padding: 5px;
+            color:red;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
         }
         #red{
+            color:white;
+            text-shadow: 2px 2px 2px black;
             display: none;
             background-color: red;
-            position: absolute;
+            position: fixed;
+            top:5px;
+            left:5px;
         }
         .shadow{
             box-shadow: 5px 5px 5px black;
@@ -40,8 +47,8 @@
     <div id="fadeIn">.fadeIn will fade in the red box</div>
     <div id="fadeOut">.fadeOut will fade out the red box</div>
     <div id="addClass">.addClass will add the class shadow to the red bos</div>
-    <div id="before">.before will add some text before the red box </div>
-    <div id="after">.after will add some text after the red box</div>
+    <div id="before">.before will add some text before the yellow box </div>
+    <div id="after">.after will add some text after the yellow box</div>
     <div id="append">.append will append some text inside the red box</div>
     <div id="html">.html will replace the text inside the red box with some html</div>
     <div id="attr">.attr will add an attribute to the red box, in this case the class shadow</div>
@@ -172,15 +179,13 @@
             $("#before").click(
                 function()
                 {
-                    $("#red").toggle();
-                    $("#red").before("<p>BEFORE</p>");
+                    $("#after").before("<p>BEFORE</p>");
                 }
             );
             $("#after").click(
                 function()
                 {
-                    $("#red").toggle();
-                    $("#red").after("<p>AFTER</p>");
+                    $("#after").after("<p>AFTER</p>");
                 }
             );
             $("#append").click(
@@ -216,7 +221,7 @@
                 function()
                 {
                     $("#red").toggle();
-                    $("#red").text("<p>this text includes the tags because text</p>");
+                    $("#red").text("<p>this text includes the tags because it is a text and not an html tag</p>");
                 }
             );
             $("#data").click(
