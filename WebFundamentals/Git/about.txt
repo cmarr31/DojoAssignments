@@ -20,6 +20,8 @@ git add .
 git commit -m "update dojo assignments"
 git push -u origin master
 
+git clone -b error_version https://github.com/Codingdojo-Trey/Debugging-jQuery.git
+
 C:\>git
 usage: git [--version] [--help] [-C <path>] [-c name=value]
            [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
