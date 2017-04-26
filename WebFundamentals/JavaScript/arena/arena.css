@@ -1,0 +1,55 @@
+#wrapper{
+    text-align: center;
+    border: 10px solid gray;
+    background-image: url("dojo.jpg");
+    width: 950px;
+    height: 407px;
+    padding: 20px;
+    font-family: sans-serif;
+
+}
+
+img {
+    display: inline-block;
+    height: 60%;
+    vertical-align: middle;
+    margin-top: 100px;
+   
+}
+
+p{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: orange;
+    margin: 0px 10px;
+    text-shadow: 2px 2px 9px rgba(97,213,255,1);
+}
+
+#header{
+    display: inline-block;
+    vertical-align: middle;
+    border: 5px solid gray;
+    border-radius: 15px;
+    background: white;
+    opacity: .8;
+    padding: 30px;
+    width: 450px;
+}
+
+button{
+    display: inline-block;
+    width: 110px;
+    /*height: 25px;*/
+    font-size: 1.2em;
+    margin: 2px;
+    /*border-radius: 8px;*/
+    
+}
+
+select{
+    display: inline-block;
+    width: 180px;
+    height: 30px;
+    font-size: 1.2em;
+    margin: 2px;
+}
