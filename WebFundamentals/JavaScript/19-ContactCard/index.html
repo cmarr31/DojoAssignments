@@ -63,24 +63,21 @@
         Remember, the content you are making is dynamic, so be sure to attach your handlers appropriately.
         NOTE: we recommend using $(document).on("click", ".btn") for this assignment as opposed to $(".btn").click() */
         function attach_handlers(){
-	        $(".btn").click(function(){
+	        $(".card").click(function(){
                 //alert("CALLBACK!");
             });
         };
-        $(document).on("click",".btn", function(){
+        $(document).on("click",".card", function(){
+            
+            //toggle             $(this)[0].hide();
+
+            //hide h3             $(this)[0].children[0].hide();
+
+            //hide p             $(this)[0].children[1].hide();
+            
+            //show p             $(this)[0].children[2].show();
+            
             alert($(this)["0"].children[2].innerText);
-            
-            //toggle
-            
-            //hide h3
-            //$(this)[0]
-
-            //hide p
-            
-            //show p
-
-
-
         });
         $(document).ready(function () {
             console.log("Contact Card");
@@ -89,7 +86,7 @@
                 var first_name = $(this)[0].children[0].children[1].value;
                 var last_name = $(this)[0].children[1].children[1].value;
                 var description = $(this)[0].children[2].children[1].value;
-                var tag = "<div class='btn'>"
+                var tag = "<div class='card'>"
                     + "<h3>" + first_name + "&nbsp;" + last_name + "</h3>"
                     + "<p>Click for description!</p>"
                     + "<p class='description' style='display:none;'>" + description + "</p>"
