@@ -20,7 +20,11 @@
         .tab{
             display: inline-block;
             width:600px;
-            padding: 2px;
+            padding: 10px;
+        }
+        .card{
+            width:580px;
+            height: 50px;
         }
         #myForm span{
             color:white;
@@ -68,19 +72,13 @@
             });
         };
         $(document).on("click",".card", function(){
-            
-            //toggle             $(this)[0].hide();
-
-            //hide h3             $(this)[0].children[0].hide();
-
-            //hide p             $(this)[0].children[1].hide();
-            
-            //show p             $(this)[0].children[2].show();
-            
-            alert($(this)["0"].children[2].innerText);
+            var description = $(this)[0].children[2].innerText;
+            var tag = "<div class='card'>"
+                + "<p class='description'>" + description + "</p>"
+                + "</div>";
+            $(this).html(tag);
         });
         $(document).ready(function () {
-            console.log("Contact Card");
             $("form").submit(function(){
                 console.log("serialize=" + $(this).serialize());
                 var first_name = $(this)[0].children[0].children[1].value;
