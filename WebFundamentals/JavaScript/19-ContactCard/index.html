@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Card</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <style>
+        body{
+            background-color: cornflowerblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        div{
+            vertical-align: top;
+        }
+        span{
+            vertical-align: top;
+        }
+        .tab{
+            display: inline-block;
+            width:600px;
+            padding: 2px;
+        }
+        #myForm span{
+            color:white;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px black;
+        }
+        #Contacts div{
+            background-color: white;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="myForm" class="tab">
+        <form>
+            <p>
+                <span>First Name : </span>
+                <input name="first_name" value="Mauricio">
+            </p>
+            <p>
+                <span>Last Name : </span>
+                <input name="last_name" value="Ruanova Hurtado">
+            </p>        
+            <p>
+                <span>Description : </span>
+                <textarea rows="4" cols="50">Legendary black belt ninja at Coding Dojo. Originary from the dark cloud, he grew up to be a fearless master of shadows and gradients.</textarea>
+            </p>
+            <button>Add Contact</button>
+        </form>
+    </div>
+    <div id="Contacts" class="tab">
+    </div>
+    <script>
+        "use strict";
+        /*  Assignment: Contact Card
+        You are going to design a contact card page. 
+        The Contact should be able to input contacts to the page. 
+        Using the techniques demonstrated in the videos, you must use jQuery to append new data to the page and make the content interactive. 
+        Remember, the content you are making is dynamic, so be sure to attach your handlers appropriately.
+        NOTE: we recommend using $(document).on("click", ".btn") for this assignment as opposed to $(".btn").click() */
+        function attach_handlers(){
+	        $(".btn").click(function(){
+                //alert("CALLBACK!");
+            });
+        };
+        $(document).on("click",".btn", function(){
+            alert($(this)["0"].children[2].innerText);
+        });
+        $(document).ready(function () {
+            console.log("Contact Card");
+            $("form").submit(function(){
+                console.log("serialize=" + $(this).serialize());
+                var first_name = $(this)[0].children[0].children[1].value;
+                var last_name = $(this)[0].children[1].children[1].value;
+                var description = $(this)[0].children[2].children[1].value;
+                var tag = "<div class='btn'>"
+                    + "<h3>" + first_name + "&nbsp;" + last_name + "</h3>"
+                    + "<p>Click for description!</p>"
+                    + "<p class='description' style='display:none;'>" + description + "</p>"
+                    + "</div>";
+                $("#Contacts").append(tag);
+		        //attach_handlers();
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
