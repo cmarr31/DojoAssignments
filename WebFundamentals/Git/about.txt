@@ -20,6 +20,14 @@ git add .
 git commit -m "update dojo assignments"
 git push -u origin master
 
+fork
+git clone
+modify
+git add
+git commit
+git push
+create new pull request
+
 git clone -b error_version https://github.com/Codingdojo-Trey/Debugging-jQuery.git
 
 C:\>git
