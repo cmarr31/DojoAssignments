@@ -17,6 +17,12 @@ $(document).ready(function(){
 });
 ---
 
+Open Weather Map: http://openweathermap.org/api
+GitHub API: https://developer.github.com/v3/
+Google Maps Directions API: https://developers.google.com/maps/documentation/directions/
+Twitter API: https://dev.twitter.com/rest/public
+Flickr API: https://www.flickr.com/services/api/
+
 traverse: parent and siblings
 
 Cool jQuery Plugins

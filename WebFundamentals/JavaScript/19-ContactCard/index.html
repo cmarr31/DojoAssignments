@@ -36,6 +36,9 @@
             font-size: 12px;
             text-align: center;
         }
+        .hidden{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -72,10 +75,21 @@
             });
         };
         $(document).on("click",".card", function(){
+            var name = $(this)[0].children[0].innerText;
+            var here = $(this)[0].children[1].innerText;
             var description = $(this)[0].children[2].innerText;
-            var tag = "<div class='card'>"
-                + "<p class='description'>" + description + "</p>"
-                + "</div>";
+            if($(this)[0].children[2].className==="description hidden"){
+                console.log("show="+$(this)[0].children[2].className);
+                var tag = "<h3 class='hidden'>" + name + "</h3>"
+                + "<p class='hidden'>" + here + "</p>"
+                + "<p class='description'>" + description + "</p>";
+            }else{
+                console.log("hide="+$(this)[0].children[2].className);
+                var tag = "<h3>" + name + "</h3>"
+                + "<p>" + here + "</p>"
+                + "<p class='description hidden'>" + description + "</p>";
+            }
+            console.log(tag);
             $(this).html(tag);
         });
         $(document).ready(function () {
@@ -87,7 +101,7 @@
                 var tag = "<div class='card'>"
                     + "<h3>" + first_name + "&nbsp;" + last_name + "</h3>"
                     + "<p>Click for description!</p>"
-                    + "<p class='description' style='display:none;'>" + description + "</p>"
+                    + "<p class='description hidden'>" + description + "</p>"
                     + "</div>";
                 $("#Contacts").append(tag);
 		        //attach_handlers();
