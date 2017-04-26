@@ -1,0 +1,66 @@
+
+#container{
+    padding: 20px;
+    font-family: sans-serif;
+}
+#net{
+    color: dodgerblue;
+}
+#sidebar{
+    background: white;
+    display: inline-block;
+    width: 250px;
+    height: 700px;
+}
+#content{
+    background: lightgreen;
+    display: inline-block;
+    vertical-align: top;
+}
+#globe {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 00px;
+    top: 35px;
+
+}
+h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+h2 {
+    background: lightblue;
+    padding: 20px;
+    margin: 0;
+}
+.smallIcon{
+    height: 25px;
+    width: 25px;
+}
+#sideTop{
+    height: 350px;
+    width: 250px;
+    border-bottom: 3px solid gray;;
+}
+#sideBottom{
+    background-image: url("/Users/Leibel/Desktop/Coding Dojo/Internet Css Project/images/ad_background.png");
+
+    height: 350px;
+    width: 250px;
+}
+#ninja {
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+}
+#addP1{
+    color: white;
+    font-weight: bold;
+    font-size: 1.6em;
+    text-align: center;
+    margin: 10px;
+    padding-top: 20px;
+}

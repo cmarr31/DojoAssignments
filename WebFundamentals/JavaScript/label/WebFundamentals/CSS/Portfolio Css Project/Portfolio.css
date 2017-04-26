@@ -1,0 +1,120 @@
+p {
+    display: inline;
+}
+#header{
+    display: inline-block;
+    background: #F8F8F8;
+    padding: 25px;
+    width: 925px;
+}
+#footer{
+    display: inline-block;
+    background: #F8F8F8;
+    /*padding: 5px;*/
+    width: 975px;
+}
+#content{
+    display: inline-block;
+    
+    background:linear-gradient(to right, #1D0D11 , #6F5964, #1D0D11);
+    padding: 25px;
+    width: 925px;
+    /*height: 800px;*/
+}
+#MasterOf{
+    
+    margin-left: 620px;
+}
+#JayneImg{
+    vertical-align: top;
+    width: 410px;
+    height: 275px;
+    border: gray 5px solid;
+    
+}
+#aboutBox{
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 25px;
+    height: 285px;
+    width: 475px;
+    background:linear-gradient(to right, #FEFEFE , #DACBD9);
+}
+#contentBottom{
+    
+}
+.category{
+    display: block;
+    padding: 20px;
+    margin: 0px; 
+    background: linear-gradient(darkgray, gray, darkgray);
+}
+.par{
+    margin-top: 0px;
+    padding: 20px;
+}
+.collum{
+    width: 280px;
+    display: inline-block;
+    margin-right: 38px;
+    margin-top: 25px;
+    background:linear-gradient(to right, #FEFEFE , #DACBD9);
+    vertical-align: top;
+}
+.sitePics{
+    width: 280px;
+
+}
+#col3{
+    margin-right: 0;
+}
+.technologies{
+    display: block;
+    padding: 15px;
+    margin: 0px; 
+    /*position:relative;
+    top:-5px;*/
+    background: linear-gradient(darkgray, gray, darkgray);
+    vertical-align: top;
+    
+}
+
+.siteDescription {
+    height: 180px;
+    padding: 15px;
+}
+
+.collumBottom{
+    height: 180px;
+    
+}
+.icons{
+    padding: 15px;
+
+}
+.icon{
+    height: 46px;
+    width: 46px;
+
+}
+.greenButton{
+    background: #407D61;
+    color: white;
+    width: 85px;
+    height: 20px;
+    text-align: center;
+    display: block;
+    padding: 3px;
+    border: 3px solid gray;
+    margin: 0 auto;
+    font-size: .75em;
+}
+.footerText{
+    text-align: center;
+    margin: 15 auto;
+    display: block;
+}
+.smallIcon{
+    height: 15px;
+    width: 15px;
+}

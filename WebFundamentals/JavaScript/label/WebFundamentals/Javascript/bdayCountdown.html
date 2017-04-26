@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>BdayCountdown</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <script>
+            var daysUntilMyBirthday = 60;
+            var daysMessage = "days until my birthday";
+            var sad = "That sucks!! Tooooo loooooong :(";
+            var excited = "Can't waaaaaiiiiit!!";
+
+
+            while (daysUntilMyBirthday > 0) {
+                if (daysUntilMyBirthday > 30) {
+                    console.log(daysUntilMyBirthday + " " + daysMessage);
+                } else if (daysUntilMyBirthday > 5) {
+                    console.log(daysUntilMyBirthday + " " + sad);
+                } else {
+                    console.log(daysUntilMyBirthday + " " + daysMessage.toUpperCase() + "!!!");
+                }
+            
+            daysUntilMyBirthday--;
+            
+            }
+            console.log("♪ღ♪*•.¸¸¸.•*¨¨*•.¸¸¸.•*•♪ღ♪¸.•*¨¨*•.¸¸¸.•*•♪ღ♪•*");
+            console.log("♪ღ♪░H░A░P░P░Y░ B░I░R░T░H░D░A░Y░░♪ღ♪");
+            console.log("*•♪ღ♪*•.¸¸¸.•*¨¨*•.¸¸¸.•*•♪¸.•*¨¨*•.¸¸¸.•*•♪ღ♪•«");
+        </script>
+    </body>
+</html>

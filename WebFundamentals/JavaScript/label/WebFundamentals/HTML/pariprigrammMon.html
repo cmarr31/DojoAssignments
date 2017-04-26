@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--<script src="myJs.js"></script>-->
+    
+</head>
+<body>
+    <button onClick="helloWorld();">Click Me!</button>
+</body>
+
+</html>
+
+<script>
+    
+    function isPrime(num){
+        for (var i = 2; i < num; i ++){
+            if(num % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function helloWorld(){
+        for(var i = 0; i <= 50; i++)
+        {
+            if(isPrime(i)){console.log("it's prime!");}
+            else{console.log("it's not prime");}
+        }
+        return true;
+    }
+    
+</script>

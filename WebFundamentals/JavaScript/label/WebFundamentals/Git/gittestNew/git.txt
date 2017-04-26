@@ -1,0 +1,423 @@
+Last login: Wed Apr 19 21:19:05 on ttys000
+Leibels-MacBook-Pro:~ Leibel$ cd /desktop
+-bash: cd: /desktop: No such file or directory
+Leibels-MacBook-Pro:~ Leibel$ cd Desktop
+Leibels-MacBook-Pro:Desktop Leibel$ mkdir test
+Leibels-MacBook-Pro:Desktop Leibel$ ls
+Anything but code
+Coding Dojo
+Dojo Screenshots
+OtherCodingRecourses
+Screen Shot 2017-04-21 at 3.51.03 PM.png
+Screen Shot 2017-04-23 at 12.40.05 AM.png
+Visual Studio Code.app
+test
+Leibels-MacBook-Pro:Desktop Leibel$ cd test
+Leibels-MacBook-Pro:test Leibel$ ls
+Leibels-MacBook-Pro:test Leibel$ touch index.html styles.css commands.txt
+Leibels-MacBook-Pro:test Leibel$ ls
+commands.txt	index.html	styles.css
+Leibels-MacBook-Pro:test Leibel$ cp index.html index_2.html
+Leibels-MacBook-Pro:test Leibel$ ls
+commands.txt	index.html	index_2.html	styles.css
+Leibels-MacBook-Pro:test Leibel$ rm styles.css
+Leibels-MacBook-Pro:test Leibel$ ls
+commands.txt	index.html	index_2.html
+Leibels-MacBook-Pro:test Leibel$ cd ..
+Leibels-MacBook-Pro:Desktop Leibel$ mkdir destination
+Leibels-MacBook-Pro:Desktop Leibel$ cd test
+Leibels-MacBook-Pro:test Leibel$ ls
+commands.txt	index.html	index_2.html
+Leibels-MacBook-Pro:test Leibel$ mv index_2.html /destination
+mv: rename index_2.html to /destination: Permission denied
+Leibels-MacBook-Pro:test Leibel$ ls
+commands.txt	index.html	index_2.html
+Leibels-MacBook-Pro:test Leibel$ mv /test/index_2.html /destination/
+mv: rename /test/index_2.html to /destination/: No such file or directory
+Leibels-MacBook-Pro:test Leibel$ ls
+commands.txt	index.html	index_2.html
+Leibels-MacBook-Pro:test Leibel$ mv index_2.html ../destination
+Leibels-MacBook-Pro:test Leibel$ ls
+commands.txt	index.html
+Leibels-MacBook-Pro:test Leibel$ cd destination
+-bash: cd: destination: No such file or directory
+Leibels-MacBook-Pro:test Leibel$ cd ..
+Leibels-MacBook-Pro:Desktop Leibel$ cd destiantion
+-bash: cd: destiantion: No such file or directory
+Leibels-MacBook-Pro:Desktop Leibel$ cd destintion
+-bash: cd: destintion: No such file or directory
+Leibels-MacBook-Pro:Desktop Leibel$ cd destination
+Leibels-MacBook-Pro:destination Leibel$ ls
+index_2.html
+Leibels-MacBook-Pro:destination Leibel$ cd ..
+Leibels-MacBook-Pro:Desktop Leibel$ ls
+Anything but code
+Coding Dojo
+Dojo Screenshots
+OtherCodingRecourses
+Screen Shot 2017-04-21 at 3.51.03 PM.png
+Screen Shot 2017-04-23 at 12.40.05 AM.png
+Visual Studio Code.app
+destination
+test
+Leibels-MacBook-Pro:Desktop Leibel$ rm -rf destination
+Leibels-MacBook-Pro:Desktop Leibel$ ls
+Anything but code
+Coding Dojo
+Dojo Screenshots
+OtherCodingRecourses
+Screen Shot 2017-04-21 at 3.51.03 PM.png
+Screen Shot 2017-04-23 at 12.40.05 AM.png
+Visual Studio Code.app
+test
+Leibels-MacBook-Pro:Desktop Leibel$ clear
+
+Leibels-MacBook-Pro:Desktop Leibel$ cd Desktop
+-bash: cd: Desktop: No such file or directory
+Leibels-MacBook-Pro:Desktop Leibel$ mkdir DojoAssignments
+Leibels-MacBook-Pro:Desktop Leibel$ cd DojoAssignments/
+Leibels-MacBook-Pro:DojoAssignments Leibel$ mkdir WebFundamentals Python MEAN Ruby iOS netCore
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ls
+MEAN		Ruby		iOS
+Python		WebFundamentals	netCore
+Leibels-MacBook-Pro:DojoAssignments Leibel$ touch /MEAN/about.txt
+touch: /MEAN/about.txt: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ touch MEAN/about.txt
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ls
+MEAN		Ruby		iOS
+Python		WebFundamentals	netCore
+Leibels-MacBook-Pro:DojoAssignments Leibel$ cd MEAN/
+Leibels-MacBook-Pro:MEAN Leibel$ ls
+about.txt
+Leibels-MacBook-Pro:MEAN Leibel$ cd ..
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ls
+MEAN		Ruby		iOS
+Python		WebFundamentals	netCore
+Leibels-MacBook-Pro:DojoAssignments Leibel$ touch Ruby/about.txt iOS/about.txt Python/about.txt WebFundamentals/about.txt netCore/about.txt
+Leibels-MacBook-Pro:DojoAssignments Leibel$ cd WebFundamentals/
+Leibels-MacBook-Pro:WebFundamentals Leibel$ mkdir Git HTML CSS Javascript
+Leibels-MacBook-Pro:WebFundamentals Leibel$ touch Git/about.txt HTML/about.txt CSS/about.txt Javascript/about.txt
+Leibels-MacBook-Pro:WebFundamentals Leibel$ cd HTML/
+Leibels-MacBook-Pro:HTML Leibel$ touch indentation.html
+Leibels-MacBook-Pro:HTML Leibel$ ls
+about.txt		indentation.html
+Leibels-MacBook-Pro:HTML Leibel$ ls -R
+about.txt		indentation.html
+Leibels-MacBook-Pro:HTML Leibel$ Is -R
+-bash: Is: command not found
+Leibels-MacBook-Pro:HTML Leibel$ ls -R
+about.txt		indentation.html
+Leibels-MacBook-Pro:HTML Leibel$ cd ..
+Leibels-MacBook-Pro:WebFundamentals Leibel$ cd ..
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ls -R
+MEAN		Ruby		iOS
+Python		WebFundamentals	netCore
+
+./MEAN:
+about.txt
+
+./Python:
+about.txt
+
+./Ruby:
+about.txt
+
+./WebFundamentals:
+CSS		Git		HTML		Javascript	about.txt
+
+./WebFundamentals/CSS:
+about.txt
+
+./WebFundamentals/Git:
+about.txt
+
+./WebFundamentals/HTML:
+about.txt		indentation.html
+
+./WebFundamentals/Javascript:
+about.txt
+
+./iOS:
+about.txt
+
+./netCore:
+about.txt
+Leibels-MacBook-Pro:DojoAssignments Leibel$ touch assignments.txt
+Leibels-MacBook-Pro:DojoAssignments Leibel$ clear
+
+Leibels-MacBook-Pro:DojoAssignments Leibel$ git
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+Leibels-MacBook-Pro:DojoAssignments Leibel$ MEAN
+MEAN
+Leibels-MacBook-Pro:DojoAssignments Leibel$ MEANRubyiOS
+-bash: MEANRubyiOS: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ Python
+Python
+Leibels-MacBook-Pro:DojoAssignments Leibel$ PythonWebFundamentalsnetCore
+-bash: PythonWebFundamentalsnetCore: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ 
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ./MEAN:
+-bash: ./MEAN:: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ about.txt
+-bash: about.txt: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ 
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ./Python:
+-bash: ./Python:: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ about.txt
+-bash: about.txt: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ 
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ./Ruby:
+-bash: ./Ruby:: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ about.txt
+-bash: about.txt: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ 
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ./WebFundamentals:
+-bash: ./WebFundamentals:: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ CSSGitHTMLJavascriptabout.txt
+-bash: CSSGitHTMLJavascriptabout.txt: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ 
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ./WebFundamentals/CSS:
+-bash: ./WebFundamentals/CSS:: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ about.txt
+-bash: about.txt: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ 
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ./WebFundamentals/Git:
+-bash: ./WebFundamentals/Git:: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ about.txt
+-bash: about.txt: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ 
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ./WebFundamentals/HTML:
+-bash: ./WebFundamentals/HTML:: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ about.txtindentation.html
+-bash: about.txtindentation.html: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ 
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ./WebFundamentals/Javascript:
+-bash: ./WebFundamentals/Javascript:: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ about.txt
+-bash: about.txt: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ 
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ./iOS:
+-bash: ./iOS:: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ about.txt
+-bash: about.txt: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ 
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ./netCore:
+-bash: ./netCore:: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ about.txt
+-bash: about.txt: command not found
+Leibels-MacBook-Pro:DojoAssignments Leibel$ clear
+
+Leibels-MacBook-Pro:DojoAssignments Leibel$ git config --global user.name "Your Name"
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ./WebFundamentals/HTML:
+-bash: ./WebFundamentals/HTML:: No such file or directory
+Leibels-MacBook-Pro:DojoAssignments Leibel$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Leibels-MacBook-Pro:DojoAssignments Leibel$ git config --global user.name "Leibelhecht"
+Leibels-MacBook-Pro:DojoAssignments Leibel$ git config --global user.email leibelhecht@gmail.com
+Leibels-MacBook-Pro:DojoAssignments Leibel$ git config --global --list
+user.name=Leibelhecht
+user.email=leibelhecht@gmail.com
+Leibels-MacBook-Pro:DojoAssignments Leibel$ git config --global color.ui "auto"
+Leibels-MacBook-Pro:DojoAssignments Leibel$ ls
+MEAN		Ruby		assignments.txt	netCore
+Python		WebFundamentals	iOS
+Leibels-MacBook-Pro:DojoAssignments Leibel$ cd ..
+Leibels-MacBook-Pro:Desktop Leibel$ cd ..
+Leibels-MacBook-Pro:~ Leibel$ cd ..
+Leibels-MacBook-Pro:Users Leibel$ ls
+Administrator	Deleted Users	Guest		Leibel		Shared
+Leibels-MacBook-Pro:Users Leibel$ cd Leibel/
+Leibels-MacBook-Pro:~ Leibel$ ls
+Adobe
+Applications
+Creative Cloud Files
+Creative Cloud Files (leibelhecht@californiacolleges.com)
+Creative Cloud Files (unknown)
+Desktop
+Documents
+Downloads
+Google Drive
+Library
+Movies
+Music
+Pictures
+Public
+Tzivos
+filmstro.log
+Leibels-MacBook-Pro:~ Leibel$ cd D
+Desktop/   Documents/ Downloads/ 
+Leibels-MacBook-Pro:~ Leibel$ cd Desktop/
+Leibels-MacBook-Pro:Desktop Leibel$ mkdir gittest
+Leibels-MacBook-Pro:Desktop Leibel$ cd gittest/
+Leibels-MacBook-Pro:gittest Leibel$ ls
+Leibels-MacBook-Pro:gittest Leibel$ git init
+Initialized empty Git repository in /Users/Leibel/Desktop/gittest/.git/
+Leibels-MacBook-Pro:gittest Leibel$ touch index.html styles.css aboutme.txt
+Leibels-MacBook-Pro:gittest Leibel$ ls
+aboutme.txt	index.html	styles.css
+Leibels-MacBook-Pro:gittest Leibel$ open aboutme.txt 
+Leibels-MacBook-Pro:gittest Leibel$ gitstatus
+-bash: gitstatus: command not found
+Leibels-MacBook-Pro:gittest Leibel$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	aboutme.txt
+	index.html
+	styles.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+Leibels-MacBook-Pro:gittest Leibel$ git add aboutme.txt 
+Leibels-MacBook-Pro:gittest Leibel$ git commit -m "about me updated"
+[master (root-commit) 05041e3] about me updated
+ 1 file changed, 1 insertion(+)
+ create mode 100644 aboutme.txt
+Leibels-MacBook-Pro:gittest Leibel$ git log
+commit 05041e3c114817c39d27f2db98448b9a0f4990aa
+Author: Leibelhecht <leibelhecht@gmail.com>
+Date:   Mon Apr 24 08:19:03 2017 -0500
+
+    about me updated
+Leibels-MacBook-Pro:gittest Leibel$ git add aboutme.txt 
+Leibels-MacBook-Pro:gittest Leibel$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   aboutme.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	index.html
+	styles.css
+
+Leibels-MacBook-Pro:gittest Leibel$ git commit "about me with fav movie"
+error: pathspec 'about me with fav movie' did not match any file(s) known to git.
+Leibels-MacBook-Pro:gittest Leibel$ git commit -m "about with movie"
+[master 9dac85d] about with movie
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+Leibels-MacBook-Pro:gittest Leibel$ git log
+commit 9dac85d081ba1037cb706f165d703f706aa22791
+Author: Leibelhecht <leibelhecht@gmail.com>
+Date:   Mon Apr 24 08:20:51 2017 -0500
+
+    about with movie
+
+commit 05041e3c114817c39d27f2db98448b9a0f4990aa
+Author: Leibelhecht <leibelhecht@gmail.com>
+Date:   Mon Apr 24 08:19:03 2017 -0500
+
+    about me updated
+Leibels-MacBook-Pro:gittest Leibel$ git revert -n 9dac85d
+Leibels-MacBook-Pro:gittest Leibel$ git log
+commit 9dac85d081ba1037cb706f165d703f706aa22791
+Author: Leibelhecht <leibelhecht@gmail.com>
+Date:   Mon Apr 24 08:20:51 2017 -0500
+
+    about with movie
+
+commit 05041e3c114817c39d27f2db98448b9a0f4990aa
+Author: Leibelhecht <leibelhecht@gmail.com>
+Date:   Mon Apr 24 08:19:03 2017 -0500
+
+    about me updated
+Leibels-MacBook-Pro:gittest Leibel$ git revert -n 9dac85d081ba1037cb706f165d703f706aa22791
+Leibels-MacBook-Pro:gittest Leibel$ git log
+commit 9dac85d081ba1037cb706f165d703f706aa22791
+Author: Leibelhecht <leibelhecht@gmail.com>
+Date:   Mon Apr 24 08:20:51 2017 -0500
+
+    about with movie
+
+commit 05041e3c114817c39d27f2db98448b9a0f4990aa
+Author: Leibelhecht <leibelhecht@gmail.com>
+Date:   Mon Apr 24 08:19:03 2017 -0500
+
+    about me updated
+Leibels-MacBook-Pro:gittest Leibel$ git commit -m " revert 9dac85d081ba1"
+[master 13e51d4]  revert 9dac85d081ba1
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+Leibels-MacBook-Pro:gittest Leibel$ git log
+commit 13e51d4a6324e988807c5eb4a30e624da8b01130
+Author: Leibelhecht <leibelhecht@gmail.com>
+Date:   Mon Apr 24 09:05:06 2017 -0500
+
+     revert 9dac85d081ba1
+
+commit 9dac85d081ba1037cb706f165d703f706aa22791
+Author: Leibelhecht <leibelhecht@gmail.com>
+Date:   Mon Apr 24 08:20:51 2017 -0500
+
+    about with movie
+
+commit 05041e3c114817c39d27f2db98448b9a0f4990aa
+Author: Leibelhecht <leibelhecht@gmail.com>
+Date:   Mon Apr 24 08:19:03 2017 -0500
+
+    about me updated
+Leibels-MacBook-Pro:gittest Leibel$ touch git.txt
+Leibels-MacBook-Pro:gittest Leibel$ 
