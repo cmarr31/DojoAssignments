@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather</title>
+    <title>Game of Thrones</title>
     <style>
         * {
             margin: 0px;
@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: orange;
+            background-color: purple;
             text-align: center;
         }
 
@@ -76,7 +76,7 @@
                     <option value="CA">CA</option>
                     <option value="UK">UK</option>
                 </select>
-                <button>Search Weather</button>
+                <button>Search Game of Thrones</button>
             </form>
         </div>
         <div id="content">
@@ -86,39 +86,19 @@
     </div>
     <script>
         $(document).ready(function () {
-            $('form').submit(function () {
-                var city = $(this)[0].city.value;
-                console.log(city);
-                var country = $(this)[0].country.value;
-                console.log(country);
-                var key ="6d7467997c7907387b6d451932f5c328";
-                var url ="http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&appid=" + key;
-                /*
-                http://api.openweathermap.org/data/2.5/weather?q=Chicago,us&appid=6d7467997c7907387b6d451932f5c328
-                */
-                $.get(url, function (res) {
-                    console.log(res.main.temp);
-                    var kelvin = res.main.temp;
-                    var celsius = kelvin - 273;
-                    var farenheit = Math.floor(9/5*celsius+32);
-                    console.log(farenheit);
-                    $("h1").html(farenheit);
-                    $("h2").html(city);
-                }, 'json');
-                return false;
-            });
+           //
         });
     </script>
 </body>
-<!--Let's build a weather forecast application where we can input any city and find out the temperature in Fahrenheit. 
-http://api.openweathermap.org/data/2.5/weather?q=London,uk&&appid= (make sure you add your API)... and you will find JSON data about London. 
-In fact, even if you try to navigate to http://api.openweathermap.org/data/2.5/weather?q=California,us%appid= (with your API id)..., 
+<!--Let's build a Game of Thrones forecast application where we can input any city and find out the temperature in Fahrenheit. 
+http://api.openGame of Thronesmap.org/data/2.5/Game of Thrones?q=London,uk&&appid= (make sure you add your API)... and you will find JSON data about London. 
+In fact, even if you try to navigate to http://api.openGame of Thronesmap.org/data/2.5/Game of Thrones?q=California,us%appid= (with your API id)..., 
 the API will find you the same JSON data. This means that we have to validate different users' responses less on our application. 
 
 We are going to have a form that our user can enter a city in a form and have the city's temperature displayed on the screen. 
 We will be listening for a form to be submitted so that we can gather what the user has filled out and add it to our URL 
-http://api.openweathermap.org/data/2.5/weather?q=. For example, if the user has typed in 'Los Angeles', we would add this input to 
-http://api.openweathermap.org/data/2.5/weather?q= so that the URL ends up being http://api.openweathermap.org/data/2.5/weather?q=Los Angeles. 
+http://api.openGame of Thronesmap.org/data/2.5/Game of Thrones?q=. For example, if the user has typed in 'Los Angeles', we would add this input to 
+http://api.openGame of Thronesmap.org/data/2.5/Game of Thrones?q= so that the URL ends up being http://api.openGame of Thronesmap.org/data/2.5/Game of Thrones?q=Los Angeles. 
 And do not forget to add the API key at the last part of the URL!
 -->
 </html>
