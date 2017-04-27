@@ -17,7 +17,7 @@ git clone ___ - clones a remote repository in ___ to your own local folder.
 cd desktop
 cd dojoassignments
 git add .
-git commit -m "update weather app"
+git commit -m "update coding dojo assignments"
 git push -u origin master
 
 fork
