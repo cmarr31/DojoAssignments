@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: orange;
+            text-align: center;
+        }
+
+        h1 {
+            color: orange;
+            text-shadow: 0px 50px 50px black;
+            font-size: 400px;
+        }
+
+        h2 {
+            color: white;
+            text-shadow: 2px 2px 2px black;
+        }
+
+        #wrapper {
+            margin: 0 auto;
+            width: 600px;
+        }
+
+        #header {
+            background: linear-gradient(to right, gray, silver, gray);
+            padding: 25px 0 25px 0;
+        }
+
+        #content {
+            background: linear-gradient(to right, white, wheat, white);
+            height: 500px;
+        }
+
+        input {
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+        button {
+            color: orange;
+            background: linear-gradient(180deg, #262626, gray);
+            padding: 5px 10px 5px 10px;
+            border: 1px solid black;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <form>
+                <input type="text" placeholder="City" name="City">
+                <button>Search Weather</button>
+            </form>
+        </div>
+        <div id="content">
+            <h1>72</h1>
+        </div>
+        <h2>Chicago</h2>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('form').submit(function () {
+                var city = "Chicago";
+                var country = "us";
+                var key ="6d7467997c7907387b6d451932f5c328";
+                var url ="http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&appid=" + key;
+                /*
+                http://api.openweathermap.org/data/2.5/weather?q=Chicago,us&appid=6d7467997c7907387b6d451932f5c328
+                */
+                $.get(url, function (res) {
+                    console.log(res.main.temp);
+                    var kelvin = res.main.temp;
+                    var celsius = kelvin - 273;
+                    var farenheit = Math.floor(9/5*celsius+32);
+                    $("h1").html(farenheit);
+                    $("h2").html(city);
+                }, 'json');
+                return false;
+            });
+        });
+    </script>
+</body>
+<!--Let's build a weather forecast application where we can input any city and find out the temperature in Fahrenheit. 
+http://api.openweathermap.org/data/2.5/weather?q=London,uk&&appid= (make sure you add your API)... and you will find JSON data about London. 
+In fact, even if you try to navigate to http://api.openweathermap.org/data/2.5/weather?q=California,us%appid= (with your API id)..., 
+the API will find you the same JSON data. This means that we have to validate different users' responses less on our application. 
+
+We are going to have a form that our user can enter a city in a form and have the city's temperature displayed on the screen. 
+We will be listening for a form to be submitted so that we can gather what the user has filled out and add it to our URL 
+http://api.openweathermap.org/data/2.5/weather?q=. For example, if the user has typed in 'Los Angeles', we would add this input to 
+http://api.openweathermap.org/data/2.5/weather?q= so that the URL ends up being http://api.openweathermap.org/data/2.5/weather?q=Los Angeles. 
+And do not forget to add the API key at the last part of the URL!
+-->
+</html>
