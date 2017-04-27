@@ -13,92 +13,145 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
+
+
         body {
-            background-color: purple;
+            background: -webkit-linear-gradient(left, #1D0D11, #6F5964, #1D0D11);
+            background: -moz-linear-gradient(left, #1D0D11, #6F5964, #1D0D11);
+            background: -o-linear-gradient(left, #1D0D11, #6F5964, #1D0D11);
+            background: linear-gradient(to right, #1D0D11, #6F5964, #1D0D11);
             text-align: center;
+            padding-top: 5px;
         }
 
-        h1 {
-            color: orange;
-            text-shadow: 0px 50px 50px black;
-            font-size: 250px;
+
+
+        img {
+            border: 5px solid white;
+            border-radius: 5px;
         }
 
-        h2 {
-            color: white;
-            text-shadow: 2px 2px 2px black;
+
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
         }
 
-        #wrapper {
-            margin: 0 auto;
-            width: 400px;
+
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 10px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
         }
 
-        #header {
-            background: linear-gradient(to right, gray, silver, gray);
-            padding: 25px 0 25px 0;
+
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
         }
 
-        #content {
-            background: linear-gradient(to right, white, wheat, white);
+
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
 
-        input {
-            padding: 5px;
-            border: 1px solid black;
-            width:75px;
-        }
 
-        select{
-            padding: 5px;
-            border: 1px solid black;
-            width:75px;
-        }
 
-        button {
-            color: orange;
-            background: linear-gradient(180deg, #262626, gray);
-            padding: 5px 10px 5px 10px;
-            border: 1px solid black;
+        #myModal p {
+            font-weight: bold;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 </head>
 
 <body>
-    <div id="wrapper">
-        <div id="header">
-            <form>
-                <input type="text" placeholder="City" name="city" value="Chicago">                
-                <select name="country">
-                    <option value="US" selected="selected">US</option>
-                    <option value="MX">MX</option>
-                    <option value="CA">CA</option>
-                    <option value="UK">UK</option>
-                </select>
-                <button>Search Game of Thrones</button>
-            </form>
+    <img src="stark.jpg" alt="House of stark" id="362">
+    <img src="targaryen.jpg" alt="House of targaryen" id="378">
+    <img src="lannister.jpg" alt="House of lannister" id="229">
+    <img src="baratheon.png" alt="House of baratheon" id="195">
+    <div id="content">
+    </div>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>House Details</h1>
+            <p>Words</p>
+            <ul>
+                <li>none</li>
+            </ul>
         </div>
-        <div id="content">
-            <h1>72</h1>
-        </div>
-        <h2>Chicago</h2>
     </div>
     <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        $(document).on("click", "img", function () {
+            modal.style.display = "block";
+            var id = $(this)[0].id;
+            $.get("https://anapioficeandfire.com/api/houses/" + id, function (res) {
+                $("#myModal h1").html(res.name);
+                $("#myModal p").html(res.words);
+                var ul = "";
+                for (var i = 0; i < res.titles.length; i++) {
+                    ul += "<li>" + res.titles[i] + "</li>";
+                }
+                $("#myModal ul").html(ul);
+                modal.style.display = "block";
+            }, "json");
+        });
         $(document).ready(function () {
-           //
+            //
         });
     </script>
 </body>
-<!--Let's build a Game of Thrones forecast application where we can input any city and find out the temperature in Fahrenheit. 
-http://api.openGame of Thronesmap.org/data/2.5/Game of Thrones?q=London,uk&&appid= (make sure you add your API)... and you will find JSON data about London. 
-In fact, even if you try to navigate to http://api.openGame of Thronesmap.org/data/2.5/Game of Thrones?q=California,us%appid= (with your API id)..., 
-the API will find you the same JSON data. This means that we have to validate different users' responses less on our application. 
+<!--The Game of Thrones API is located here: ASOIAF. 
+https://anapioficeandfire.com/
+Their documentation is great and will show how to use their API. 
+Images you may use are found here: Houses
+http://s3.amazonaws.com/General_V88/boomyeah/company_209/chapter_3926/handouts/chapter3926_7250_gameofthrones.zip
+Note: An API Key is not needed.
 
-We are going to have a form that our user can enter a city in a form and have the city's temperature displayed on the screen. 
-We will be listening for a form to be submitted so that we can gather what the user has filled out and add it to our URL 
-http://api.openGame of Thronesmap.org/data/2.5/Game of Thrones?q=. For example, if the user has typed in 'Los Angeles', we would add this input to 
-http://api.openGame of Thronesmap.org/data/2.5/Game of Thrones?q= so that the URL ends up being http://api.openGame of Thronesmap.org/data/2.5/Game of Thrones?q=Los Angeles. 
-And do not forget to add the API key at the last part of the URL!
+When a User clicks an Image, the House Details should be appended or updated with the correct House information pulled from the API. 
+For full names of the houses, you may check this entry.
+https://www.quora.com/What-are-the-names-of-the-noble-houses-and-the-Seven-Kingdoms-of-Westeros
 -->
+
 </html>
