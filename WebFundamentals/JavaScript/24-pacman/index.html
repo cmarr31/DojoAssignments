@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PACMAN</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        div.row {
+            height: 16px;
+        }
+
+
+        div.row div {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
+
+
+        .heart {
+            background-image: url('alist.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 0px
+        }
+
+        .brick {
+            background-color: blue;
+        }
+
+
+        .coin {
+            background-image: url('coin.gif');
+            border: 0px
+        }
+
+
+        div#pacman {
+            background-image: url('pacman.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pacman"></div>
+    <div id="world"></div>
+    <script>
+        var pacman = {
+            x: 1,
+            y: 1
+        };
+        var world = [
+            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            [2, 0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 2],
+            [2, 1, 1, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 2],
+            [2, 1, 1, 2, 1, 1, 3, 1, 2, 1, 2, 1, 1, 2],
+            [2, 1, 1, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 2],
+            [2, 1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 1, 1, 2],
+            [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2],
+            [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+        ];
+        function displayWorld() {
+            var output = "";
+            for (var i = 0; i < world.length; i++) {
+                output += "\n<div class='row'>\n";
+                for (var j = 0; j < world[i].length; j++) {
+                    if (world[i][j] == 3) {
+                        output += "<div class='heart'></div>";
+                    }
+                    else if (world[i][j] == 2) {
+                        output += "<div class='brick'></div>";
+                    }
+                    else if (world[i][j] == 1) {
+                        output += "<div class='coin'></div>";
+                    }
+                    else {
+                        output += "<div class='empty'></div>";
+                    }
+                }
+                output += "\n</div>";
+            };
+            document.getElementById("world").innerHTML = output;
+        };
+        function displayPacman(){
+            document.getElementById('pacman').style.top = pacman.y*16+"px";
+            document.getElementById('pacman').style.left = pacman.x*16+"px";
+            console.log("Y="+pacman.y);
+            console.log("X="+pacman.x);
+        };
+        displayWorld();
+        displayPacman();
+        document.onkeydown = function (e) {
+            if(e.keyCode==37 && world[pacman.y][pacman.x-1]!=2){
+                console.log("left");
+                pacman.x--;
+            }
+            if(e.keyCode==38 && world[pacman.y-1][pacman.x]!=2){
+                console.log("up");
+                pacman.y--;
+            }
+            if(e.keyCode==39 && world[pacman.y][pacman.x+1]!=2){
+                console.log("right");
+                pacman.x++;
+            }
+            if(e.keyCode==40 && world[pacman.y+1][pacman.x]!=2){
+                console.log("down");
+                pacman.y++;
+            }
+            if(world[pacman.y][pacman.x]>0){
+                console.log("EAT");
+                world[pacman.y][pacman.x]=0;
+                displayWorld();
+            }
+            displayPacman();
+        };
+    </script>
+</body>
+
+</html>

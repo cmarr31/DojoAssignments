@@ -20,7 +20,21 @@ http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID={INSERTAPI
 // Make sure to put your unique API key in the URL (taking out the brackets).
 // &APPID={INSERTAPIKEY} will need to be at the end of each URL you access below and in the assignment.
 
-
+ var houses = {Stark:{number:"362", imgUrl:"stark.svg"},
+                    Targaryen: { number: "378", imgUrl: "targaryen.svg"},
+                    Lannister: { number: "229", imgUrl: "lannister.svg"},
+                    Arryn: { number: "7", imgUrl: "arryn.svg"},
+                    Baratheon: { number: "17", imgUrl: "baratheon.svg"},
+                    Bolton: { number: "34", imgUrl: "bolton.png"},
+                    Greyjoy: { number: "169", imgUrl: "greyjoy.png"},
+                    Hightower: { number: "195", imgUrl:"hightower.png"},
+                    Hornwood: { number: "202", imgUrl: "hornwood.png"},
+                    Tarly: { number: "379", imgUrl: "tarly.png"},
+                    Tully: { number: "395", imgUrl: "tully.svg"},
+                    Tyrell: { number: "398", imgUrl: "tyrell.svg"},
+                    Mallister: { number: "254", imgUrl: "mallister.png"}
+                }
+				
 Open Weather Map: http://openweathermap.org/api
 GitHub API: https://developer.github.com/v3/
 Google Maps Directions API: https://developers.google.com/maps/documentation/directions/
