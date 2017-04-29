@@ -1,4 +1,4 @@
-WEB FUNDAMENTALS 
+﻿WEB FUNDAMENTALS 
 CASCADING STYLE SHEET
 
 Browser Compatibility
@@ -256,3 +256,7 @@ http://daringfireball.net/projects/markdown/
 http://mediaqueri.es/
 
 www.noupe.com
+
+Other CSS Frameworks
+Foundation 3 - Open-sourced Foundation is a powerful, responsive front-end framework built with SASS, a CSS processor.
+Skeleton - Skeleton is a super lightweight CSS framework with simple syntax and a great grid system.
