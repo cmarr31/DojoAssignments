@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid System</title>
+    <style>
+        * { box-sizing: border-box; }
+        /* Small sized screens */
+        @media only screen and (max-width: 480px) {
+            .twelve-s {
+                width: 100%;
+            }
+        }
+        /* Medium sized screens */
+        @media only screen and (min-width: 481px) {
+            .four-m {
+                width: 33.333333%;
+            }
+            .five-m {
+                width: 41.66666%;
+            }
+            .seven-m {
+                width: 58.33333%;
+            }
+            .eight-m {
+                width: 66.66666%;
+            }
+        }
+        /* Large sized screens */
+        @media only screen and (min-width: 1024px) {
+            .four-l {
+                width: 33.333333%;
+            }
+            .eight-l {
+                width: 66.66666%;
+            }
+        }
+        .row {
+            padding-left: 20px;
+            clear: both;
+        }
+        .column {
+            float: left;
+            padding-right: 20px;
+        }
+        .content { padding: 20px; }
+        #wrapper {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #main-content {
+            background-color: #D8D8DC;
+        }
+        #sidebar {
+            background-color: #828284;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Awesome Company Brand</h1>
+        <div class="row">
+            <div class="column twelve-s seven-m eight-l">
+                <div id="main-content" class="content">
+                    <h4>Header</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga sit quam saepe dolores aperiam ea cupiditate
+                        ducimus cum libero, assumenda hic tempora nobis rerum, quisquam totam consectetur quos accusamus
+                        obcaecati.
+                    </p>
+                </div>
+            </div>
+            <div class="column twelve-s five-m four-l">
+                <div id="sidebar" class="content">
+                    <h4>Header</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro placeat, voluptatem fugiat saepe cumque
+                        iste enim delectus et eum omnis doloribus veritatis nobis, illum adipisci dignissimos non vitae sequi
+                        consectetur!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

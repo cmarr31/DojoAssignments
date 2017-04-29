@@ -1,0 +1,61 @@
+HTML5 Boilerplate
+
+HTML5 Boilerplate is basically just a front-end starting template. 
+It is the product of many years of iterative development and combined community knowledge. 
+
+Boilerplate is a front-end kickstart template that contains series of best practices and common inclusions. 
+It offers a generic files/folders structure, and HTML5-ready template. 
+It's like a blueprint for your house, but without the building blocks. 
+The man behind this project is Paul Irish, an American front-end engineer and a developer advocate for Google Chrome.
+
+Isn't Boilerplate just another CSS framework like Bootstrap?
+
+Not really. 
+You can't build websites with Boilerplate - it's only a starting point. 
+Bootstrap and other frameworks like Foundation or Materializecss provide ready-to-use components 
+and utilities you can use to build an entire website from scratch. 
+But you can combine Boilerplate with Bootstrap to get the best benefits of both (Follow the "customizable option" below). 
+
+Why use it?
+
+HTML5 Boilerplate helps designers to get started with the new standard by offering a professional front-end template that allows you to create a fast, 
+and adaptable site with a set of HTML5-ready features and elements.
+
+Where to download it?
+
+You can download the HTML5 boilerplate here:  
+https://www.html5boilerplate.com
+
+There is a full form version, and a stripped down version. 
+The stripped down version is recommended for those who have worked with boilerplate before. 
+There's also a customizable option (link here
+http://www.initializr.com/
+) that allows you to choose only the elements you need.
+
+Who uses it?
+
+Below are the sites using boilerplate:
+
+Nike Skateboarding
+Unilever
+Nasa Data Catalog
+Features:
+
+IE Conditional comments
+Has an "Old Browser" warning (optional)
+HTML5 ready.
+Google Analytics (optional)
+Cross-browser compatible
+Mobile browser optimizations
+Included normalize.css for CSS normalizations and common bug fixes.
+The latest jQuery via CDN, with a local fallback (optional).
+Modernizr - A JavaScript library that detects HTML5 and CSS3 features in the user's browser.
+CSS Media queries
+Useful CSS Helpers
+Delete-key friendly. Easy to strip out parts you don't need.
+Common helpers:
+
+.hidden - Add to any elements you want to hide
+.visuallyhidden - Hides text from browsers but makes available to screen readers
+.invisible - Hide without affecting layout
+.clearfix - Ensures that any floated children are contained within an element.

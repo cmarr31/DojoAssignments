@@ -230,3 +230,43 @@ index.html
 
 mau@mau-laptop MINGW64 ~/Desktop
 $ 
+
+*************************************
+Quick setup — if you’ve done this kind of thing before
+ Set up in Desktop	or	
+ HTTPS
+ SSH
+
+https://github.com/mruanova/basic_repo.git
+
+We recommend every repository include a README, LICENSE, and .gitignore.
+…or create a new repository on the command line
+
+echo "# basic_repo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/mruanova/basic_repo.git
+git push -u origin master
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/mruanova/basic_repo.git
+git push -u origin master
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+Import code
+
+*********************
+cd desktop
+mkdir basic_repo
+cd basic_repo
+git init
+copy NUL about.txt
+git add .
+git commit -m "new file about"
+git remote add origin https://github.com/mruanova/basic_repo.git
+git push -u origin master
+git add .
+git commit -m "new file about"
+git push -u origin master

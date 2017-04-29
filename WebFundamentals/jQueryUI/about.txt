@@ -1,0 +1,30 @@
+Enter jQuery UI
+As fun as building beautiful websites from scratch is, there are certain things that you are better off leaving to those who have perfected the craft. Why spend all day driving yourself crazy trying to make your own nested tabs when jQueryUI can make them for you in mere seconds? jQueryUI is a powerful library of user interface elements that can make your website extremely interactive and beautiful with a few short lines of code. In this section, you will see just how easy it is to implement this powerful tool into your arsenal!
+
+Setting it up!
+
+*Note - jQueryUI has changed their website and is no longer offering links to the CDN link as shown in the video; you still add the files in the same manner.
+
+jQueryUI works much like vanilla jQuery. You reference the correct sources and write code that will interact with your HTML elements. Much of this website was built using jQueryUI! Once you start using jQueryUI and become familiar with it, you will notice it everywhere! This is an extremely popular library, so knowing how to use it will make you a better developer! 
+
+Now, to set up jQueryUI, go to https://developers.google.com/speed/ libraries/ and click on jQuery from the available list and add this; then click on jQueryUI and add both the CSS file and the JavaScript file - the JavaScript file from jQueryUI must go below the first file we added. Once that is complete, it's time to go to work.
+
+***
+
+Optional Assignment: Using other jQuery Libraries
+Search on the internet for some cool jQuery libraries.  
+http://tutorialzine.com/2013/04/50-amazing-jquery-plugins/ 
+or 
+https://designshack.net/articles/javascript/40-awesome-jquery-plugins-you-need-to-check-out/
+could be a good start although you can just google as well.
+
+When you're building your project, it's helpful that you understand what other jQuery/JavaScript libraries are out there. Get familiar with some cool JavaScript libraries and see if you can make something cool! Later in the bootcamp, you'll learn more about JavaScript and you'll know how to use more advanced JavaScript libraries. For now, try to get yourself familiar with some cool JavaScript libraries as well as what these will allow you to do. We're seeing that more companies are looking for developers who understand how to use JavaScript as well as those who know how to quickly integrate other JavaScript libraries. This is your chance to get into the world of JavaScript. :)
+ Build a simple HTML/JavaScript app that utilizes the 3 jQuery libraries you discovered.
+ Build another app where you use HighCharts (
+
+http://www.highcharts.com
+
+andTableSorter (
+
+http://tablesorter.com/docs
+

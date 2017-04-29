@@ -1,0 +1,140 @@
+//1
+console.log("1 print1to255");
+function print1to255(){
+  for(var i=1;i<=255;i++){
+    console.log(i);
+  }
+}
+print1to255();
+//2
+console.log("2 print1to255odds");
+function print1to255odds(){
+  for(var i=1;i<=255;i+=2){
+    console.log(i);
+  }
+}
+print1to255odds();
+//3 
+console.log("3 printSum");
+function printSum(){
+  var sum=0;
+  for(var i=0;i<=255;i++){
+    sum+=i;
+    console.log("New Number:  "+i+" Sum: "+sum);
+  }
+}
+printSum();
+//4 
+console.log("4 print array");
+function print(a){
+  for(var i=0;i<a.length;i++){
+    console.log(a[i]);
+  }
+}
+var a = [1,2,3,4];
+print(a);
+//5 
+console.log("5 findMax");
+function findMax(a){
+  var max = a[0];
+  for(var i=1;i<a.length;i++){
+    if(a[i]>max){
+      max=a[i];
+    }
+  }
+  return max;
+}
+findMax(a);
+//6 
+console.log("6 getAverage");
+function getAverage(a){
+  var sum = a[0];
+  for(var i=1;i<a.length;i++){
+    sum+=a[i];
+  }
+  return sum/a.length;
+}
+getAverage(a);
+//7 
+console.log("7 arrayWithOddNumbers");
+function arrayWithOddNumbers(){
+  var y = [];
+  for(var i=1;i<255;i+=2){
+    y.push(i);
+  }
+}
+arrayWithOddNumbers();
+//8 
+console.log("8 greaterThanY");
+function greaterThanY(a,y){
+  var count = 0;
+  for(var i=1;i<a.length;i++){
+    if(a[i]>y){
+      count++;
+    }
+  }
+  return count;
+}
+greaterThanY(a,1);
+//9 
+console.log("9 squareTheValues");
+function squareTheValues(a){
+  for(var i=1;i<a.length;i++){
+    a[i]=a[i]*a[i];
+  }
+}
+squareTheValues(a);
+//10 
+console.log("10 eliminateNegatives");
+function eliminateNegatives(a){
+  for(var i=1;i<a.length;i++){
+    if(a[i]<0){
+      a[i]=0;
+    }
+  }
+}
+eliminateNegatives(a);
+//11 
+console.log("11 printMaxMinAvg");
+function printMaxMinAvg(a){
+  var min = a[0];
+  var max = a[0];
+  var sum = a[0];
+  
+  for(var i=1;i<a.length;i++){
+    sum+=a[i];
+    if(a[i]>max){max=a[i];}
+    if(a[i]<min){min=a[i];}
+  }
+  console.log("max="+max);
+  console.log("min="+min);
+  console.log("avg="+sum/a.length);
+  return sum/a.length;
+}
+printMaxMinAvg(a);
+
+//12 
+console.log("12 shifting");
+function shifting(a){
+  var temp=[];
+  
+  for(var i=1;i<a.length;i++){
+    if(i==a.length)
+    {
+      temp.push(0);
+    }else{
+      temp.push(a[i]);
+    }
+  }
+  return temp;
+}
+shifting(a);
+
+//13 
+console.log("13 numberToString");
+function numberToString(a){
+  for(var i=1;i<a.length;i++){
+    if(a[i]<0){a[i]="Dojo";}
+  }
+}
+numberToString(a);

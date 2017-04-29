@@ -252,3 +252,7 @@ http://www.awwwards.com/6-web-design-trends-you-must-know-for-2015-2016.html
 Text to HTML
 This nifty tool will take your text files and add HTML markdown. Use it with caution and always double check the output!
 http://daringfireball.net/projects/markdown/
+
+http://mediaqueri.es/
+
+www.noupe.com

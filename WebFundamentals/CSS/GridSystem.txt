@@ -1,0 +1,143 @@
+Grid System
+
+Every website is a grid unless it's a single-column, single-row website.  
+When it is a single-column, single-row site, then it probably isn't a grid. 
+A grid system allows us to divide horizontal and vertical spaces into consistent units where text, headlines, and images can be placed.
+
+There are various CSS grid frameworks out there that you can use:
+
+Foundation
+Materialize
+Skeleton
+Bootstrap
+Gumby
+
+Having these kinds of frameworks available to us gives off an impression that CSS grids are so complicated 
+that you'll need some kind of framework to help you, because who knows what will happen if you try and build it yourself. 
+That's not true! 
+There is nothing against these frameworks, but don't think that it's too hard to handle a grid system for yourself.  
+You can do it!
+
+Parts of a CSS Grid
+
+container - The purpose of the container is to set the width of the entire grid. The width is generally 100%.
+
+row - To keep the columns inside of the row from overflowing onto other rows. 
+This commonly has a clearfix CSS code to make sure everything inside stays on its own row.
+
+column - Columns have various widths. For this course, we will create a 12-column grid, that is, a grid that can be divided into 12 columns.
+
+gutter - That little space in between columns. This is an optional feature you can add to your grid.
+
+Here's what we want to achieve in this tab:
+
+Create a CSS file that can define column widths for a 12-column grid and to be able to reuse it on future projects
+To use float instead of inline-block for columns. 
+The reason is because inline-block produces a space between inline elements, we don't need that.
+
+Duplicate the screenshot below:
+
+Mobile: 
+Tablet:
+Desktop:
+
+Here's the HTML code:
+
+<div id="wrapper">
+ <h1>Awesome Company Brand</h1>
+ <div class="row">
+  <div class="column twelve-s seven-m eight-l">
+   <div id="main-content" class="content">
+    <h4>Header</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga sit quam saepe dolores aperiam ea cupiditate ducimus cum libero, assumenda hic tempora nobis rerum, quisquam totam consectetur quos accusamus obcaecati.</p>
+   </div>
+  </div> 
+  <div class="column twelve-s five-m four-l">
+   <div id="sidebar" class="content">
+    <h4>Header</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro placeat, voluptatem fugiat saepe cumque iste enim delectus et eum omnis doloribus veritatis nobis, illum adipisci dignissimos non vitae sequi consectetur!</p>
+   </div>    
+  </div>
+ </div>
+</div>
+
+.row class - Looking at our screenshots above, both large and medium screen size (represented by -l and -m respectively), 
+have one row that houses both #main-content and #sidebar. But in mobile, we have two rows. 
+
+Why do we only have one .row class in our HTML? 
+Answer: Because the .twelve-s class has a 100% width, and if a div is already occupying 100% of the viewport's width, 
+then the next div will move to the next row automatically. 
+the .row class just basically does clear: both; 
+so that we can manually move divs to desired rows even if those divs haven't reached the viewport's 100% width yet.
+
+.row { clear: both; }
+
+The class width numbers as the name (.four, .eight, .twelve) - These are just names I thought up. 
+You can name them whatever you want, I just find the numbers comprehensible when talking about grid portions. 
+The numbers represent their portions of the 12-grid layout. .four is 4/12 or 33.33%, etc.
+
+Why do we need 3 different classes for a column (s, m, and l)? 
+Answer: Since we are talking about responsive design, we need to make sure that our columns respond to different viewport sizes. 
+A .four-sized column in a desktop doesn't look good on a tablet or mobile, 
+that's why we need to tell it to resize to a certain width when we view it on certain devices:
+
+/* Small sized screens */
+@media only screen and (max-width: 480px) {
+    .twelve-s { width: 100%; }
+}
+
+/* Medium sized screens */
+@media only screen and (min-width: 481px) {
+    .four-m { width: 33.333333%; }
+    .five-m { width: 41.66666%; }
+    .seven-m { width: 58.33333%; }
+    .eight-m { width: 66.66666%; }
+}
+
+/* Large sized screens */
+@media only screen and (min-width: 1024px) {
+    .four-l { width: 33.333333%; }
+    .eight-l { width: 66.66666%; }
+}
+
+If you run your HTML file now, you will see that it looks good on a mobile device, but not on tablet or desktop sizes.
+
+Why is that? 
+Answer: Because we haven't floated our columns yet. 
+Right now, by default your divs will be stacked from top to bottom, regardless of width:
+.column { float: left; }
+ 
+Let's add a background color to both #main-content and #sidebar. 
+And let's display this page on the center of our screen:
+#wrapper {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#main-content { background-color: #D8D8DC; }
+#sidebar { background-color: #828284; }
+ 
+Let's add some gutters! Now we will not be using margin because that will force us to re-evaluate our widths. 
+Remember, margins take space, and adding margins to your div adds more pixels to your set width. We will use padding instead. 
+Update your .column class to...
+
+.column {
+    float: left;
+    padding-right: 20px;
+}
+ 
+If your run your HTML file now, you will see a different result: 
+
+Don't worry! We can fix that.
+Let's make our padding responsive to its container's width. Right now, our padding has its own width, forcing our second column to move on the second row. That's because .eight + paddings + .four is now greater than 100%. Copy the code below to fix this:
+
+* { box-sizing: border-box; }
+ 
+Finally, let's give our column some padding so that our text doesn't stick to the edge of each column. Since we set .column to have gutters on their right, we also need to add a gutter to the left of .row, for consistency:
+.row {
+    padding-left: 20px;
+    clear: both;
+}
+.content { padding: 20px; }
+ 
+Done! Here's the project used in this demonstration:  https://github.com/codingdojo88oliver/gridsystem

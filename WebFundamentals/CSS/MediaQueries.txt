@@ -1,0 +1,58 @@
+Media Queries
+
+Media queries allow developers to target specific device features and/or screen sizes and implement styles for those media types. 
+Media query is the most powerful tool for creating responsive layouts. 
+It is the tool that makes our page "respond" to whatever device the browser is being shown.
+
+Syntax
+When a media query is true, the corresponding style sheet or style rules are applied, following the normal cascading rules.
+
+@media [media type] {
+ /* styles here */
+}
+
+Example
+Note: The styling rules applied inside a specific media query will only be executed if the media query rules are met.
+
+width <= 480px - Rules applied if browser's width is 480px and below.
+
+@media all and (max-width: 480px) {
+ /* styles here */
+}
+
+width >= 960px - Rules applied if browser's width is 960px and above.
+
+@media all and (min-width: 960px) {
+ /* styles here */
+}
+
+width >= 1024px - Rules applied if browser's width is 1024px and above.
+
+@media all and (min-width: 1024px) {
+ /* styles here */
+}
+
+Notice that we use all as our media type in our examples above. 
+This recognized media type is suitable for all devices. 
+Media types specify how a document is to be presented on different media: 
+on the screen, on a paper (print), with a speech synthesizer, with a braille device, etc.
+
+The default media type is screen if we don't specify any. 
+Using all as media type is really not a good idea because we don't normally want our webpage to look the same on different media. 
+For example, the font-size property is useful both for the screen and print media. 
+The two media types are different enough to require different values for the common property; 
+a document will typically need a larger font on a computer screen than on a paper. 
+Therefore, it is necessary to express that a style sheet, or a section of a stylesheet, applies to certain media types.
+
+Recognized media types:
+
+all - Suitable for all devices
+braille - Intended for braille tactile feedback devices
+embossed - Intended for paged braille printers.
+handheld - Intended for handheld devices (typically small screen, limited bandwidth)
+print - Intended for paged material and for documents viewed on screen in print view mode.
+projection - Intended for projected presentations (projectors)
+screen - Intended primarily for color computer screens
+speech - Intended for speech synthesizers
+tty - Intended for media using a fixed-pitch character grid(such as teletypes, terminals, or portable devices with limited display capabilities)
+

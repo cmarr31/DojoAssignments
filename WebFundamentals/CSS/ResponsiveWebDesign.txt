@@ -1,0 +1,257 @@
+Responsive Web Design
+
+The Basics 0%
+ Introduction
+ Breakpoints
+ Units
+ Basic Typesetting and Scaling
+ Media Queries
+ Let's Get Started
+ Quiz
+ Grid System
+ Layouts
+ Responsive Typography
+ CSS Framework
+ CSS Reset and Boilerplate
+
+Introduction
+The new features of HTML5, CSS3, and jQuery have brought new life to the old web. 
+As users spend more time browsing the Internet using mobile devices, 
+we developers need to start thinking in more fluid terms regarding our design. 
+That's the point of this course, in which you'll learn the basics of:
+
+Responsive web design
+Media queries
+Third-party tools that speed development
+Useful CSS3 techniques
+Graphics formatting techniques
+Fluid grids
+Flexible text contents
+Target resolutions (Mobile, Tablet, & Desktops)
+
+What is Responsive Web Design?
+Responsive Web Design is a technique for building sites that deliver a great user experience no matter the hardware used to access our page.
+
+According to Wikipedia, 
+
+"Responsive web design (RWD) is an approach to web design aimed at crafting sites to provide an optimal viewing and interaction experience - easy reading and navigation with minimum of resizing, panning, and scrolling - across a wide range of devices ( from desktop computer monitors to tablets to mobile phones).
+
+A site designed with RWD adapts the layout to the viewing environment by using fluid, proportion-based grids, flexible images, and CSS3 media queries, 
+an extension of the @media rule."
+So that's in a nutshell what responsive web design is. Rather than creating static, fixed layouts as we've done for so many years
+(since the invention of the world wide web), now we are starting to build layouts that adapt to the device that's being used to view it.
+
+There are tons of great examples of responsive designs. Below is just one of the many sites that showcase these designs. Spend at least 5-10 minutes to play around with the layouts by shrinking and expanding the width of your browser:
+
+http://mediaqueri.es/
+
+http://www.noupe.com
+
+Notice that major portions of the layout shift around while we change the browser's width. 
+Rather than having, for example, the contact us form over on the right-hand side on a Desktop size, 
+now it appears down towards the bottom when we change it to Tablet size, and it doesn't appear at all (viewed on top) when the size shrinks down to Mobile. 
+Take note: This will not always be the case. We can also make inline stuff (like navbar) 
+appear stacked or hide grids and only make each grid item appear when a certain button is clicked, etc.
+
+RWD Philosophy
+Mobile user experience is just as important as desktop user experience. 
+Instead of creating mobile sites with limited options, information, and functionality, 
+RWD takes all the benefits of a desktop website and present them in a very mobile-friendly way.
+
+RWD Goal
+To be able to create one website that looks great on both large desktop monitors, and small smartphones and everywhere in between.
+
+Why should we use RWD?
+Mobile browsing is the future.
+Desktop sales have been surpassed by mobile sales already
+
+source:  http://searchenginewatch.com/sew/opinion/2353616/mobile-now-exceeds-pc-the-biggest-shift-since-the-internet-began
+
+Before, the approach is to set up a "mobile" version of your website that is completely separate from your original site. 
+This means that updating your main site requires you to also update the mobile version of your site. 
+
+Luckily with RWD, we only need to update in one location.
+Your content can be viewed on most devices, and it's going to be viewed in its best form. (One website, many devices) 
+
+By creating responsive websites, your content (texts, images, videos) scales to most of the devices today and most probably in the near future.
+It makes business owners happy because they no longer need a separate website for every new kind of mobile device.
+It makes the web designers happy because they only have to create, update and maintain content for one site.
+It makes smartphone makers happy because, with an improved mobile web, users will want smartphones.
+And finally, it makes users happy because they now have access to or can now interact with businesses, friends through social media, 
+or watch videos on whatever devices they want.
+To fully understand a Responsive Web Design, look at a layout that is NOT responsive and try to make it responsive. 
+Remember those static screenshots that you recreated using HTML/CSS? We are going recreate those and make them responsive :)
+Privacy Policy To report a mistake, highlight the selection you believe is in error.
+
+Breakpoints
+Breakpoints are the points which your site's content will respond to, to provide the user with the best possible layout to view the information. 
+Though we are not into back-end programming yet, breakpoints behave like actual logic code.
+
+Pseudo-code:
+
+if browser's width is less than or equal to 480px:
+    then set #sidebar to hide
+    also make sure to stack #navbar items from top to bottom
+    finally, make texts smaller and images smaller
+You may be thinking of defining breakpoints at the exact device widths that you are looking to target. 
+Maybe, list down smartphone dimensions, then tablet, then desktops, then finally anything that is above 1366px. DON'T!
+
+Instead of being concerned with each device's breakpoints or what device the user is currently using to access your site, 
+the best practice is to target 3 resolutions:
+
+Mobile - 480px horizontal display and lower
+Tablet - 481px to 1023px horizontal display
+Desktop - 1024px horizontal display and higher
+So whether they are using a Netbook, or PSP, or a Laptop, or a Tablet, or whatever it is that they're using that doesn't matter. 
+What matters is the resolution of that device.
+
+But what does this mean for the website design process today? On what resolution should we start building our site with?
+
+Mobile First
+The design of mobile websites is just as crucial as the design of desktop websites. 
+And the websites that were complex and awesome when viewed on the desktop, were not always easy to adapt to mobile devices. 
+Which is both frustrating and time-consuming. 
+Because mobile websites are usually simpler than their desktop counterparts, 
+many web designers started recommending that you start designing the mobile version of the website first, then design it up to the desktop version. 
+Allowing you to focus on the important information and features for the mobile version, then add more as the site gets bigger on tablets and desktops.
+
+While this is a great idea for web designers, it's not always an easy decision for businesses.
+
+Sometimes mobile-first design makes the most sense; sometimes desktop-first design does. 
+The decision should be about providing the best user experience to your target market.
+
+But in this chapter, we will be designing from mobile to the desktop so that you will be familiar with what the current trend is in building responsive layouts.
+
+*******************************************************
+Units
+Since RWD needs to be fluid and proportional, we will no longer be using pixels (fixed or absolute) that much. 
+Instead, we will use relative units (em, %, rem). 
+Creating media queries using relative units allows browsers to adjust the design based on the zoom level, 
+resulting in a more pleasant, more accessible reading experience.
+
+For now, let's just think about em and rem as multipliers.
+
+rem?
+Different users have different preferences on how they want to access your site. 
+They may have different default zoom level, or font size bigger or smaller, etc. 
+Commonly, the font size is set to 16px by default. 
+
+So by default, 1rem = 16px. 
+
+But what it really represents is the default font size that specified by the user in the browser.
+
+In the example below, 3rem is 3 times the default font size. 
+h1 and any other elements that you want to define a font-size with a rem will always be based on the root rem (rem) which is set on the HTML element. 
+
+html {
+    font-size: 1rem;
+}
+h1 {
+    font-size: 3rem;
+}
+
+So if we go ahead and change HTML element's font size to 1.5rem, then h1's font size will be 3rem times 1.5rem which is 4.5rem, or 72px.
+
+em?
+The only difference between em and rem is em value is relative to its parent element. 
+That means the child element's em value always multiplies to its immediate parent's em value. So if we have...
+
+body {
+    font-size: 1em;
+}
+li {
+    font-size: 2em;
+}
+
+Then the li element is 2em times 1em which is 2em, or 32px;
+
+The problem occurs when you have a sub-list for the li element:
+
+<ul>
+    <li>Hello, World!
+        <ul>
+            <li>Hello, World!</li>
+        </ul>
+    </li>
+</ul>
+
+Using the code above, the sub-list item's text will be bigger:
+
+Why is that?! Simple explanation:
+
+The parent element (the first instance of <li> in the example above) has 2em font-size.
+The child element (the second instance of <li>) has 2em font-size.
+The rule of em: The value is always relative to its parent.
+Child element's original font-size = parent em size times its own em size = 4em or 64px.
+That's why it's wiser to combine both em and rem for these kinds of scenarios. em cascades while rem bases its size on the root element ( HTML or body). 
+Simply changing the code above to the one below will fix it:
+
+body {
+    font-size: 1em;
+}
+li {
+    font-size: 2rem;
+}
+
+%?
+In theory, both em and the percent units are identical, but in application, they have a few minor differences that are important to consider.
+
+***
+
+What's the Difference (Between Relative and Fixed)?
+It's easy to understand the difference between these units when you see them in action. Generally, 1em = 16px = 100%. 
+Using these units, let's see what happens when we increase the base font size from 100% to 150%:
+
+100%
+
+150%
+
+As you can see, both em and percent units get larger as the base font increases (  body { font-size: 150%; } ), but pixels don't. 
+You might think that it's easier for a text to be absolute, but it's much easier for your visitors to use a scalable text that can display on any device. 
+For this reason, the em and percent units are preferred for web document text.
+
+What's the Difference (Between Two Relatives: em and percentage)?
+Both em and % are relative measures. 
+The difference is what each is relative to. em is always relative to font size. 
+% is relative to the containing block, usually the body, a div, or a table unless applied to font-size, in which case it applies to the parent font-size.
+
+Below is a screenshot of a 33em div (which should roughly cover a third of the viewport), with 2em font-size:
+
+By the looks of it, em as div's width is not behaving as we expected. It looks like it's covering 75 percent of the viewport's width.
+
+Below is another screenshot, this time with 33% div (which should also roughly cover a third of the viewport), with 2em font-size:
+
+Now that's more like it!
+
+Conclusion
+em is becoming the standard for font sizes on the web, and we will be using ems instead of % when we deal with:
+
+font sizes - Since we are more familiar with pixels, we will be doing calculations a lot to convert pixel to em. 
+The formula is 1 / parent's font-size * required pixel value = em value. 
+So if you are planning to have a 24px text and the parent's font-size is 1em or 16px, then:
+
+1 / 16px * 24px = 1.5em
+sizing images - For images, we are only interested in width, because we will just use auto for the height. 
+Making it adjust proportionately to whatever width the image has. So if we want an image with 20px as width, then:
+
+1 / 16px * 20px = 1.25em
+paddings / margins (for fonts)
+We use % when we deal with:
+
+column's / container's width - If you plan to have a 320px width on a 960px width container, then:
+
+320 / 960 = 33.333% 
+We use rem:
+
+font sizes
+paddings / margins (for fonts)
+Finally, we use px for:
+
+media queries
+paddings / margins (for containers like divs)
+Now, we won't be dropping px completely. We will use it so that we can immediately output something, without having to calculate for the em's. 
+Let's start off with a static design first, so that when you get the desired width, we will then convert each pixel values to a percentage.
+
+em to px Converter
+http://pxtoem.com/
+

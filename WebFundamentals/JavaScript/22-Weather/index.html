@@ -12,49 +12,42 @@
             padding: 0px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
-
         body {
             background-color: orange;
             text-align: center;
         }
-
         h1 {
             color: orange;
             text-shadow: 0px 50px 50px black;
             font-size: 250px;
         }
-
         h2 {
             color: white;
             text-shadow: 2px 2px 2px black;
+            font-size: 75px;
         }
-
         #wrapper {
             margin: 0 auto;
             width: 400px;
         }
-
         #header {
             background: linear-gradient(to right, gray, silver, gray);
             padding: 25px 0 25px 0;
         }
-
         #content {
             background: linear-gradient(to right, white, wheat, white);
+            height: 370px;
         }
-
         input {
             padding: 5px;
             border: 1px solid black;
-            width:75px;
+            width: 75px;
         }
-
-        select{
+        select {
             padding: 5px;
             border: 1px solid black;
-            width:75px;
+            width: 75px;
         }
-
         button {
             color: orange;
             background: linear-gradient(180deg, #262626, gray);
@@ -69,7 +62,7 @@
     <div id="wrapper">
         <div id="header">
             <form>
-                <input type="text" placeholder="City" name="city" value="Chicago">                
+                <input type="text" placeholder="City" name="city" value="Chicago">
                 <select name="country">
                     <option value="US" selected="selected">US</option>
                     <option value="MX">MX</option>
@@ -80,29 +73,42 @@
             </form>
         </div>
         <div id="content">
-            <h1>72</h1>
+            <h1>0</h1>
         </div>
         <h2>Chicago</h2>
     </div>
     <script>
         $(document).ready(function () {
+
+            var key = "6d7467997c7907387b6d451932f5c328";
+
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var lat = position.coords.latitude;
+                    var lon = position.coords.longitude;
+                    console.log("Found your location \nLat : " + position.coords.latitude + " \nLang :" + position.coords.longitude);
+                    var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=" + key;
+                    $.get(url, function (res) {
+                        var kelvin = res.main.temp;
+                        var fahrenheit = Math.floor(((kelvin - 273.15) * 9 / 5) + 32);
+                        $("h1").html(fahrenheit);
+                    }, 'json');
+                    return false;
+                });
+            } else {
+                console.log("Browser doesn't support geolocation!");
+            };
+
             $('form').submit(function () {
                 var city = $(this)[0].city.value;
                 console.log(city);
                 var country = $(this)[0].country.value;
                 console.log(country);
-                var key ="6d7467997c7907387b6d451932f5c328";
-                var url ="http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&appid=" + key;
-                /*
-                http://api.openweathermap.org/data/2.5/weather?q=Chicago,us&appid=6d7467997c7907387b6d451932f5c328
-                */
+                var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&appid=" + key;
                 $.get(url, function (res) {
-                    console.log(res.main.temp);
                     var kelvin = res.main.temp;
-                    var celsius = kelvin - 273;
-                    var farenheit = Math.floor(9/5*celsius+32);
-                    console.log(farenheit);
-                    $("h1").html(farenheit);
+                    var fahrenheit = Math.floor(((kelvin - 273.15) * 9 / 5) + 32);
+                    $("h1").html(fahrenheit);
                     $("h2").html(city);
                 }, 'json');
                 return false;
@@ -121,4 +127,5 @@ http://api.openweathermap.org/data/2.5/weather?q=. For example, if the user has 
 http://api.openweathermap.org/data/2.5/weather?q= so that the URL ends up being http://api.openweathermap.org/data/2.5/weather?q=Los Angeles. 
 And do not forget to add the API key at the last part of the URL!
 -->
+
 </html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Date Picker - Default functionality</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/start/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        img{
+            margin-top: 20px;
+            width: 75%;
+            margin-bottom: 20px;
+        }
+        .container{
+            background-color:lightsalmon;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        #dialog{
+            display: none;
+        }
+        .alert-success{
+            display: none;
+        }
+        .alert-warning{
+            display: none;
+        }
+        .alert-danger{
+            display: none;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#datepickerFrom").datepicker();
+            $("#datepickerTo").datepicker();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!--
+        <div class="page-header">
+            <h1>Bootstrap</h1> 
+        </div>
+        -->
+        <div class="jumbotron">
+            <h1>Plan-a-cruise!</h1> 
+            <!--
+            <p>The most popular CSS framework for responsive, mobile-first projects on the web.
+            <a href="http://mruanova.com" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+            -->
+        </div>
+
+        <div class="alert alert-info">
+        <strong>Welcome!</strong> Please enter a date range for your trip and your name.
+        </div>
+        <div class="alert alert-success">
+        <strong>Success!</strong> Indicates a successful or positive action.
+        </div>
+        <div class="alert alert-warning">
+        <strong>Warning!</strong> Indicates a warning that might need attention.
+        </div>
+        <div class="alert alert-danger">
+        </div>
+
+        <form action="">
+            <input type="text" id="datepickerFrom" placeholder="From:">
+            <input type="text" id="datepickerTo" placeholder="To:">
+            <input type="text" id="name" placeholder="Name:">
+            <button class="btn btn-primary btn-lg">Check dates!</button>
+        </form>
+        <img src="mockup-3.png" alt="mock">
+
+        <div id="dialog" title="Plan-a-cruise!">
+        <p>Thanks Mau! your cruise leaves on 1/1/1 and returns on 9/9/9.</p>
+        </div>
+    </div>
+
+    <script>
+         $(document).ready(function () {
+            $(".alert-success").hide();
+            $(".alert-warning").hide();
+            $(".alert-danger").hide();
+
+            $('form').submit(function () {
+                var msg="";
+                if($(this)[0].name.value.length==0){
+                    $(".alert-info").hide();
+                    msg = "<strong>ERROR!</strong> Please enter your name.";
+                    $(".alert-danger").html(msg);
+                    $(".alert-danger").show();
+                }
+                else if($(this)[0].datepickerFrom.value.length==0){
+                    $(".alert-info").hide();
+                    msg = "<strong>ERROR!</strong> Please enter date from.";
+                    $(".alert-danger").html(msg);
+                    $(".alert-danger").show();
+                }
+                else if($(this)[0].datepickerTo.value.length==0){
+                    $(".alert-info").hide();
+                    msg = "<strong>ERROR!</strong> Please enter date to.";
+                    $(".alert-danger").html(msg);
+                    $(".alert-danger").show();
+                }
+                else if($(this)[0].datepickerTo.value<=$(this)[0].datepickerFrom.value){
+                    $(".alert-info").hide();
+                    msg = "<strong>WARNING!</strong> DATE TO should be greater than DATE FROM.";
+                    $(".alert-warning").html(msg);
+                    $(".alert-warning").show();
+                }
+                else {
+                    msg = "Thanks <strong>"+$(this)[0].name.value
+                        +"!</strong> your cruise leaves on <strong>"+$(this)[0].datepickerFrom.value
+                        +"</strong> and returns on <strong>"+$(this)[0].datepickerTo.value
+                        +"</strong>";
+
+                    $(".alert-success").html(msg);
+                }
+                $("#dialog p").html(msg);
+                $("#dialog").dialog();
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
