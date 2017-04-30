@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LAYOUTS</title>
+    <title>Bootstrap three layouts</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -20,10 +20,12 @@
             float: left;
             padding-right: 20px;
         }
-        
+        body{
+                padding-top:2px;
+        }
         /* Small sized screens */
         @media (max-width: 480px) {
-            .twelve-s {
+            .col-sm-12 {
                 width: 100%;
             }
             body {
@@ -36,7 +38,7 @@
 
         /* Medium sized screens */
         @media only screen and (min-width: 481px) {
-            .four-m {
+            .col-md-4 {
                 width: 33.333333%;
             }
             .five-m {
@@ -58,7 +60,7 @@
 
         /* Large sized screens */
         @media only screen and (min-width: 1024px) {
-            .three-l {
+            .col-lg-3 {
                 width: 25%;
             }
             .four-l {
@@ -80,39 +82,32 @@
 
 <body>
     <div class="container">
-        <!--
-        <div class="page-header">
-            <h1>Bootstrap</h1> 
-        </div>
-        -->
-        <div class="jumbotron">
-            <h1>Three Layouts</h1> 
-            <!--
-            <p>The most popular CSS framework for responsive, mobile-first projects on the web.
-            <a href="http://mruanova.com" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-            -->
-        </div>
-
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">LAYOUTS</a>
+                    <a class="navbar-brand" href="http://mruanova.com">MRUANOVA</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Videos</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Something</a></li>
-                    <li><a href="#">Something more ...</a></li>
-                    <li><a href="#">Something even more ...</a></li>
+                    <li class="active"><a href="http://mruanova.com">Home</a></li>
+                    <li><a href="http://mruanova.com">About</a></li>
+                    <li><a href="http://mruanova.com">Linkedid</a></li>
+                    <li><a href="http://mruanova.com">Github</a></li>
+                    <li><a href="http://mruanova.com">Email</a></li>
+                    <li><a href="http://mruanova.com">Snippets</a></li>
+                    <li><a href="http://mruanova.com">Books</a></li>
+                    <li><a href="http://mruanova.com">Papers</a></li>
                 </ul>
             </div>
         </nav>
-        <!--col-md-3-->
+
+        <div class="jumbotron">
+            <h1>Bootstrap 3 Layouts</h1> 
+            <p>Desktop, Tablet, and Mobile.</p>
+            <a href="http://mruanova.com" class="btn btn-primary btn-lg">Learn more &raquo;</a>
+        </div>
+
         <div class="row">
-            <div class="column twelve-s four-m three-l">
+            <div class="column col-sm-12 col-md-4 col-lg-3">
                 <h2>RWD</h2>
                 <p>Responsive web design is an approach to web design aimed at crafting sites to provide an optimal viewing and interaction experience 
                     - easy reading and navigation with minimum of resizing, panning, and scrolling - across a wide range of devices.</p>
@@ -120,7 +115,7 @@
                     <a class="btn btn-default" href="http://mruanova.com">Learn more &raquo;</a>
                 </p>
             </div>
-            <div class="column twelve-s four-m three-l">
+            <div class="column col-sm-12 col-md-4 col-lg-3">
                 <h2>Media queries</h2>
                 <p>Media queries allow developers to target specific device features and/or screen sizes and implement styles for those media types. 
                 Media query is the most powerful tool for creating responsive layouts. 
@@ -129,14 +124,14 @@
                     <a class="btn btn-default" href="http://mruanova.com">Learn more &raquo;</a>
                 </p>
             </div>
-            <div class="column twelve-s four-m three-l">
+            <div class="column col-sm-12 col-md-4 col-lg-3">
                 <h2>Bootstrap</h2>
                 <p>Bootstrap the most popular HTML / CSS JavaScript framework for responsive, mobile-first projects on the web.</p>
                 <p>
                     <a class="btn btn-default" href="http://mruanova.com">Learn more &raquo;</a>
                 </p>
             </div>
-            <div class="column twelve-s twelve-m three-l">
+            <div class="column col-sm-12 twelve-m col-lg-3">
                 <h2>Lorem Ipsum</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, eum nostrum suscipit laboriosam id, laborum magnam necessitatibus, qui ad, illo ratione in repellendus. Sint esse, placeat. Dolorem recusandae nesciunt perferendis!
