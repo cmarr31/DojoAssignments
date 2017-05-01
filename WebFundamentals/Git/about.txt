@@ -14,6 +14,8 @@ git push - pushes the changes in your local repository to the remote repository.
 git pull - pulls the changes in a remote repository to your own local repository.
 git clone ___ - clones a remote repository in ___ to your own local folder.
 
+echo "hello world" > helloworld.txt
+
 cd desktop
 cd dojoassignments
 git add .
