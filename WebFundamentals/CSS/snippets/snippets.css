@@ -1,0 +1,225 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+a{
+    color:gray;
+}
+a span{
+    font-size:8px;
+}
+button span{
+    font-size:8px;
+    vertical-align: top;
+}
+h2{
+    font-family:cursive;
+    font-size: 16px;
+}
+#wrapper{
+    width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(to right, silver , white, silver);
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+#header{
+    background-color: black;
+    color:white;
+    border-radius: 2px;
+}
+#header img{
+    height:30px;
+    display: inline-block;
+    margin: 5px 0 5px 30px;
+}
+#header div{
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 5px;
+    background-color: black;
+}
+#header h1{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: normal;
+    vertical-align: top;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+#header ul{
+    list-style-type:none;
+    display: flex;
+    margin: 0 0 0 100px;
+    text-align: center;
+    justify-content:space-around;
+    width: 450px;
+}
+#header li{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 5px;
+    text-align: -webkit-match-parent;
+}
+#content-top{
+    border-bottom: 1px solid gray;
+    padding-bottom:5px;
+    margin-bottom:15px;
+}
+#content-top div{
+    display: inline-block;
+    width: 550px;
+    vertical-align: top;
+    margin: 20px;
+}
+#content-top img{
+    display: inline-block;
+}
+#content-top h1{
+    font-size: 27px;
+    font-family:Courier New, Courier, monospace;
+}
+#content-top p{
+    margin: 20px 0 20px 0;
+    color:gray;
+    line-height: 20px;
+}
+#content-top button{
+    margin-left: 450px;
+    background-color: black;
+    color:white;
+    padding: 5px;
+    border-radius: 5px;
+}
+#content-left{
+    display: inline-block;
+    width: 500px;
+    vertical-align: top;
+    padding-left: 5px;
+}
+#content-left div{
+    display: inline-block;
+    width: 150px;
+    margin: 2px;
+    padding: 2px;
+    vertical-align: top;
+}
+#content-left img{
+    border: 1px solid black;
+    display: inline-block;
+    height: 30px;
+}
+#content-left h2{
+    display: inline-block;
+    font-weight: normal;
+    vertical-align: top;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+#content-left p{
+    color:gray;
+    line-height: 20px;
+    margin: 5px 0 5px 0px;
+}
+#content-right{
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+    margin-left: 25px;
+}
+#content-right div{
+    background-color: white;
+    display: inline-block;
+    width: 250px;
+    padding: 2px;
+    vertical-align: top;
+}
+#content-right h2{
+    display: inline-block;
+    font-weight: normal;
+    vertical-align: top;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+#content-right p{
+    color:gray;
+    line-height: 20px;
+    margin: 5px 0 5px 0px;
+}
+#content-right img{
+    height: 50px;
+}
+#content-right ul{
+    list-style-type:none;
+}
+#content-bottom{
+    display:flex;
+    margin-top: 5px;
+    padding-bottom:25px;
+    background-color: #0d0d0d;
+    color:white;
+    border-radius: 2px;
+}
+#content-bottom div{
+    flex:1;
+    vertical-align: top;
+    margin-left: 10px;
+}
+#content-bottom h2{
+    display: inline-block;
+    font-weight: normal;
+    vertical-align: top;
+    padding-top: 5px;
+    margin: 5px 0 20px 0;
+}
+#content-bottom p{
+    margin-bottom: 5px;
+    font-size: 10px;
+    font-weight: normal;
+}
+#content-bottom div:nth-of-type(1) p:nth-of-type(5){
+    margin-top:20px;
+}
+#content-bottom div:nth-of-type(2) p{
+    padding-bottom:5px;
+    border-bottom: 1px solid #262626;
+}
+#content-bottom form{
+    margin-top: 10px;
+}
+#content-bottom input{
+    background-color: #262626;
+    color:gray;
+    border: 0;
+    width: 97px;
+    padding: 5px;
+    border: 1px solid black;
+    font-size: 10px;
+}
+#content-bottom input:nth-of-type(3) {  
+    width: 210px;
+    margin-top: 15px;
+}      
+#content-bottom button{
+    background: linear-gradient(180deg, #262626, black);
+    color:gray;
+    border: 0;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid black;
+}
+#content-bottom hr{
+    margin-bottom: 5px;
+    color: gray;
+    background-color: gray;
+}
+#footer{
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+#footer p{
+    color: gray;
+    font-size: 11px;
+}
