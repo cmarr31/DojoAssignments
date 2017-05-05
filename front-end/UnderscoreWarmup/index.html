@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>underscore warmup</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script src="backbone.js"></script>
+</head>
+<body>
+    <!--.each(), .map(), .pluck(), .where(), .findWhere(), .filter(), .sortBy()-->    
+    <script>
+        var ironman = {
+            name: "Tony Stark",
+            alias: "Iron Man"
+        };
+
+        var avengers_array = [
+            {name: "Tony Stark", alias: "Iron Man", ability: "flight"},
+            {name: "Bruce Banner", alias: "The Incredible Hulk", ability: "superhuman strength"},
+            {name: "Steve Rogers", alias: "Captain America", ability: "superhuman strength"},
+            {name: "Clint Barton", alias: "Hawkeye", ability: "superior hand-eye coordination"},
+            {name: "Thor Odinson", alias: "Thor", ability: "teleportation"},
+            {name: "Natasha Romanova", alias: "Black Widow", ability: "espionage"}
+        ];
+        
+        // .each() A simple function that can iterate over objects or arrays and even do some manipulation
+        var each = _.each(ironman, function(value, key){ alert(key+': '+value); });
+        console.log("each ironman");
+        console.log(each);
+
+        // .map() Pushes each avenger object into a new array after funneling it through an optional transformation function
+        var avengersAssemble = _.map(avengers_array, function(avenger){ return avenger; });
+        console.log("map avengersAssemble");
+        console.log(avengersAssemble);
+
+        // .pluck() Often used with .map(). Returns or “plucks” only the values for the key specified as the second argument and places them in an array
+        var avengerNames = _.pluck(avengers_array, 'name');
+        console.log("pluck avengerNames");
+        console.log(avengerNames);
+
+        // .where() Returns an ARRAY of all values that contain a match to the key-value properties object
+        var superhumanStrengthAvengersArray = _.where(avengers_array, {ability: "superhuman strength"});
+        console.log("where superhumanStrengthAvengersArray");
+        console.log(superhumanStrengthAvengersArray);
+
+        // .findWhere() Returns the FIRST value when it finds a match to the key-value properties object; if none are found then undefined is returned
+        var superhumanStrengthAvenger = _.findWhere(avengers_array, {ability: "superhuman strength"});
+        console.log("findWhere superhumanStrengthAvenger");
+        console.log(superhumanStrengthAvenger);
+
+        // .filter() Returns an array of values that satisfy a predicate (function seen here)
+        var superhumanStrengthAvengers = _.filter(avengers_array, function(avenger){ return avenger.ability == "superhuman strength"; });
+        console.log("filter superhumanStrengthAvengers");
+        console.log(superhumanStrengthAvengers);
+
+        // .sortBy() Returns an ascending  sorted array based on the values tied to the key we specify
+        var sortedAvengerNames = _.sortBy(avengers_array, 'name');
+        console.log("sortBy sortedAvengerNames");
+        console.log(sortedAvengerNames);
+
+        // .last() or .first()... does exactly what you think
+        var firstAvenger = _.first(avengers_array); // returns the first value in an array
+        console.log("firstAvenger");
+        console.log(firstAvenger);
+        var lastTwoAvengers = _.last(avengers_array, 2); // The optional second parameter allows for additional values to be returned, 
+        //but when specified, comes back as an array
+        console.log("lastTwoAvengers");
+        console.log(lastTwoAvengers);
+
+        // .range()
+        var newArray = _.range(0,10); // returns an array with the values from argument1 (inclusive) to argument2 (exclusive)
+        console.log("range newArray");
+        console.log(newArray);
+
+        // .defaults() supplies defaults to an object if they haven’t already been created. 
+        //It’s kind of like a fail-safe for your apps. 
+        //Our almostAvenger object will look like this: { name: "John Q. Public", alias: "John Q", abilities: "Need Superhero Abilities" }
+        var almostAvenger = {
+            name: "John Q. Public",
+            alias: "John Q"
+        };
+
+        var almost = _.defaults(almostAvenger, {
+            name: "Need a Real Name",
+            alias: "Need a Superhero Name",
+            abilities: "Need Superhero Abilities"
+        });
+        console.log("defaults almost");
+        console.log(almost);
+
+
+
+
+    </script>
+</body>
+</html>
