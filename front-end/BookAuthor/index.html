@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>front-end backbone models</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script src="backbone.js"></script>
+</head>
+<body>
+    <script>
+     var BookModel = Backbone.Model.extend({
+      defaults: {
+        title: null,
+        author: null
+      },
+      validate: function(attrs, options){
+        if (!attrs.author){
+          return "Book must have an author";
+        }
+      }
+    });
+    var myBook = new BookModel({title: "Charlotte's Web"});
+    myBook.on('invalid', function(model, error){
+      alert(model.get('title')+" found to be invalid. Reason: "+error);
+    });
+    myBook.save();
+    </script>
+</body>
+</html>

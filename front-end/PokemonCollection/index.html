@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>front-end backbone models</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script src="backbone.js"></script>
+</head>
+<body>
+    <script>
+    var PokemonModel = Backbone.Model.extend({
+      defaults: {
+        name: null,
+        url: null
+      }
+    });
+    var PokemonCollection = Backbone.Collection.extend({
+      model: PokemonModel,
+      url: "http://pokeapi.co/api/v2/pokemon",
+      parse: function(response){
+        return response.results;
+      }
+    });
+    var pokemonList = new PokemonCollection();
+    pokemonList.fetch()
+      .then(function(){
+        console.log(pokemonList);
+      });
+    </script>
+</body>
+</html>

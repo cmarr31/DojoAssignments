@@ -10,18 +10,74 @@
     <script src="backbone.js"></script>
 </head>
 <body>
+    <ul id="pokemon_list"></ul>
     <script>
-        
-var BookModel = Backbone.Model.extend({
-  defaults: {
-    title: null,
-    author: null
-  },
-  initialize: function(){
-    console.log("I'm alive!");
-  }
-});
+    var PokemonModel = Backbone.Model.extend({
+      defaults: {
+        name: null,
+        url: null
+      }
+    });
 
+    var PokemonCollection = Backbone.Collection.extend({
+      model: PokemonModel,
+      url: "http://pokeapi.co/api/v2/pokemon",
+      parse: function(response){
+        return response.results;
+      }
+    });
+
+    var PokemonView = Backbone.View.extend({
+      tagName: "li",
+      template: _.template("<h1><%=name%></h1>"),
+      initialize: function(){
+        //this.render();
+            this.listenTo(this.collection,"sync",this.render);
+            this.listenTo(this.collection,"remove",this.whatHappened);
+            //this is the view. it is listening to this.model!
+            this.listenTo(this.model, 'change', this.doSomething);
+      },
+      render: function(){
+        var m=this.model.toJSON();
+        var t =this.template(m);
+        this.$el.html(t);
+        return this;
+      },
+        events:{
+            'dblclick':'destroy'
+        },
+        destroy: function(){
+            console.log('destroy destroy destroy');
+            this.model.destroy();
+        },
+        doSomething: function(){
+          //....
+            console.log('do Something!');
+        }
+    });
+
+    var PokemonListView = Backbone.View.extend({
+      el:"#pokemon_list",
+      initialize:function(){
+        this.render();
+      },
+      render:function(){
+        this.$el.empty();
+        this.collection.each(function(pokemon){
+          var pokemonView = new PokemonView({model:pokemon});
+          this.$el.append(pokemonView.render().$el);
+        },this);
+      },
+        whatHappened: function(){
+            console.log('what Happened?');
+        }
+    });
+
+    var pc = new PokemonCollection();
+    pc.fetch()
+      .then(function(){
+        var myPokemonList = new PokemonListView({collection:pc});
+      });
     </script>
 </body>
 </html>
