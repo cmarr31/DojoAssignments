@@ -22,8 +22,7 @@
     <p>The current time is: <span id="time" style="color:red;"></span></p>
     <button onclick="stopTextColor();">Stop</button>
     <button id="time-btn">Get current time</button>
-
-    <script type="text/jsx">
+    <script>
         var intervalID = window.setInterval(myCallback, 1000);
 
         function myCallback() {        
@@ -57,8 +56,9 @@
 
         //replace content-top
         const myH2 = React.createElement('h2', null, 'Things I need to do:');
-        ReactDOM.render(myH2, document.getElementById('content-top'));
-
+        ReactDOM.render(myH2, document.getElementById('content-top'));        
+    </script>
+    <script type="text/jsx">
         //babel
         const items = ["Learn React","Climb Mount Everest","Run a marathon","Feed the dogs"];
         function MyList(props) {
