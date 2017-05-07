@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>REACT</title>
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script>
+        //console.log(React);
+        //console.log(ReactDOM);
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="content-top"></div>    
+    <ul id="root">
+        <!--<li ng-repeat = "item in items">{{item}}</li>-->
+    </ul>   
+    <p>The current time is: <span id="time" style="color:red;"></span></p>
+    <button onclick="stopTextColor();">Stop</button>
+    <button id="time-btn">Get current time</button>
+
+    <script type="text/jsx">
+        var intervalID = window.setInterval(myCallback, 1000);
+
+        function myCallback() {        
+            document.getElementById('time').innerHTML = new Date().toLocaleTimeString().toString();
+            var oElem = document.getElementById('time');
+            oElem.style.color = oElem.style.color == 'red' ? 'blue' : 'red';
+        };
+
+        function stopTextColor() {
+            clearInterval(intervalID);
+        };
+
+        document.getElementById('time-btn').onclick = () => {
+            document.getElementById('time').innerHTML = new Date().toString();
+        }
+        /*
+            const MyComponent = (data) => UI;
+            // For those less ES6-inclined:
+            function MyComponent(data) { return UI; }
+        */
+
+        //my first burron using react that doesn't do anything.
+        const myButton = React.createElement('button', null, 'REACT!');
+        //console.log(JSON.stringify(myButton));
+        //Prints the following: {"type":"button","key":null,"ref":null,"props": {"children":"Click Me!"}, "_owner":null,"_store":{} }
+        ReactDOM.render(myButton, document.getElementById('header'));
+
+        //replace button with header 1.
+        const myH1 = React.createElement('h1', null, 'HELLO DOJO!');
+        ReactDOM.render(myH1, document.getElementById('header'));
+
+        //replace content-top
+        const myH2 = React.createElement('h2', null, 'Things I need to do:');
+        ReactDOM.render(myH2, document.getElementById('content-top'));
+
+        //babel
+        const numbers = ["Learn React","Climb Mount Everest","Run a marathon","Feed the dogs"];
+        ReactDOM.render(
+            <NumberList numbers={numbers} />,
+            document.getElementById('root')
+        );
+
+        /* babel
+            function NumberList(props) {
+                const numbers = props.numbers;
+                const listItems = numbers.map((number) =>
+                    <li key={number.toString()}>
+                        {number}
+                    </li>
+                );
+                return (
+                    <ul>{listItems}</ul>
+                );
+            }
+            const numbers = [1, 2, 3, 4, 5];
+            const doubled = numbers.map((number) => number * 2);
+            console.log(doubled);
+            ReactDOM.render(
+                <NumberList numbers={numbers} />,
+                document.getElementById('root')
+            );
+        */
+    </script>
+    <!--<script type="text/jsx" src="script.jsx"></script>-->
+</body>
+</html>

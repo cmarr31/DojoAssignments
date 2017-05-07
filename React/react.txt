@@ -1,0 +1,30 @@
+https://medium.freecodecamp.com/yes-react-is-taking-over-front-end-development-the-question-is-why-40837af8ab76
+
+https://github.com/facebook/react-devtools
+
+https://facebook.github.io/react/tutorial/tutorial.html
+
+https://github.com/facebookincubator/create-react-app#getting-started
+
+https://github.com/facebookincubator/create-react-app
+
+https://webpack.js.org/guides/get-started/
+
+https://hacks.mozilla.org/2015/08/es6-in-depth-modules/
+
+https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/
+
+http://todomvc.com/
+Helping you select an MV* framework
+DownloadView on GitHubBlog
+Introduction
+Developers these days are spoiled with choice when it comes to selecting an MV* framework for structuring and organizing their JavaScript web apps.
+
+Backbone, Ember, AngularJS… the list of new and stable solutions continues to grow, but just how do you decide on which to use in a sea of so many options?
+
+To help solve this problem, we created TodoMVC 
+- a project which offers the same Todo application implemented using MV* concepts in most of the popular JavaScript MV* frameworks of today
+
+http://todomvc.com/examples/react/#/
+
+
