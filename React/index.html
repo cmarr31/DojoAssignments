@@ -60,32 +60,22 @@
         ReactDOM.render(myH2, document.getElementById('content-top'));
 
         //babel
-        const numbers = ["Learn React","Climb Mount Everest","Run a marathon","Feed the dogs"];
+        const items = ["Learn React","Climb Mount Everest","Run a marathon","Feed the dogs"];
+        function MyList(props) {
+            const items = props.items;
+            const listItems = items.map((item) =>
+                <li key={item.toString()}>
+                    {item}
+                </li>
+            );
+            return (
+                <ul>{listItems}</ul>
+            );
+        }
         ReactDOM.render(
-            <NumberList numbers={numbers} />,
+            <MyList items={items} />,
             document.getElementById('root')
         );
-
-        /* babel
-            function NumberList(props) {
-                const numbers = props.numbers;
-                const listItems = numbers.map((number) =>
-                    <li key={number.toString()}>
-                        {number}
-                    </li>
-                );
-                return (
-                    <ul>{listItems}</ul>
-                );
-            }
-            const numbers = [1, 2, 3, 4, 5];
-            const doubled = numbers.map((number) => number * 2);
-            console.log(doubled);
-            ReactDOM.render(
-                <NumberList numbers={numbers} />,
-                document.getElementById('root')
-            );
-        */
     </script>
     <!--<script type="text/jsx" src="script.jsx"></script>-->
 </body>
