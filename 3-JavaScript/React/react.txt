@@ -28,3 +28,16 @@ To help solve this problem, we created TodoMVC
 http://todomvc.com/examples/react/#/
 
 
+const MyComponent = (data) => UI;
+// For those less ES6-inclined:
+function MyComponent(data) { return UI; }
+
+const HeadlineComponent = (data) => {
+return React.createElement('h1', null, 'Hello Dojo!');
+}
+
+The above example uses an arrow function, but we could have written it as:
+
+const HeadlineComponent = function(data){
+return React.createElement('h1', null, 'Hello Dojo!');
+}
