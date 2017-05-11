@@ -1,3 +1,9 @@
+cd desktop
+cd dojoassignments
+git add .
+git commit -m "update coding dojo assignments"
+git push -u origin master
+
 WEB FUNDAMENTALS 
 GIT
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -15,12 +21,6 @@ git pull - pulls the changes in a remote repository to your own local repository
 git clone ___ - clones a remote repository in ___ to your own local folder.
 
 echo "hello world" > helloworld.txt
-
-cd desktop
-cd dojoassignments
-git add .
-git commit -m "update coding dojo assignments"
-git push -u origin master
 
 fork
 git clone
