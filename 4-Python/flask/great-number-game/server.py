@@ -8,7 +8,7 @@ def home():
     if 'number' not in session.keys():
         session['number'] = random.randint(1,10)
         session['phrase'] = "Take a guess!"
-        session['color'] = "yellow"
+        session['color'] = "blue"
     if 'guess' in session.keys():
         if session['guess'] > session['number']:
             session['phrase'] = "Too high! Guess a lower number"
