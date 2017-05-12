@@ -27,4 +27,5 @@ def process_validation():
         return redirect('/')
     else:
         return render_template('result.html')
+        
 app.run(debug=True)

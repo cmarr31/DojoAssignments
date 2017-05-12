@@ -1,0 +1,19 @@
+*{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+#wrapper{
+  width: 450px;
+}
+.row-item{
+  width:49%;
+  display: inline-block;
+}
+.button{
+  margin-top:20px;
+  margin-left: 353px;
+  text-align: right;
+}
+p{
+  color:red;
+}
