@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Great Number Game</title>
+  <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css')}}">
+</head>
+
+<body>
+  <div id="wrapper">
+    <h4>Welcome to the Great Number Game!</h4>
+    <h4>I am thinking of a number between 1 and 10</h4>
+    {% if session['color'] == 'yellow'%}
+      <div id="result-box" class="yellow">
+    {% elif session['color'] == 'green'%}
+      <div id="result-box" class="green">
+    {% elif session['color'] == 'red'%}
+      <div id="result-box" class="red">
+    {% else %}
+      <div id="result-box" class="blue">
+    {% endif %}
+      <h3 id="result-phrase">{{session['phrase']}}</h3>
+      {% if session['color'] == 'green'%}
+        <form action="/reset" method="get">
+        <input type="submit" id="reset-button" value="Reset">
+        </form>
+      {% else %}
+        <form action='/guess' method="post">
+        <input type="text" name="guess">
+        <input id="submit-button" type="submit" value="Submit">
+        </form>
+      {% endif %}
+      </div>
+    </div>
+</body>
+
+</html>
