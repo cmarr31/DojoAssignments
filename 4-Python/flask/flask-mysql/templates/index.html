@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- linking a css style sheet -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style_sheet.css') }}">
+  <!-- linking a javascript file -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>
+</head>
+
+<body>
+  <!-- linking an image -->
+  <img src="{{ url_for('static', filename='8bit.jpg') }}">
+  <h1>Flask MySQL</h1>
+  {% for item in users %}
+  <div>
+    <span>{{ item.first_name }}</span>
+    <span>{{ item.last_name }}</span>
+    <span>{{ item.email }}</span>
+  </div>
+  {% endfor %}
+</body>
+
+</html>

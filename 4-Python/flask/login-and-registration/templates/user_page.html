@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_page_styles.css') }}">
+
+  </head>
+  <body>
+    <div id="wrapper">
+      {% if 'current_user' in session.keys() %}
+        <h1>Welcome, {{session['first_name']}}</h1>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div id="message-area">
+              {% for message in messages %}
+                <h3>{{ message }}</h3>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        <h4>Here's your information:</h4>
+        <hr>
+        <table cellspacing=0 border=1>
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email Address</th>
+              <th>Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{session['first_name']}}</td>
+              <td>{{session['last_name']}}</td>
+              <td>{{session['email']}}</td>
+              <td>********</td>
+            </tr>
+          </tbody>
+        </table>
+        <form id="logout-form" action="/logout" method="post">
+          <input type="submit" value="LOGOUT">
+        </form>
+      {% else %}
+        <h1>You must <a href='/'>login</a> to see this page</h1>
+      {% endif %}
+    </div>
+  </body>
+</html>

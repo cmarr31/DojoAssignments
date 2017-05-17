@@ -1,0 +1,32 @@
+#wrapper{
+  padding:20px;
+  font-size: 2em;
+  font-family: sans-serif;
+  display: inline-block;
+  margin-left: 50px;
+
+}
+input{
+  font-size: 1.3em;
+}
+h1{
+  border-bottom: 6px solid black;
+}
+#email-list{
+  position: absolute;
+  top:150px;
+}
+.success-message{
+  background-color: green;
+  color: white;
+  margin: 0px;
+  padding:10px;
+  max-width: 900px;
+}
+.delete-button{
+  color:white;
+  background-color: red;
+}
+#back-button{
+  margin-top: 50px;
+}

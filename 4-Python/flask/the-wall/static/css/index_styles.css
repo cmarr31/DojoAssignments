@@ -1,0 +1,37 @@
+#wrapper{
+  padding:20px;
+  font-size: 2em;
+  font-family: sans-serif;
+  display: inline-block;
+  margin-left: 50px;
+
+}
+h1{
+  margin-bottom: 5px;
+}
+input{
+  font-size: 1.3em;
+}
+#submit-button{
+margin-right: 10px;
+}
+
+h3{
+  display: inline-block;
+}
+
+.error-message{
+  background-color: red;
+  color: white;
+  margin: 0px;
+}
+
+form{
+  position: absolute;
+  top: 260px;
+  text-align: right;
+}
+#register-link{
+  font-size: .8em;
+  margin-right: 10px;
+}
