@@ -8,7 +8,6 @@
   <body>
     <div id="wrapper">
       <h1>Registering New User</h1>
-      
       {% with messages = get_flashed_messages() %}
         {% if messages %}
           <div id="message-area">
@@ -18,7 +17,6 @@
           </div>
         {% endif %}
       {% endwith %}
-
       <form class="login-form" action="/process_registration" method="post">
         <label for="first_name">First Name:</label>
         <input type="text" name="first_name">
@@ -43,7 +41,6 @@
         <span id="register-link"><a href='/'>Click here to go back</a></span>
         <input id="submit-button" type="submit" value="Register">
       </form>
-
     </div>
   </body>
 </html>
