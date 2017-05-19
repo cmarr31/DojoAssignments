@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>portfolio index</title>
+    {% load staticfiles %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'first_app/css/styles.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+    <div id="nav-bar">
+    <h3 class="nav-bar-item">Coding Dojo</h3>
+    </div>
+    <h1>hello world :)</h1>
+    <h2>I'm Mauricio Ruanova-Hurtado</h2>
+    <h3>Welcome to my portfolio</h3>
+    {{request.session.name}}
+    <form action="/new_user" method="POST">
+        {% csrf_token %}<!--Prevents cross-site request forgery-->
+        <input type="text" name="first_name">
+        <input type="submit" value="submit">
+    </form>
+    <table>
+        <tr>
+            <th><a href="/projects">Projects</a></th>
+            <th><a href="/about">About Me</a></th>
+            <th><a href="/testimonials">Testimonials</a></th>
+        </tr>
+        <tr>
+            <td>I have a variety of projects both personal and contract. They are built using Python, Ruby and JavaScript.</td>
+            <td>A little about my background and why I do what I do.</td>
+            <td>What my clients and mentors have to say about my projects and work ethic.</td>
+        </tr>
+    </table>
+    <div id="upper-box" class='box'>
+        <h6>The current time and date:</h6>
+    </div>
+    <div id="lower-box" class='box'>
+        <h1>{{request.session.upper_date}}</h1>
+        <h1>{{request.session.lower_date}}</h1>
+    </div>
+</body>
+</html>
