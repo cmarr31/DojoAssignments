@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ninja_gold/css/styles.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <script src="{% static 'ninja_gold/js/ninja_gold.js'%}"></script>
+    <title>Ninja Gold</title>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="gold-status">
+        <h5>Your Gold:</h5>
+        <h5 id="gold-counter">{{ request.session.gold }}</h5>
+    </div>
+    <div id="option-select-area">
+        <div class="option-box">
+            <h3>Farm</h3>
+            <h5>(earns 10-20 gold)</h5>
+            <form action="/process_money/farm" method="post">
+                {% csrf_token %}
+                <input class="find-gold-button" type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="option-box">
+            <h3>Cave</h3>
+            <h5>(earns 5-10 gold)</h5>
+            <form action="/process_money/cave" method="post">
+                {% csrf_token %}
+                <input class="find-gold-button" type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="option-box">
+            <h3>House</h3>
+            <h5>(earns 2-5 gold)</h5>
+            <form action="/process_money/house" method="post">
+                {% csrf_token %}
+                <input class="find-gold-button" type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="option-box">
+            <h3>Casino</h3>
+            <h5>(earns/takes 0-50 gold)</h5>
+            <form action="/process_money/casino" method="post">
+                {% csrf_token %}
+                <input class="find-gold-button" type="submit" value="Find Gold!">
+            </form>
+        </div>
+    </div>
+    <h5>Activities:</h5>
+    <div id="activity-log">
+      {% for activity in request.session.activity_list %}
+        {% if "lost" in activity or "least" in activity%}
+          <p class="red">{{ activity }}</p>
+        {% else %}
+          <p class="green">{{ activity }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <form action="/reset" method="post">
+      {% csrf_token %}
+      <input type="submit" value="RESET">
+    </form>
+  </div>
+
+</body>
+</html>

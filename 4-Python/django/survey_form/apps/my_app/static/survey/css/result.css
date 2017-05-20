@@ -1,0 +1,36 @@
+body{
+  font-size: 2em;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: cornflowerblue;
+  color: white;
+}
+td{
+  padding: 10px 20px;
+  text-align: left;
+}
+#wrapper{
+  display: inline-block;
+  background-color: white;
+  color: black;
+}
+#message-box{
+  background-color: lightgreen;
+}
+p{
+  margin: 0px;
+}
+.box{
+  border: 1px solid black;
+  display: block;
+  padding: 5px 5px 5px;
+  margin: 5px 5px 5px;
+  text-align: left;
+}
+form{
+  text-align: right;
+  margin-right: 20px;
+}
+h2{
+  text-decoration: underline;
+}
