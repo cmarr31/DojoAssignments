@@ -17,5 +17,6 @@ Display a different landscape photo for each range of values:
 def index(request):
     return render(request, 'index.html')
 def results(request, param):
-    context = {'param': param}
+    print type(param)
+    context = {'param': int(param)}
     return render(request, 'results.html', context)
