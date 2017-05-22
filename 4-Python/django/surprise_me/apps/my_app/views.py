@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect, HttpResponse
+import random
 VALUES = ['strange', 'weird', 'unusual', 'rare', 'different', 'wicked', 'odd', 'crazy', 'eccentric', 'queer', 'singular', 'funky', 'freaky', 'curious', 'uncanny']
 '''
 Surprise Me! 
@@ -14,13 +15,13 @@ Display the strings in the template.
 '''
 def index(request):
     return render(request, 'index.html')
-
 def results(request):
-    # shuffle array 
-    # for loop
-    # HOW TO ADD? context.add(key,value) context = {'results':request.session['number']} 
-    context = {'values':VALUES}
-    return render(request, 'results.html', context)
+    random.shuffle(VALUES)
+    if request.session['number']=="0":
+        return render(request, 'results.html')
+    else:
+        context = {'values':VALUES[0:int(request.session['number'])]}
+        return render(request, 'results.html', context)
     
 def submit(request):
     if request.method == "POST":
