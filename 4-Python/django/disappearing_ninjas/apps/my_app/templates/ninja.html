@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <title>{{color}} Ninja</title>
+  </head>
+  <body>
+    {% if color == "blue" %}
+      <img src="{% static 'img/leonardo.jpg' %}" alt="Leonardo">
+    {% elif color == "orange" %}
+      <img src="{% static 'img/michelangelo.jpg' %}" alt="Michelangelo">
+    {% elif color == "red" %}
+      <img src="{% static 'img/raphael.jpg' %}" alt="Raphael">
+    {% elif color == "purple" %}
+      <img src="{% static 'img/donatello.jpg' %}" alt="Donatello">
+    {% else %}
+      <img src="{% static 'img/notapril.jpg' %}" alt="Not April?">
+    {% endif %}
+  </body>
+</html>
