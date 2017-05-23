@@ -7,10 +7,18 @@ from .models import Book
 # WORDS = response.content.splitlines()
 # title =WORDS[x]
 def index(request):
-	return render(request, "index.html")
+	books = Book.objects.all()
+	print books
+	context = {
+		"books": books
+	}
+	return render(request, "index.html", context)
 
 def new_book(request):
-    x = randint(1, len(WORDS))
-    book = Book.objects.create(title ="my book #"+str(x), author ="mau rua", published_date = "2017",category = "novel",in_print = "true")
-    books = Book.objects.all()
-    return redirect("/")
+	# x = randint(1, len(WORDS))
+	x = randint(1, 150)
+	book = Book.objects.create(title ="my book #"+str(x), author ="mau rua", published_date = "2017",category = "novel",in_print = "True")
+	print book
+	books = Book.objects.all()
+	print books
+	return redirect("/")
