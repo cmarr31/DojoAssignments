@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Products Django</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <h1>Products page</h1>
+    <p>Assignment: Products</p>
+    <p>Using a new Django project, create in your app folder a model for a single table, Product.</p>
+    <p>Complete the below functionality.</p>
+    <p>1. Build a new project</p>
+    <p>Refer back to the Setup Cheatsheet supplied in Django Intro if needed.</p>
+    <p>2. Create a new model called Product</p>
+    <p>The models file is found in your app's automatically generated files.</p>
+    <p>If you need a refresher, look back at the last several tabs, especially the models tab.</p>
+    <p>3. Add the following fields to the Product class </p>
+    <p>A product should have a name, description, weight, price, cost (to seller), and category.</p>
+    <p>Figure out what type should be assigned to each field.</p>
+    <p>Once all the previous steps are complete, test your code by adding 3 new products.</p>
+    <p>Retrieve all rows from your table and print each to the console.</p>
+    <a href="/new_product"><button>create new product in DB</button></a>
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>WEIGHT</th>
+            <th>PRICE</th>
+            <th>COST</th>
+            <th>CATEGORY</th>
+            <th>CREATED AT</th>
+            <th>UPDATED AT</th>
+        </tr>        
+    {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.weight }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.cost }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.created_at }}</td>
+            <td>{{ product.updated_at }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Books django</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Assignment: Books</h1>
+        <p>Create a new Django project and add a books model.</p>
+        <p>Complete the below functionality.</p>
+        <p>1. Create Books model</p>
+        <p>Your model should contain the following fields: title, author, published date, category.</p>
+        <p>2. Migrate</p>
+        <p>Make your migrations and activate shell.</p>
+        <p>3. Create and show Books</p>
+        <p>Make 5 new books and retrieve them all, as before.</p>
+        <p>4. Add a new field</p>
+        <p>Add a field to your table called in_print. This should be a boolean field.</p>
+        <p>What should you do to see your changes reflected in your database table? You'll have to makemigrations and migrate again.</p>
+        <p>Once you do, a prompt will walk you through filling in values for the existing entries.</p>
+        <p>Why is this? Discuss with your cohort-mates.</p>
+        <p>Ask an instructor if you and your friends can't work it out.</p>
+        <table>
+            <tr>
+                <th>title</th>
+                <th>author</th>
+                <th>published_date</th>
+                <th>category</th>
+                <th>in_print</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+            </tr>        
+            {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.published_date }}</td>
+                <td>{{ book.category }}</td>
+                <td>{{ book.in_print }}</td>
+                <td>{{ book.created_at }}</td>
+                <td>{{ book.updated_at }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/new_book"><button>create new record in DB</button></a>
+    </body>
+</html>
