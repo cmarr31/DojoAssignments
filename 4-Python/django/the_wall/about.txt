@@ -1,0 +1,17 @@
+Assignment: The Wall
+Recreate the models for the Wall assignment using Django.
+
+Wall Wireframe
+
+Leads to:
+
+Wall DB
+How would we go about generating a similar structure in Django?
+
+We have a user who has messages
+Each message can have many comments
+Each comment is associated with a user
+Remember: ForeignKey fields indicate a one-to-many relationship. 
+The ForeignKey goes in the many side of the relationship. 
+If that's not clear, refer back to some of the examples. 
+If you need more help, don't be shy about asking a cohort-mate for help.
