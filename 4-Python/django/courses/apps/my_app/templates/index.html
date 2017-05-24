@@ -3,23 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>Courses</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'favicon.ico' %}"/>
   </head>
   <body>
+    <h1>Assignment: Courses</h1>
+    <p>Make a new Django project and application, and complete the functionality of the wireframe below.</p>
+    <h2>Bonus Features (Optional)</h2>
+    <p>Make description a one-to-one relationship with the Course table rather than a column in the course table (intermediate).</p>
+    <p>Add a button that allows you to add comments about the courses and render a page with those comments (advanced)</p>
     <h1>Add a new course</h1>
-
-    <form id="new-course-form" action="/new_course" method="post">
+    <div id="wrapper">
+    <form action="/create" method="post">
       {% csrf_token %}
       <label for="course_name">Name:</label>
       <input type="text" name="course_name" value="">
-      <br>
       <label for="course_description">Description:</label>
       <textarea name="course_description"></textarea>
       <input type="submit" name="" value="Add">
     </form>
-
+    </div>
     <h1>Courses</h1>
     <table cellpadding=10 border=1>
       <thead>
+        <th>Course Id</th>
         <th>Course Name</th>
         <th>Description</th>
         <th>Date Added</th>
@@ -28,11 +36,12 @@
       <tbody>
         {% for course in courses %}
         <tr>
+          <td>{{course.id}}</td>
           <td>{{course.course_name}}</td>
           <td>{{course.course_description}}</td>
           <td>{{course.created_at}}</td>
           <td>
-            <form  action="/delete_course/{{course.id}}">
+            <form  action="/delete/{{course.id}}">
               <input type="submit" name="" value="remove">
             </form>
           </td>

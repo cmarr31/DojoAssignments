@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Email Validation</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Assignment: Username Validation</h1>
+      <p>Create a new project that will validate a username.</p>
+      <p>Validate the user as follows:</p>
+      <ul>
+        <li>length of username should greater than 8 characters</li>
+        <li>length of username should be fewer than 16 characters</li>
+        <li>If the username is not valid display a notification "Username is not valid" on the root page.</li>
+        <li>Once a valid username is entered, save the username to the database.</li>
+        <li>On the success page display all the usernames entered, along with the date and the time (e.g. June 24th, 2013, 6:00 PM) that each username was created.</li>
+        <li>Ninja: Allow the user to delete a username on the success page</li>
+        <li>Hacker: Make sure that the username is not a duplicate before inserting it into the database.</li>
+      </ul>
+      <h2>Add Your Email to the List!</h2>
+
+        {% if messages %}
+          <div id="message-area">
+            {% for message in messages %}
+              <h3 class="error-message">{{ message }}</h3>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+      <form id="email-form" action="/process" method="post">
+        {% csrf_token %}
+        <label for="email">Email Address: </label>
+        <input type="text" name="email">
+        <input id="enter-email-button" type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>

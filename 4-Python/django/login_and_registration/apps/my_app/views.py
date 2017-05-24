@@ -9,6 +9,8 @@ from .models import User
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 NAME_REGEX = re.compile(r'^[a-zA-Z]+$')
 
+# TODO: move logic from view to model
+
 def login_page(request):
     if "current" in request.session.keys():
         print request.session['current_user']
@@ -100,7 +102,6 @@ def process_registration(request):
         elif found_user:
             messages.error(request, "This email is already registered!")
             failed_validation = True
-
         if len(request.POST['password']) < 1:
             messages.error(request, "Password is required!")
             failed_validation = True
@@ -115,26 +116,21 @@ def process_registration(request):
             return redirect('/register')
 
         User.objects.create(first_name=first_name, last_name=last_name, email=email, password=hashed_password, salt=salt)
-
         request.session['current_user'] = User.objects.get(email=email).id
         # print session['current_user']
         # print "^ Current user result ^"
         return redirect('/user_page')
 
 def show_user_home_page(request):
-
     if "current_user" in request.session.keys():
-
         context = {
             "user":User.objects.get(pk=request.session['current_user']),
             'messages':get_messages(request)
         }
         return render(request, 'user_page.html', context)
-
     return render(request, 'user_page.html')
 
 def log_out_user(request):
     request.session.clear()
     messages.success(request, "Successfully logged out")
-
     return redirect('/')

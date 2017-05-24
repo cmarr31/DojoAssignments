@@ -1,0 +1,15 @@
+*{
+  font-family: sans-serif;
+}
+.error-message{
+  background-color: red;
+  color: white;
+}
+.success-message{
+  background-color: green;
+  color: white;
+}
+.delete-button{
+  color:white;
+  background-color: red;
+}

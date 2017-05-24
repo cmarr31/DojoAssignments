@@ -7,10 +7,32 @@
     <link rel="stylesheet" href="{% static 'main/css/index_styles.css' %}">
   </head>
   <body>
+    <h1>Assignment: Login and Registration</h1>
+    <p>Rebuild the Login and Registration assignment from the flask chapter, this time using Django.</p>
+    <p>We’ve learned how to integrate models, validations, and controllers to our projects.</p>
+    <p>Our next goal is to create a fully functional login and registration app!</p>
+    <p>This will combine your knowledge of MVC patterns, validations, and password encryption.</p>
+    <h2>Build the following:</h2>
+    <ul>
+      <li>Show validation error messages if validations fail the following tests</li>
+        <ul>
+          <li>First Name - Required; No fewer than 2 characters; letters only</li>
+          <li>Last Name - Required; No fewer than 2 characters; letters only</li>
+          <li>Email - Required; Valid Format</li>
+          <li>Password - Required; No fewer than 8 characters in length; matches Password Confirmation</li>
+        </ul>
+        <li>Don't worry about hashing passwords for now. We'll take a closer look at hashing tomorrow.</li>
+        <li>Bonus: Birthday Field - Before today, or go creative and do it in an age range</li>
+        <li>Bonus: Implement Flash Messages</li>
+    </ul>
+    <p>One thing we've noticed as people build their login and registrations that you should consider:</p>
+    <p>User.objects.get(email = email)</p>
+    <p>If there is not a matching email for a .get(), Django throws an error (try and except could come in handy), otherwise it returns the User object associated with the matching user. e.g. Userobject.</p>
+    <p>User.objects.filter(email = email)</p>
+    <p>Filter, on the other hand, returns a list, so if there is no user that matches, it returns an empty list.</p>
+    <p>If there is a single matching user the list will contain a single User object: e.g. [Userobject].</p>
     <div id="wrapper">
       <h1>Please Login Here</h1>
-
-
         {% if messages %}
           <div id="message-area">
             {% for message in messages %}
@@ -18,8 +40,6 @@
             {% endfor %}
           </div>
         {% endif %}
-
-
       <form class="login-form" action="/process_login" method="post">
         {% csrf_token %}
         <label for="email">Email Address:</label>
@@ -33,7 +53,6 @@
         <span id="register-link"><a href='/register'>Click here to register</a></span>
         <input id="submit-button" type="submit" value="Login">
       </form>
-
     </div>
   </body>
 </html>

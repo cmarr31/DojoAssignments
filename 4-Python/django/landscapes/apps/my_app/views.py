@@ -19,4 +19,5 @@ def index(request):
 def results(request, param):
     print type(param)
     context = {'param': int(param)}
+    print context['param']>0
     return render(request, 'results.html', context)
