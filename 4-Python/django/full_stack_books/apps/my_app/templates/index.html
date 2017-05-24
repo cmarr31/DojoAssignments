@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Books</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+  </head>
+  <body>
+    <h1>Assignment: Full Stack Books</h1>
+    <p>Make a new project that can display a list of books, including authors and categories.</p>
+    <p>Your model will be similar to the one we used in the previous books assignment. </p>
+    <p>This one is just a little more simple. </p>
+    <p>You should be focused on generating rows from user input and displaying all the Book data in a table in your HTML template. </p>
+    <p>You already know how to add and retrieve information.</p>
+    <table cellpadding=10 border=1>
+      <thead>
+        <th>id</th>
+        <th>title</th>
+        <th>author</th>
+        <th>published_date</th>
+        <th>category</th>
+        <th>in_print</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </thead>
+      <tbody>
+        {% for book in books %}
+        <tr>
+          <td>{{ book.id }}</td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.published_date }}</td>
+          <td>{{ book.category }}</td>
+          <td>{{ book.in_print }}</td>
+          <td>{{ book.created_at }}</td>
+          <td>{{ book.updated_at }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h1>Add a new book</h1>
+    <form action="/create" method="post">
+      {% csrf_token %}
+      <label for="title">title:</label>
+      <input type="text" name="title" value="">
+      <label for="author">author:</label>
+      <input type="text" name="author">
+      <label for="category">category:</label>
+      <input type="text" name="category" value="">
+      <label for="published_date">published_date:</label>
+      <input type="text" name="published_date" value="">
+      <input type="submit">
+    </form>
+
+  </body>
+</html>

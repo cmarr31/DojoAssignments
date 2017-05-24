@@ -1,0 +1,36 @@
+#wrapper{
+  padding:20px;
+  font-size: 2em;
+  font-family: sans-serif;
+  display: inline-block;
+  margin-left: 50px;
+
+}
+input{
+  font-size: 1.2em;
+  padding: 3px 10px 5px;
+}
+
+#logout-button{
+margin-right: 10px;
+}
+
+h3{
+  display: inline-block;
+  background-color: green;
+  color: white;
+  margin: 0px;
+}
+
+h4{
+  margin-bottom: 0px;
+}
+
+td, th{
+  padding:4px;
+}
+
+#logout-form{
+  text-align: right;
+  margin-top: 20px;
+}
