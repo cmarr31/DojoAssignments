@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Landing Page</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'my_app/css/styles.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+</head>
+<body>
+  <a href="{% url 'new_book' %}">Add Book and Review</a> |
+  <a href="{% url 'logout' %}">Logout</a>
+  <h4>Welcome {{user.full_name}}!</h4>
+  <div class="box">
+    <h4>Recent Book Reviews:</h4>
+      {% for review in reviews %}
+        <a href="{% url 'book_page' book_id=review.book.id %}">{{review.book.title}}</a>
+        <p>Rating: {% for i in "x"|rjust:review.stars %}
+        <img src="{% static 'my_app/img/star.png' %}" alt="star"> {% endfor %}</p>
+        <p><a href="{% url 'user_page' user_id=review.user.id %}">{{review.user.alias}}</a> says: <i>{{review.content}}</i></p>
+        <p>Posted on {{review.created_at}}</p>
+      {% endfor %}
+  </div>
+  <div class="box">
+    <h4>Other Books with Reviews:</h4>
+      {% for book in books %}
+      <p><a href="{% url 'book_page' book_id=book.id %}">{{book.title}}</a></p>
+      {% endfor %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+body{
+  padding: 5px;
+}
+.box{
+  border: 1px solid black;
+  width: 360px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+label{
+  width: 160px;
+}
+.button{
+  margin-left: 170px;
+  width: 170px;
+}
+.error{
+  color:red;
+}
