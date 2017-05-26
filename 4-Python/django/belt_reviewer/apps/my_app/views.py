@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.db.models import Count
 from django.core.urlresolvers import reverse
 from .models import User, Book, Author, Review
+# from .models import *
 
 def index(request):
     context = {

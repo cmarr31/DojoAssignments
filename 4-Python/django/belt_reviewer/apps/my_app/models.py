@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+# from ..login.models import *
 from django.db import models
 import bcrypt, re
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 NAME_REGEX = re.compile(r'^[a-zA-Z ]+$')
 ALIAS_REGEX = re.compile(r'^\w+$')
-REGEX_PASSWORD = re.compile(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$')
+PASSWORD_REGEX = re.compile(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$')
 
 class UserManager(models.Manager):
     def login(self, postData):
@@ -32,7 +32,7 @@ class UserManager(models.Manager):
 
         if failed_authentication:
             return {'result':"failed_authentication", 'messages':messages}
-        if not REGEX_PASSWORD.match(postData['password']):
+        if not PASSWORD_REGEX.match(postData['password']):
             messages.append("Password must be at least 8 characters with at least 1 uppercase letter and 1 numeric value")
             return {'result':"failed_authentication", 'messages':messages}
 
@@ -80,7 +80,7 @@ class UserManager(models.Manager):
         if len(postData['password']) < 1:
             messages.append("Password is required!")
             failed_validation = True
-        elif not REGEX_PASSWORD.match(postData['password']):
+        elif not PASSWORD_REGEX.match(postData['password']):
             messages.append("Password must be at least 8 characters with at least 1 uppercase letter and 1 numeric value")
             failed_validation = True
         elif postData['confirm_password'] != postData['password']:
