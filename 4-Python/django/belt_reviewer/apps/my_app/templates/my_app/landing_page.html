@@ -12,23 +12,23 @@
     crossorigin="anonymous">
 </head>
 <body>
-  <a href="{% url 'new_book' %}">Add Book and Review</a> |
-  <a href="{% url 'logout' %}">Logout</a>
+  <a href="{% url 'my_app:new_book' %}">Add Book and Review</a> |
+  <a href="{% url 'my_app:logout' %}">Logout</a>
   <h4>Welcome {{user.full_name}}!</h4>
   <div class="box">
     <h4>Recent Book Reviews:</h4>
       {% for review in reviews %}
-        <a href="{% url 'book_page' book_id=review.book.id %}">{{review.book.title}}</a>
+        <a href="{% url 'my_app:book_page' book_id=review.book.id %}">{{review.book.title}}</a>
         <p>Rating: {% for i in "x"|rjust:review.stars %}
         <img src="{% static 'my_app/img/star.png' %}" alt="star"> {% endfor %}</p>
-        <p><a href="{% url 'user_page' user_id=review.user.id %}">{{review.user.alias}}</a> says: <i>{{review.content}}</i></p>
+        <p><a href="{% url 'my_app:user_page' user_id=review.user.id %}">{{review.user.alias}}</a> says: <i>{{review.content}}</i></p>
         <p>Posted on {{review.created_at}}</p>
       {% endfor %}
   </div>
   <div class="box">
     <h4>Other Books with Reviews:</h4>
       {% for book in books %}
-      <p><a href="{% url 'book_page' book_id=book.id %}">{{book.title}}</a></p>
+      <p><a href="{% url 'my_app:book_page' book_id=book.id %}">{{book.title}}</a></p>
       {% endfor %}
   </div>
 </body>

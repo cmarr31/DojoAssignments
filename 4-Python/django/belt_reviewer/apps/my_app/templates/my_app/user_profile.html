@@ -14,9 +14,9 @@
   <body>
     <div id="wrapper">
       <div>
-        <a href="{% url 'landing_page' %}">Home</a> |
-        <a href="{% url 'new_book' %}">Add Book and Review</a> |
-        <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'my_app:landing_page' %}">Home</a> |
+        <a href="{% url 'my_app:new_book' %}">Add Book and Review</a> |
+        <a href="{% url 'my_app:logout' %}">Logout</a>
       </div>
       <div class="box">
         <h4>User</h4>
@@ -29,7 +29,7 @@
         <h4>Posted reviews on the following books:</h4>
         <ul>
         {% for book in reviewed_books %}
-          <li><a href="{% url 'book_page' book_id=book.id %}">{{book.title}}</a></li>
+          <li><a href="{% url 'my_app:book_page' book_id=book.id %}">{{book.title}}</a></li>
         {% endfor %}
         </ul>
       </div>
@@ -37,7 +37,7 @@
         <h4>Favorites:</h4>
         <ul>
         {% for book in user.books.all %}
-          <li><a href="{% url 'book_page' book_id=book.id %}">{{book.title}}</a></li>
+          <li><a href="{% url 'my_app:book_page' book_id=book.id %}">{{book.title}}</a></li>
         {% endfor %}
         </ul>
       </div>

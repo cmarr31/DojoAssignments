@@ -14,15 +14,15 @@
 </head>
 
 <body>
-  <a href="{% url 'landing_page' %}">Home</a> |
-  <a href="{% url 'logout' %}">Logout</a>
+  <a href="{% url 'my_app:landing_page' %}">Home</a> |
+  <a href="{% url 'my_app:logout' %}">Logout</a>
   {% if messages %}
     {% for message in messages %}
     <p class="error">{{ message }}</p>
     {% endfor %}
   {% endif %}
   <h4>Add a New Book Title and a Review</h4>
-  <form action="{% url 'process_add_book' %}" method="post">
+  <form action="{% url 'my_app:process_add_book' %}" method="post">
     {% csrf_token %}
     <div class="box">
       <label for="title">Book Title:</label>

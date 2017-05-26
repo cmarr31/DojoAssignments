@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.messages import get_messages
 from django.contrib import messages
 from django.db.models import Count
+from django.core.urlresolvers import reverse
 from .models import User, Book, Author, Review
 
 def index(request):
@@ -22,7 +23,6 @@ def register(request):
             'confirm_password':request.POST['confirm_password']
         }
         register_result = User.objects.register(post_data)
-        print "*"*100
         print register_result
         if register_result['result'] == "failed_validation":
             if 'messages' in register_result.keys():
@@ -66,7 +66,7 @@ def login(request):
             if 'messages' in login_result.keys():
                 for message in login_result['messages']:
                     messages.error(request, message)
-            return redirect('/')
+            return redirect(reverse('my_app:index'))
         else:
             if 'user' in login_result.keys():
                 request.session['current_user'] = login_result['user'].id
@@ -75,13 +75,14 @@ def login(request):
                 #         messages.success(request, message)
             else:
                 messages.error(request, "Something went wrong")
-                return redirect('/')
-            return redirect('/landing_page')
+                return redirect(reverse('my_app:index'))
+            print "*"*100
+            return redirect(reverse('my_app:landing_page'))
 
 def logout(request):
     request.session.clear()
     messages.success(request, "Successfully logged out")
-    return redirect('/')
+    return redirect(reverse('my_app:index'))
 
 def show_add_book_page(request):
     context = {
@@ -143,7 +144,7 @@ def process_add_book(request):
             print "Added new review"
         else:
             messages.error(request, "please try again")
-    return redirect('/new_book')
+    return redirect(reverse('my_app:new_book'))
 
 def show_book_page(request, book_id):
     book = Book.objects.get(pk=book_id)
@@ -170,18 +171,17 @@ def add_review(request, book_id):
         user = User.objects.get(pk=request.session['current_user'])
         book = Book.objects.get(pk=book_id)
         Review.objects.create(content=content, stars=stars, user=user, book=book)
-    return redirect('/book/' + book_id)
+    return redirect(reverse('my_app:book_page', kwargs={'book_id':book_id}))
 
 def delete_review(request, review_id):
     review = Review.objects.get(pk=review_id)
     book_id = review.book.id
     review.delete()
-    return redirect('/book/' + str(book_id))
+    # return redirect('/book/' + str(book_id))
+    return redirect(reverse('my_app:book_page', kwargs={'book_id':book_id}))
 
 def add_to_my_favorites(request, book_id):
     user = User.objects.get(pk=request.session['current_user'])
     book = Book.objects.get(pk=book_id)
     user.books.add(book)
-    return redirect('/landing_page')
-
-# redirect(reverse("home"))
+    return redirect(reverse('my_app:landing_page'))

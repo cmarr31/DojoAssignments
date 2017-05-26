@@ -14,24 +14,24 @@
 </head>
 
 <body>
-  <a href="{% url 'landing_page' %}">Home</a> |
-  <a href="{% url 'logout' %}">Logout</a>
+  <a href="{% url 'my_app:landing_page' %}">Home</a> |
+  <a href="{% url 'my_app:logout' %}">Logout</a>
   <h3>{{book.title}}</h3>
-  <a href="{% url 'add_to_my_favorites' book_id=book.id %}">Add to my favorites</a>
+  <a href="{% url 'my_app:add_to_my_favorites' book_id=book.id %}">Add to my favorites</a>
   <h4>Author: {{book.author.full_name}}</h4>
   <div class="box">
     <h4>Reviews:</h4>
     {% for review in reviews %}
     <p>Rating: {% for i in "x"|rjust:review.stars %}
     <img src="{% static 'my_app/img/star.png' %}" alt="star"> {% endfor %}</p>
-    <p><a href="{% url 'user_page' user_id=review.user.id %}">{{review.user.alias}}</a> says: <i>{{review.content}}</i></p>
+    <p><a href="{% url 'my_app:user_page' user_id=review.user.id %}">{{review.user.alias}}</a> says: <i>{{review.content}}</i></p>
     <p>Posted on {{review.created_at}} {% if review.user.id == request.session.current_user %}</p>
-    <a href="{% url 'delete_review' review_id=review.id %}">Delete this Review</a> {% endif %}
+    <a href="{% url 'my_app:delete_review' review_id=review.id %}">Delete this Review</a> {% endif %}
     {% endfor %}
   </div>
   <div class="box">
     <h4>Add a review:</h4>
-    <form action="{% url 'add_review' book_id=book.id %}" method="post">
+    <form action="{% url 'my_app:add_review' book_id=book.id %}" method="post">
       {% csrf_token %}
       <textarea name="content" placeholder="Your review here..."></textarea>
       <br>
@@ -51,7 +51,7 @@
     <h4>Favorites:</h4>
     <ul>
     {% for user in book.users.all %}
-      <li><a href="{% url 'user_page' user_id=user.id %}">{{user.alias}}</a></li>
+      <li><a href="{% url 'my_app:user_page' user_id=user.id %}">{{user.alias}}</a></li>
     {% endfor %}
     </ul>
   </div>
