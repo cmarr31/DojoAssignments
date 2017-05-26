@@ -1,7 +1,7 @@
 cd desktop
 cd dojoassignments
 git add .
-git commit -m "update coding dojo assignments"
+git commit -m "added regex for password"
 git push -u origin master
 
 WEB FUNDAMENTALS 

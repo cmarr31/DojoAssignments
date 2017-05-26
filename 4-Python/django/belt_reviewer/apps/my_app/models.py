@@ -7,6 +7,7 @@ import bcrypt, re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 NAME_REGEX = re.compile(r'^[a-zA-Z ]+$')
 ALIAS_REGEX = re.compile(r'^\w+$')
+REGEX_PASSWORD = re.compile(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$')
 
 class UserManager(models.Manager):
     def login(self, postData):
@@ -31,11 +32,9 @@ class UserManager(models.Manager):
 
         if failed_authentication:
             return {'result':"failed_authentication", 'messages':messages}
-
-        if len(postData['password']) < 8:
-            messages.append("Password must be at least 8 characters")
+        if not REGEX_PASSWORD.match(postData['password']):
+            messages.append("Password must be at least 8 characters with at least 1 uppercase letter and 1 numeric value")
             return {'result':"failed_authentication", 'messages':messages}
-
 
         hashed_password = bcrypt.hashpw(str(postData['password']), str(found_user.salt))
 
@@ -81,12 +80,13 @@ class UserManager(models.Manager):
         if len(postData['password']) < 1:
             messages.append("Password is required!")
             failed_validation = True
-        elif len(postData['password']) < 8:
-            messages.append("Password must be at least 8 characters")
+        elif not REGEX_PASSWORD.match(postData['password']):
+            messages.append("Password must be at least 8 characters with at least 1 uppercase letter and 1 numeric value")
             failed_validation = True
         elif postData['confirm_password'] != postData['password']:
             messages.append("Password confirmation failed")
             failed_validation = True
+
         if failed_validation:
             return {'result':"failed_validation", 'messages':messages}
         salt = bcrypt.gensalt()
