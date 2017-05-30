@@ -1,478 +1,55 @@
 <!DOCTYPE html>
 <html>
-<!--
+
 <head>
-  <meta charset="utf-8">
   <title>Zillow: Real Estate, Apartments, Mortgages &amp; Home Values</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Mauricio Ruanova-Hurtado front-end web developer and software engineer career portfolio">
+  <meta name="keywords" content="Mauricio Ruanova-Hurtado,mruanova,mauricio ruanova">
+  <meta name="author" content="Mauricio Ruanova-Hurtado">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
   {% load staticfiles %}
   <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
   <link rel="stylesheet" href="{% static 'user_app/css/styles.css' %}">
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/start/jquery-ui.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
--->
-<head>
-<meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="//www.zillowstatic.com"><link rel="dns-prefetch" href="//fonts.googleapis.com"><link rel="dns-prefetch" href="//photos.zillowstatic.com"><link rel="preconnect" crossorigin="true" href="https://videos.zillowstatic.com/"><meta charset="utf-8"><title>Zillow: Real Estate, Apartments, Mortgages &amp; Home Values</title><meta name="description" content="The leading real estate marketplace. Search millions of for-sale and rental listings, compare Zestimate® home values and connect with local professionals."><meta name="author" content="Zillow, Inc."><meta name="Copyright" content="Copyright (c) 2006-2017 Zillow, Inc."><script async="" type="text/javascript" src="https://www.googletagservices.com/tag/js/gpt.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-P6HT97"></script><script type="text/javascript" async="" src="https://report-ads-to.pubnation.com/dist/pnr.js?t=pn-d3d2eba3d4d1f405"></script><script type="text/javascript" async="true" src="https://sb.scorecardresearch.com/beacon.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script>var UI_INIT_AT = Date.now ? Date.now() : +(new Date());</script><link href="https://www.zillowstatic.com/static-zsg/e09a3e7/static-zsg/zsg/z-fonts/gotham/gotham.css" type="text/css" rel="stylesheet" media="all"><script>document.documentElement.className = document.documentElement.className.replace(/\bwf-loading\b/g, '');</script><link href="https://www.zillowstatic.com/static-zsg/e09a3e7/static-zsg/zsg/zsg-core.css" type="text/css" rel="stylesheet" media="all"><link href="https://www.zillowstatic.com/static-zsg/e09a3e7/static-zsg/zsg/zsg-opt.css" type="text/css" rel="stylesheet" media="all"><script>document.documentElement.className += ' gotham-test'</script><link rel="stylesheet" media="all" href="https://www.zillowstatic.com/s/?static.b342333=css/z-modules/header.css,css/z-modules/ui-mobile-toast-message.css&amp;static-search.1d45cf3=css/collection-discovery.css,css/search-list-card-actions.css&amp;static-topnav.701e0cd=css/z-modules/top-nav.css,css/z-modules/top-nav-hoverable.css,css/z-modules/top-nav-wide.css,css/z-modules/sub-nav-wide.css&amp;static-homepage.852eede=css/z-pages/home.css,css/z-pages/home-desktop.css,css/z-pages/home-desktop-wide.css&amp;static-pagewrapper.a916eef=css/z-modules/header-wide.css,css/z-modules/brand-links-footer.css" type="text/css"><meta name="msapplication-config" content="none"><meta name="ROBOTS" content="ALL"><meta name="ROBOTS" content="NOYDIR"><meta name="ROBOTS" content="NOODP"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="format-detection" content="telephone=no"><link rel="apple-touch-icon" href="https://www.zillowstatic.com/static/images/m/apple-touch-icon.png"><meta name="msapplication-TileColor" content="#3366b8"><meta name="msapplication-TileImage" content="https://www.zillowstatic.com/static/images/logos/zillow-logo-win8-tile.png"><meta name="verify-v1" content="/8Me6HBNZX/rt2n5/y1Lo3ZIrkcvkTBimqviTDiurR4="><meta name="y_key" content="7cb4abe457d82ae8"><link rel="canonical" href="https://www.zillow.com/"><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"><link rel="publisher" href="https://plus.google.com/100246012832518642551"><meta name="msvalidate.01" content="D002B788494C63AC593FB8ADE2F8FB5B"><meta itemprop="name" content="Zillow Real Estate, Rentals, and Mortgage"><meta itemprop="description" content="The most trafficked website about home sales and rentals, with real estate values for almost every U.S. home. 1,000,000 listings that you won't find on MLS."><meta itemprop="image" content="https://www.zillowstatic.com/static/images/social/share_thumbnail.png"><link rel="start" title="Zillow home" href="/"><!--[if gte IE 9]><link rel="shortcut icon" href="/static/images/ie9_favicon.ico" type="image/x-icon"/><![endif]--><meta name="google-translate-customization" content="691f1bfccade71b5-c065751219a379dd-g64cedb67f5ea020a-a"><meta name="referrer" content="always"><meta property="fb:app_id" content="172285552816089"><meta property="og:type" content="website"><meta property="og:url" content="http://www.facebook.com/zillow"><meta property="og:site_name" content="Zillow"><meta property="og:title" content="Zillow: Real Estate, Apartments, Mortgages &amp; Home Values"><meta property="og:image" content="https://www.zillowstatic.com/static/images/m/apple-touch-icon.png"><meta property="og:description" content="The leading real estate marketplace. Search millions of for-sale and rental listings, compare Zestimate® home values and connect with local professionals."><meta name="google-signin-clientid" content="238648973530.apps.googleusercontent.com"><meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"><meta name="google-signin-cookiepolicy" content="https://www.zillow.com"><script>"use strict";(function(){var f=typeof window!="undefined"?window:exports,r=[],d={},o=f.requestAnimationFrame||(function(s){setTimeout(s,0)}),j=document.createEvent("CustomEvent"),b=function(s){var t={name:s,entryType:"mark",startTime:f.performance.now(),duration:0};r.push(t);d[s]=t},c=function(s,w,u){var t=d[w].startTime,v=d[u].startTime;r.push({name:s,entryType:"measure",startTime:t,duration:v-t,})},n=function(s){k("mark",s)},m=function(s,t){return l(t,s)},q=function(s){return l(s)},l=function(v,s){var u=r.length,t=[];while(u--){if(r[u].entryType===v&&(!s||r[u].name===s)){t.unshift(r[u])}}return t},k=function(u,s){var t=r.length,v;while(t--){v=r[t];if(v.entryType===u&&(s===void 0||v.name==s)){r.splice(t,1)}}},g=function(s){if("mark" in performance){f.performance.mark(s)}else{b(s)}},h=function(s,u,t){if("measure" in performance){f.performance.measure(s,u,t)}else{c(s,u,t)}},a=function(s,t){if("getEntriesByName" in performance){return f.performance.getEntriesByName(s,t)}else{return m(s,t)}},e=function(s){if("clearMarks" in performance){f.performance.clearMarks(s)}else{n(s)}},p=function(t,u){var v=a(t,"mark").length;if(!v){return}if(u){var s=t+"_intervalEnded";g(s);h(t+"_intervalDuration",t,s);e(s)}window.dispatchEvent(j);delete this.__profiled[t];u&&delete this.__profiled[t+"_intervalDuration"]};j.initCustomEvent("profileIntervalDidEnd",true,true,{});f.performance||(f.performance={});f.performance.now||(f.performance.now=performance.now||performance.webkitNow||performance.msNow||performance.mozNow);if(!f.performance.now){var i=f.UI_INIT_AT||Date.now?Date.now():+(new Date());if(performance.timing&&performance.timing.navigationStart){i=performance.timing.navigationStart}f.performance.now=(function(){var s=Date.now?Date.now():+(new Date());return s-i})}f.performance.mark||(f.performance.mark=f.performance.webkitMark?f.performance.webkitMark:(b));f.performance.measure||(f.performance.measure=f.performance.webkitMeasure?f.performance.webkitMeasure:(c));f.performance.getEntriesByType||(f.performance.getEntriesByType=f.performance.webkitGetEntriesByType?f.performance.webkitGetEntriesByType:(q));f.performance.clearMarks||(f.performance.clearMarks=f.performance.webkitClearMarks?f.performance.webkitClearMarks:(n));f.ClientProfiler={};f.ClientProfiler.profile=function(s){o(function(){g(s)})};f.ClientProfiler.profileInterval=function(s){};f.ClientProfiler.__profiled={};f.ClientProfiler.profileIntervalBegin=function(s){g(s)};f.ClientProfiler.profileIntervalEnd=function(s){p.call(this,s,true)};f.ClientProfiler.profileIntervalFail=function(s){p.call(this,s,false)};f.ClientProfiler.getProfiles=function(){var t=ClientProfiler,A=[],z,u,s,v,x="getEntriesByType" in performance?f.performance.getEntriesByType.bind(f.performance):q,B=x("mark").concat(x("measure"));for(var w=0,y=B.length;w<y;w++){z=B[w];s=z.name;v=s.indexOf("_intervalDuration")>-1?"duration":"startTime";u=Math.round(z[v]);if(u>=0&&u<3600000&&!t.__profiled[s]){t.__profiled[s]=z;A.push(u+" "+s)}}return A}}());</script><script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-</script><script>if(typeof ZILLOW==="undefined"){var ZILLOW={}}(function(w,d){if(top!=self){top.location.replace(self.location.href)}var h=d.getElementsByTagName("html")[0];h.className=h.className.replace(/(?:^|\s)no-js(?!\S)/g,"");var l=w.location,a=l.hash,sn,snr=/scrnnm=[^&\}]+/;if(a&&a.indexOf("scrnnm")>0&&(sn=a.match(snr)[0])){a=l.hash.replace(snr,"");a=a.replace(/&&/,"&").replace(/\{&/,"{").replace(/&\}/,"}").replace(/\{\}/,"");w.location=l.protocol+"//"+l.host+l.pathname+(l.search?l.search+"&"+sn:"?"+sn)+a}ZILLOW.facebookSdkUrl="//connect.facebook.net/en_US/all.js";
-/*@cc_on
-            var q=d.createElement('div');q.innerHTML='<z>i</z>';q.childNodes.length!==1&&('abbr article aside audio canvas details figcaption '+
-            'figure footer header hgroup mark meter nav output progress section summary time video').replace(/\w+/g,function(n){d.createElement(n)});
-            @*/
-})(this,document);var oldErr=window.onerror;window.cpErrors=0;window.onerror=function(f,c,b){try{cpErrors++;if(window.zonLog){var a="c=uncaught&m="+encodeURI(f)+"&u="+encodeURI(c)+"&l="+encodeURI(b)+"&r="+encodeURI(document.referrer);window.zonLog("Unhandled Error: "+a)}if(console&&console.error){console.error("Unhandled error found. "+f+" "+c+" "+b+" "+document.referrer)}if(oldErr){return oldErr(errorMsg,c,lineNumber)}return false}catch(d){if(console&&console.error){console.error("Couldn't process error.",d)}}};if(document.addEventListener){document.addEventListener("DOMContentLoaded",function ProfileDOMContentLoadedEvent(a){ClientProfiler.profile("DOMContentLoaded");setTimeout(function(){if(ga&&performance&&typeof performance.getEntriesByName==="function"&&performance.getEntriesByName("DOMContentLoaded").length>0){ga("set","dimension72",parseFloat(performance.getEntriesByName("DOMContentLoaded")[0].startTime.toString()).toFixed(2))}},2000);document.removeEventListener("DOMContentLoaded",ProfileDOMContentLoadedEvent)})}if(window.addEventListener){window.addEventListener("load",function ProfileLoadEvent(a){ClientProfiler.profile("native browser onload");setTimeout(function(){if(ga&&performance&&typeof performance.getEntriesByName==="function"&&performance.getEntriesByName("native browser onload").length>0){ga("set","dimension73",parseFloat(performance.getEntriesByName("native browser onload")[0].startTime.toString()).toFixed(2))}},2000);window.removeEventListener("load",ProfileLoadEvent)})}var _gaq=_gaq||[],_gaqBackup=_gaqBackup||[];</script><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><script>
-    var ZILLOW, AB_TREATMENTS, k,
-        treatments = {"TR_HTTPS":"FORCE_SECURE"};
-    window.ZILLOW = window.ZILLOW || {};
-    ZILLOW = window.ZILLOW;
-    ZILLOW.AB_TREATMENTS = ZILLOW.AB_TREATMENTS || {};
-    AB_TREATMENTS = ZILLOW.AB_TREATMENTS;
-    for (k in treatments) {
-        if (treatments.hasOwnProperty(k)) {
-            AB_TREATMENTS[k] = treatments[k];
-        }
-    }
-</script><script src="https://www.zillowstatic.com/l/?wants=intl,event-base,event-custom-base,node-base,yui-later,z-collections-manager,z-hidden-property-manager,zillow-node-methods&amp;deploy=admin-account-tools.1acd2e9,adv.2ef0d63,advice.25e5aad,agentteams.7225a85,app-upsell.a5f35aa,app-views.90d3843,async-content.36c5773,bdp.6ea24cb,best-time.7bfd1b3,bpro.3cf9b7b,building-admin.b704e7c,chinese-landing-page.8ee294a,claim.c59129c,community-pillar.2f89179,complaints.e92a505,contact-form.c475eba,contacts.168508b,email-a-friend.81212a5,formatters.34b921e,hdp.644931c,hdp-legacy-shim.ecad3e9,homepage.852eede,homevalues.7b80678,instant-offer.0e49f16,keystone.b1ad3f9,lazy-image-loader.d191b4d,managed-lifecycle.edbfe9d,map.42527f7,mobile-landingpage.4665836,modals.5608907,npm.f7b28f2,santas-house.9b25f76,neighborhood.ea42cf0,pa.0badb50,pagewrapper.a916eef,paparazzi.5def141,permits.fa415f9,personalization.a3932d1,posting-path.cb5c18e,pricing-tool.ec1b066,profile.cf6c68d,property-maps.8e80909,property-photos.61eb4e8,rent-affordability.474f18d,renterprofile.28e1de1,rentvsbuy.a5759a2,richdata.caddb34,sales-history.5de7f7b,schools.16964f1,search.1d45cf3,seller.a5185f2,seller-landing.5ec83e1,seopages.2ab1829,smart-banner.594889c,social-media-tools.dcd85c8,third-party-ads.3c31100,topnav.701e0cd,user-account.a1bf1ef,validation-regexes.60fd4ba,vcr.57e2860,video-landing.3309f64,webview-support.7118271,widgets.2233f53,yui.5b7360e,zsg.e09a3e7,static.b342333&amp;afterFn=_womboResponse" type="text/javascript" async="" charset="utf-8"></script><script src="https://www.zillowstatic.com/l/?wants=keystone-event-source,z-home-search-bar,z-top-nav&amp;deploy=admin-account-tools.1acd2e9,adv.2ef0d63,advice.25e5aad,agentteams.7225a85,app-upsell.a5f35aa,app-views.90d3843,async-content.36c5773,bdp.6ea24cb,best-time.7bfd1b3,bpro.3cf9b7b,building-admin.b704e7c,chinese-landing-page.8ee294a,claim.c59129c,community-pillar.2f89179,complaints.e92a505,contact-form.c475eba,contacts.168508b,email-a-friend.81212a5,formatters.34b921e,hdp.644931c,hdp-legacy-shim.ecad3e9,homepage.852eede,homevalues.7b80678,instant-offer.0e49f16,keystone.b1ad3f9,lazy-image-loader.d191b4d,managed-lifecycle.edbfe9d,map.42527f7,mobile-landingpage.4665836,modals.5608907,npm.f7b28f2,santas-house.9b25f76,neighborhood.ea42cf0,pa.0badb50,pagewrapper.a916eef,paparazzi.5def141,permits.fa415f9,personalization.a3932d1,posting-path.cb5c18e,pricing-tool.ec1b066,profile.cf6c68d,property-maps.8e80909,property-photos.61eb4e8,rent-affordability.474f18d,renterprofile.28e1de1,rentvsbuy.a5759a2,richdata.caddb34,sales-history.5de7f7b,schools.16964f1,search.1d45cf3,seller.a5185f2,seller-landing.5ec83e1,seopages.2ab1829,smart-banner.594889c,social-media-tools.dcd85c8,third-party-ads.3c31100,topnav.701e0cd,user-account.a1bf1ef,validation-regexes.60fd4ba,vcr.57e2860,video-landing.3309f64,webview-support.7118271,widgets.2233f53,yui.5b7360e,zsg.e09a3e7,static.b342333&amp;have=de45d225f67519af491166ff9f81ae5fb9ba11fe&amp;afterFn=_womboResponse" type="text/javascript" async="" charset="utf-8"></script><script src="https://www.zillowstatic.com/l/?wants=z-plugin-nav-scrolling&amp;deploy=admin-account-tools.1acd2e9,adv.2ef0d63,advice.25e5aad,agentteams.7225a85,app-upsell.a5f35aa,app-views.90d3843,async-content.36c5773,bdp.6ea24cb,best-time.7bfd1b3,bpro.3cf9b7b,building-admin.b704e7c,chinese-landing-page.8ee294a,claim.c59129c,community-pillar.2f89179,complaints.e92a505,contact-form.c475eba,contacts.168508b,email-a-friend.81212a5,formatters.34b921e,hdp.644931c,hdp-legacy-shim.ecad3e9,homepage.852eede,homevalues.7b80678,instant-offer.0e49f16,keystone.b1ad3f9,lazy-image-loader.d191b4d,managed-lifecycle.edbfe9d,map.42527f7,mobile-landingpage.4665836,modals.5608907,npm.f7b28f2,santas-house.9b25f76,neighborhood.ea42cf0,pa.0badb50,pagewrapper.a916eef,paparazzi.5def141,permits.fa415f9,personalization.a3932d1,posting-path.cb5c18e,pricing-tool.ec1b066,profile.cf6c68d,property-maps.8e80909,property-photos.61eb4e8,rent-affordability.474f18d,renterprofile.28e1de1,rentvsbuy.a5759a2,richdata.caddb34,sales-history.5de7f7b,schools.16964f1,search.1d45cf3,seller.a5185f2,seller-landing.5ec83e1,seopages.2ab1829,smart-banner.594889c,social-media-tools.dcd85c8,third-party-ads.3c31100,topnav.701e0cd,user-account.a1bf1ef,validation-regexes.60fd4ba,vcr.57e2860,video-landing.3309f64,webview-support.7118271,widgets.2233f53,yui.5b7360e,zsg.e09a3e7,static.b342333&amp;have=b281c89304d83076c5d909bde1d6268c930ceb0e&amp;afterFn=_womboResponse" type="text/javascript" async="" charset="utf-8"></script><script src="https://www.zillowstatic.com/l/?wants=z-home-tabs&amp;deploy=admin-account-tools.1acd2e9,adv.2ef0d63,advice.25e5aad,agentteams.7225a85,app-upsell.a5f35aa,app-views.90d3843,async-content.36c5773,bdp.6ea24cb,best-time.7bfd1b3,bpro.3cf9b7b,building-admin.b704e7c,chinese-landing-page.8ee294a,claim.c59129c,community-pillar.2f89179,complaints.e92a505,contact-form.c475eba,contacts.168508b,email-a-friend.81212a5,formatters.34b921e,hdp.644931c,hdp-legacy-shim.ecad3e9,homepage.852eede,homevalues.7b80678,instant-offer.0e49f16,keystone.b1ad3f9,lazy-image-loader.d191b4d,managed-lifecycle.edbfe9d,map.42527f7,mobile-landingpage.4665836,modals.5608907,npm.f7b28f2,santas-house.9b25f76,neighborhood.ea42cf0,pa.0badb50,pagewrapper.a916eef,paparazzi.5def141,permits.fa415f9,personalization.a3932d1,posting-path.cb5c18e,pricing-tool.ec1b066,profile.cf6c68d,property-maps.8e80909,property-photos.61eb4e8,rent-affordability.474f18d,renterprofile.28e1de1,rentvsbuy.a5759a2,richdata.caddb34,sales-history.5de7f7b,schools.16964f1,search.1d45cf3,seller.a5185f2,seller-landing.5ec83e1,seopages.2ab1829,smart-banner.594889c,social-media-tools.dcd85c8,third-party-ads.3c31100,topnav.701e0cd,user-account.a1bf1ef,validation-regexes.60fd4ba,vcr.57e2860,video-landing.3309f64,webview-support.7118271,widgets.2233f53,yui.5b7360e,zsg.e09a3e7,static.b342333&amp;have=b9ee39a512f470d7cd773831d403a11560153f56&amp;afterFn=_womboResponse" type="text/javascript" async="" charset="utf-8"></script><script src="https://www.zillowstatic.com/l/?wants=z-plugin-list-drawer,z-react-reg-dialup_ACT_67,zillow-lightbox-manager,autocomplete,z-search-autocomplete,z-search-autocomplete-loader,z-google-gpt-loader,z-google-tag-manager,z-truste-loader,zsg-responsive-subnav&amp;deploy=admin-account-tools.1acd2e9,adv.2ef0d63,advice.25e5aad,agentteams.7225a85,app-upsell.a5f35aa,app-views.90d3843,async-content.36c5773,bdp.6ea24cb,best-time.7bfd1b3,bpro.3cf9b7b,building-admin.b704e7c,chinese-landing-page.8ee294a,claim.c59129c,community-pillar.2f89179,complaints.e92a505,contact-form.c475eba,contacts.168508b,email-a-friend.81212a5,formatters.34b921e,hdp.644931c,hdp-legacy-shim.ecad3e9,homepage.852eede,homevalues.7b80678,instant-offer.0e49f16,keystone.b1ad3f9,lazy-image-loader.d191b4d,managed-lifecycle.edbfe9d,map.42527f7,mobile-landingpage.4665836,modals.5608907,npm.f7b28f2,santas-house.9b25f76,neighborhood.ea42cf0,pa.0badb50,pagewrapper.a916eef,paparazzi.5def141,permits.fa415f9,personalization.a3932d1,posting-path.cb5c18e,pricing-tool.ec1b066,profile.cf6c68d,property-maps.8e80909,property-photos.61eb4e8,rent-affordability.474f18d,renterprofile.28e1de1,rentvsbuy.a5759a2,richdata.caddb34,sales-history.5de7f7b,schools.16964f1,search.1d45cf3,seller.a5185f2,seller-landing.5ec83e1,seopages.2ab1829,smart-banner.594889c,social-media-tools.dcd85c8,third-party-ads.3c31100,topnav.701e0cd,user-account.a1bf1ef,validation-regexes.60fd4ba,vcr.57e2860,video-landing.3309f64,webview-support.7118271,widgets.2233f53,yui.5b7360e,zsg.e09a3e7,static.b342333&amp;have=53756b8375d1697c2825150dc09e9c01024949a2&amp;afterFn=_womboResponse" type="text/javascript" async="" charset="utf-8"></script><link charset="utf-8" rel="stylesheet" id="yui_3_18_1_1_1496115571445_1160" href="https://www.zillowstatic.com/static-reg-login/LIVE/reg-login/css/reg-login-8ef8e8c5bb.css"><script charset="utf-8" id="yui_3_18_1_1_1496115571445_1161" src="https://www.zillowstatic.com/static-reg-login/LIVE/overall-commons-7d412b378f.js"></script><script charset="utf-8" id="yui_3_18_1_1_1496115571445_1541" src="https://consent.truste.com/notice?domain=zillow.com&amp;c=teconsent&amp;text=true" async=""></script><script charset="utf-8" id="yui_3_18_1_1_1496115571445_1547" src="https://js-sec.indexww.com/ht/htw-zillow2.js" async=""></script><style type="text/css" class="autocomplete-list-sam-skin">/*
-YUI 3.18.1 (build f7e7bcb)
-Copyright 2014 Yahoo! Inc. All rights reserved.
-Licensed under the BSD License.
-http://yuilibrary.com/license/
-*/
-
-.yui3-aclist{position:absolute;z-index:1}.yui3-aclist-hidden{visibility:hidden}.yui3-aclist-aria{left:-9999px;position:absolute}.yui3-aclist-list{list-style:none;margin:0;overflow:hidden;padding:0}.yui3-aclist-item{cursor:pointer;list-style:none;padding:2px 5px}.yui3-aclist-item-active{outline:#afafaf dotted thin}.yui3-skin-sam .yui3-aclist-content{background:#fff;border:1px solid #afafaf;-moz-box-shadow:1px 1px 4px rgba(0,0,0,0.58);-webkit-box-shadow:1px 1px 4px rgba(0,0,0,0.58);box-shadow:1px 1px 4px rgba(0,0,0,0.58)}.yui3-skin-sam .yui3-aclist-item-hover{background:#bfdaff}.yui3-skin-sam .yui3-aclist-item-active{background:#2647a0;color:#fff;outline:0}#yui3-css-stamp.skin-sam-autocomplete-list{display:none}
-</style></head>
-
 <body>
-  <header class="zss-header pinnable-header zsg-layout-width layout-width_marginless" id="yui_3_18_1_1_1496110537819_1595">
-    <nav role="navigation" class="nav-top nav-top_full " id="yui_3_18_1_1_1496110537819_1588">
-      <a class="zsg-logo za-track-event" href="https://www.zillow.com/" title="Zillow Real Estate" accesskey="1" data-za-category="TopNav"
-        data-za-action="Zillow logo click" data-za-label="" id="yui_3_18_1_1_1496110537819_1589">
-        <svg class="zsg-logo-svg" id="yui_3_18_1_1_1496110537819_1587">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-house-svg" class="zsg-logo-house"></use>
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-text-svg" class="zsg-logo-text">
-          </use>
-        </svg>
-      </a>
-      <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-        <symbol id="logo-text-svg" viewBox="0 0 100 100">
-          <path d="M61.2 81.8c1.1-1.2 1.5-2.6 1.5-4.7c0-2-0.4-3.3-1.4-4.5c-1.1-1.2-2.4-1.8-4.2-1.8c-3.3 0-5.5 2.6-5.5 6.4 c0 3.9 2.2 6.4 5.5 6.4C59 83.5 60.3 82.9 61.2 81.8z M58.6 73.7c0.4 0.6 0.7 1.6 0.7 3.3c0 2.9-0.6 4.1-2 4.1c-0.6 0-1.3-0.3-1.6-1 c-0.3-0.6-0.4-1.7-0.4-3.1c0-1.2 0.1-2.1 0.3-2.7c0.3-0.8 0.9-1.2 1.7-1.2C57.8 73.1 58.3 73.3 58.6 73.7z M76.8 83.2L80.4 71H77 l-0.9 4.4c-0.3 1.6-0.6 3.5-0.7 4c0 0-0.4-2.1-0.9-4.3l-1-4.1h-3l-1.2 4.1c-0.6 2.1-0.9 4.3-0.9 4.3S68 77 67.7 75.5l-1-4.6h-3.3 l3.4 12.3h3l0.6-2.5c0.3-1.1 0.8-3.3 1.1-4.3c0.2-0.9 0.2-1.1 0.3-1.6c0.1 0.5 0.1 0.6 0.2 1.2c0.1 0.8 0.4 2 0.7 3l1.1 4.2H76.8z M45.8 83.2h3.3l0-17.7l-3.3 0.7L45.8 83.2z M39.4 83.2h3.3l0-17.7l-3.3 0.7L39.4 83.2z M33 83.3h3.2l0-11.5L33 72.5L33 83.3z M34.6 71c1.1 0 2-0.9 2-2c0-1.1-0.9-2-2-2c-1.1 0-2 0.9-2 2C32.7 70.2 33.6 71 34.6 71z M30 83.2l0.9-2.7h-5.6l-1.4 0 c0 0 0.3-0.5 0.6-1.1l6.4-11.1v-2.4h-10L20 68.7h5.2c1 0 1.4 0 1.4 0s-0.2 0.6-0.7 1.4l-6.3 10.8v2.3H30z">
-          </path>
-        </symbol>
-        <symbol id="logo-house-svg" viewBox="0 0 100 100">
-          <path d="M30 48.8c4.9-5.1 22.6-21.5 22.6-21.5c-9.2 2.2-18.8 5.1-22.3 6.7l-5.2 5.3c4.3-0.9 5.7-1.1 8.9-1.6L30 48.8z M62.8 23.2c0 0-15.6 15.8-18.1 18c4.8-1.7 14.5-3.8 20.7-4.1c0.7-2.2 1.5-3.8 1.5-3.8l8.3-0.8C75.2 32.5 68.9 27.4 62.8 23.2z M27.3 56.3c1.8-0.8 18.6-6.4 34.1-7.3c0.3-1.3 2-5.7 2.3-6.9c-16.1 1.1-29.1 6-34.4 8.4L27.3 56.3z M52.4 16.3 c-2.8 1.3-10.8 7.5-15.1 10.7c5.2-1.8 17.8-4.6 24.3-4.7C59.6 20.9 53.9 17.1 52.4 16.3z"></path>
-        </symbol>
-      </svg>
-      <a class="zsg-logo-menu za-track-event" title="Zillow Real Estate" accesskey="1" data-za-category="TopNav" data-za-action="Zillow logo click"
-        data-za-label="" aria-label="menu toggle button" role="button"><img src="https://www.zillowstatic.com:443/static/images/logos/z-logo-menu_carat.svg"> 
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img src="{% static 'user_app/images/logo.png' %}" alt="zillow">
         </a>
-        <a class="za-track-event zsg-logo_home-link zsg-link" href="https://www.zillow.com/">
-          <span>Homepage</span>
-        </a>
-      <div class="nav-top-container" aria-hidden="true" id="yui_3_18_1_1_1496110537819_1642">
-        <div class="user-nav nav-top-group nav_hoverable" id="yui_3_18_1_1_1496110537819_355">
-          <div class="user-nav-placeholder login-section nav-top-group nav_hoverable" id="yui_3_18_1_1_1496110537819_369">
-            <section class="nav-section nav-top-auth mobile-flex app-loaded" id="login-block">
-              <div class="nav-header-content nav-top-auth-icon">
-                <a href="https://www.zillow.com/user/acct/login/" title="Sign in" class="zss-login-link auth-required login" data-za-label="TopNav"
-                  data-after-auth-action-type="Refresh" rel="nofollow">
-                  <span class="login-icon zsg-icon-user">
-                </span>
-                </a>
-              </div>
-              <div class="nav-header-content nav-top-auth-links">
-                <a href="https://www.zillow.com/user/acct/login/" id="login_opener" title="Sign in" class="zss-login-link auth-required login"
-                  data-za-label="TopNav" data-after-auth-action-type="Refresh" rel="nofollow">
-                  <span>Sign in</span>
-                </a>
-                or
-                <a href="https://www.zillow.com/user/acct/register/" id="register_opener" title="Join" class="auth-required register" data-za-label="TopNav"
-                  data-after-auth-action-type="Refresh" rel="nofollow"><span>Join</span></a> </div>
-              <section
-                class="nav-section nav-top-placeholder nav-top_non-mobile">
-                <div class="zss-account-popup-container"></div>
-            </section>
-            </section>
-            <section class="nav-section nav-top-promo" id="yui_3_18_1_1_1496110537819_1641">
-              <div class="nav-header-content" id="yui_3_18_1_1_1496110537819_1640"> <a href="https://www.zillow.com/advertise/" title="Advertising" class=""><span>Advertise</span></a> </div>
-            </section>
-          </div>
-          <section class="nav-section nav-section-help nav-top-narrow_hidden">
-            <div class="nav-header-content"><a href="https://zillow.zendesk.com/hc/en-us" title="Zillow Help Center"><span class="zsg-icon-circle-question"></span></a></div>
-          </section>
-        </div>
-        <div class="main-nav nav-top-group nav_hoverable" id="yui_3_18_1_1_1496110537819_382">
-          <section class="nav-section nav-dropdown nav-section_wide" id="yui_3_18_1_1_1496110537819_1637">
-            <header class="nav-header"> <a href="https://www.zillow.com/homes/" title="Buy" class=""><span>Buy</span></a> <span class="zsg-icon-expando-down"
-                role="button" aria-label="open or close section"></span> </header>
-            <ul class="nav-content" aria-hidden="true">
-              <li>
-                <header class="nav-sub-header"> Homes for sale </header>
-                <ul class="nav-link-section list-drawer drawer-closed" data-visible-count="1" data-show-more-text="See more"
-                  data-show-less-text="See less" id="yui_3_18_1_1_1496110537819_525">
-                  <li id="yui_3_18_1_1_1496110537819_555">
-                    <ul class="nav-link-list">
-                      <li id="yui_3_18_1_1_1496110537819_554"> <a href="https://www.zillow.com/homes/for_sale/" title="Homes for sale" class=""><span>Homes for sale</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_552"> <a href="https://www.zillow.com/homes/for_sale/fore_lt/pmf,pf_pt/" title="Foreclosures" class=""><span>Foreclosures</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_550"> <a href="https://www.zillow.com/homes/fsbo/" title="For sale by owner" class=""><span>For sale by owner</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_548"> <a href="https://www.zillow.com/homes/for_sale/1_open/" title="Open houses" class=""><span>Open houses</span></a>                        </li>
-                    </ul>
-                  </li>
-                  <li class="hide drawer-item" id="yui_3_18_1_1_1496110537819_546">
-                    <ul class="nav-link-list">
-                      <li id="yui_3_18_1_1_1496110537819_545"> <a href="https://www.zillow.com/homes/new_homes/0_mmm/" title="New construction" class=""><span>New construction</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_543"> <a href="https://www.zillow.com/homes/coming_soon/cmsn_lt/" title="Coming soon" class=""><span>Coming soon</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_541"> <a href="https://www.zillow.com/homes/recently_sold/" title="Recent home sales" class="" data-za-action="Recent Home Sales"><span>Recent home sales</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_539"> <a href="https://www.zillow.com/browse/homes/" title="All homes" class="" data-za-action="All homes"><span>All homes</span></a>                        </li>
-                    </ul>
-                  </li>
-                  <li class="drawer-show-hide" id="yui_3_18_1_1_1496110537819_537"><a href="#" class="show-hide-link">See more</a></li>
-                </ul>
-              </li>
-              <li>
-                <header class="nav-sub-header"> Resources </header>
-                <ul class="nav-link-section ">
-                  <li>
-                    <ul class="nav-link-list">
-                      <li> <a href="https://www.zillow.com/home-buying-guide/" title="Buyers Guide" class=""><span>Buyers Guide</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/foreclosures/" title="Foreclosure center" class=""><span>Foreclosure center</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/mobile/realestate" title="Real estate app" class=""><span>Real estate app</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/change-your-address/" title="Change your address" class=""><span>Change your address</span></a>                        </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </section>
-          <section class="nav-section nav-dropdown nav-section_wide">
-            <header class="nav-header"> <a href="https://www.zillow.com/homes/for_rent/" title="Rent" class=""><span>Rent</span></a> <span class="zsg-icon-expando-down"
-                role="button" aria-label="open or close section"></span> </header>
-            <ul class="nav-content" aria-hidden="true">
-              <li>
-                <header class="nav-sub-header"> Rentals </header>
-                <ul class="nav-link-section ">
-                  <li>
-                    <ul class="nav-link-list">
-                      <li> <a href="https://www.zillow.com/homes/for_rent/condo,apartment_duplex_type/" title="Apartments for rent"
-                          class=""><span>Apartments for rent</span></a> </li>
-                      <li> <a href="https://www.zillow.com/homes/for_rent/house,townhouse_type/" title="Houses for rent" class=""><span>Houses for rent</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/homes/for_rent/1_pets/" title="Pet friendly rentals" class=""><span>Pet friendly rentals</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/homes/for_rent/" title="All rental listings" class=""><span>All rental listings</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/browse/b/" title="All rental buildings" class=""><span>All rental buildings</span></a>                        </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <header class="nav-sub-header"> Rental Manager </header>
-                <ul class="nav-link-section ">
-                  <li>
-                    <ul class="nav-link-list">
-                      <li> <a href="https://www.zillow.com/rental-manager/posts/all/?source=topnav&amp;itc=postbutton_topnav"
-                          id="ZRMYourListings" title="Your listings" class="" data-za-action="Sign in to see your listings"><span>Sign in to see your listings</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/rental-manager/" id="ZRMPostListing" title="Post a rental" class=""
-                          data-za-action="List a rental (it's free)"><span>List a rental (it's free)</span></a> </li>
-                      <li>
-                      <a href="https://www.zillow.com/rental-manager/resources/?source=topnav&amp;itc=postbutton_topnav"
-                          id="ZRMResources" title="Resources" class="" data-za-action="Resources"><span>Resources</span></a>                        </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <header class="nav-sub-header"> Renter resources </header>
-                <ul class="nav-link-section ">
-                  <li>
-                    <ul class="nav-link-list">
-                      <li> <a href="https://www.zillow.com/renter-profile/" title="Renter profile" class=""><span>Renter Profile</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/rent-affordability-calculator/" title="Rent affordability calculator"
-                          class=""><span>Rent affordability calculator</span></a> </li>
-                      <li> <a href="https://www.zillow.com/rent-vs-buy-calculator/" title="Rent vs. buy calculator" class=""><span>Rent vs. buy calculator</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/rent/guide/" title="Renters Guide" class=""><span>Renters Guide</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/mobile/rentals" title="Rentals app" class=""><span>Rentals app</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/rental-property-advertising/" title="Rental pro real estate advertising"
-                          class=""><span>Rental advertising</span></a> </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </section>
-          <section class="nav-section nav-dropdown nav-section_wide">
-            <header class="nav-header"> <a href="https://www.zillow.com/sell/" title="Sell" class=""><span>Sell</span></a> <span class="zsg-icon-expando-down"
-                role="button" aria-label="open or close section"></span> </header>
-            <ul class="nav-content" aria-hidden="true">
-              <li>
-                <header class="nav-sub-header"> Selling tools </header>
-                <ul class="nav-link-section ">
-                  <li>
-                    <ul class="nav-link-list">
-                      <li> <a href="https://www.zillow.com/how-much-is-my-home-worth/" title="See your home's Zestimate" class=""
-                          data-za-action="HDP"><span>See your home's Zestimate</span></a> </li>
-                      <li> <a href="https://www.zillow.com/home-values/" title="Neighborhood Home Values" class="" data-za-action="Home values"><span>Neighborhood Home Values</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/home-inspections/" title="Add a Home Inspection" class=""><span>Add a Home Inspection</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/sellers-guide/" title="Sellers Guide" class=""><span>Sellers Guide</span></a>                        </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <header class="nav-sub-header"> Post a home for sale </header>
-                <ul class="nav-link-section ">
-                  <li>
-                    <ul class="nav-link-list">
-                      <li> <a href="https://www.zillow.com/post-real-estate-listings/" title="For sale by agent" class="" data-za-action="FSBA"><span>For sale by agent</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/for-sale-by-owner/" title="For sale by owner" class="" data-za-action="FSBO"><span>For sale by owner</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/coming-soon/" title="Coming Soon" class=""><span>Coming soon</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/make-me-move/" title="Make Me Move" class=""><span>Make me move</span></a>                        </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </section>
-          <section class="nav-section nav-dropdown nav-section_wide">
-            <header class="nav-header"> <a href="https://www.zillow.com/home-loans/#source=Z_Mortgagestopnav" title="Mortgages" class=""><span>Mortgages</span></a>              <span class="zsg-icon-expando-down" role="button" aria-label="open or close section"></span> </header>
-            <ul
-              class="nav-content" aria-hidden="true">
-              <li>
-                <header class="nav-sub-header"> Shop mortgages </header>
-                <ul class="nav-link-section ">
-                  <li>
-                    <ul class="nav-link-list">
-                      <li> <a href="https://www.zillow.com/home-loans/#source=Z_Mortgageshovertopnav" title="Mortgage lenders"
-                          class=""><span>Mortgage lenders</span></a> </li>
-                      <li> <a href="https://www.zillow.com/mortgage-rates/" title="Mortgage rates" class=""><span>Mortgage rates</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/refinance/" title="Refinance rates" class=""><span>Refinance rates</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/mortgage/browse/" title="All mortgage rates" class=""><span>All mortgage rates</span></a>                        </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <header class="nav-sub-header"> Calculators </header>
-                <ul class="nav-link-section ">
-                  <li>
-                    <ul class="nav-link-list">
-                      <li> <a href="https://www.zillow.com/mortgage-calculator/" title="Mortgage calculator" class=""><span>Mortgage calculator</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/mortgage-calculator/house-affordability/" title="Affordability calculator"
-                          class=""><span>Affordability calculator</span></a> </li>
-                      <li> <a href="https://www.zillow.com/mortgage-calculator/refinance-calculator/" title="Refinance calculator"
-                          class=""><span>Refinance calculator</span></a> </li>
-                      <li> <a href="https://www.zillow.com/mortgage-calculator/amortization-schedule-calculator/" title="Amortization calculator"
-                          class=""><span>Amortization calculator</span></a> </li>
-                      <li> <a href="https://www.zillow.com/mortgage-calculator/debt-to-income-calculator/" title="Debt-to-Income calculator"
-                          class=""><span>Debt-to-Income calculator</span></a> </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <header class="nav-sub-header"> Resources </header>
-                <ul class="nav-link-section ">
-                  <li>
-                    <ul class="nav-link-list">
-                      <li> <a href="https://www.zillow.com/lender-directory/" title="Lender reviews" class=""><span>Lender reviews</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/mortgage-learning/" title="Mortgage learning center" class=""><span>Mortgage learning center</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/mobile/mortgages" title="Mortgages app" class=""><span>Mortgages app</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/lender-resources/" title="Lender resource center" class=""><span>Lender resource center</span></a>                        </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              </ul>
-          </section>
-          <section class="nav-section nav-dropdown nav-section_wide">
-            <header class="nav-header"> <a href="https://www.zillow.com/agent-finder/real-estate-agent-reviews/" title="Agent finder" class=""><span>Agent finder</span></a>              <span class="zsg-icon-expando-down" role="button" aria-label="open or close section"></span> </header>
-            <ul
-              class="nav-content" aria-hidden="true">
-              <li>
-                <header class="nav-sub-header"> Looking for pros? </header>
-                <ul class="nav-link-section list-drawer drawer-closed" data-visible-count="1"
-                  data-show-more-text="See more" data-show-less-text="See less" id="yui_3_18_1_1_1496110537819_560">
-                  <li id="yui_3_18_1_1_1496110537819_582">
-                    <ul class="nav-link-list">
-                      <li id="yui_3_18_1_1_1496110537819_581"> <a href="https://www.zillow.com/agent-finder/real-estate-agent-reviews/" title="Real estate agents"
-                          class=""><span>Real estate agents</span></a> </li>
-                      <li id="yui_3_18_1_1_1496110537819_579"> <a href="https://www.zillow.com/agent-finder/property-manager-reviews/" title="Property managers" class=""><span>Property managers</span></a>                        </li>
-                    </ul>
-                  </li>
-                  <li class="hide drawer-item" id="yui_3_18_1_1_1496110537819_577">
-                    <ul class="nav-link-list">
-                      <li id="yui_3_18_1_1_1496110537819_576"> <a href="https://www.zillow.com/agent-finder/home-improvement-reviews/" title="Home improvement pros"
-                          class=""><span>Home improvement pros</span></a> </li>
-                      <li id="yui_3_18_1_1_1496110537819_574"> <a href="https://www.zillow.com/agent-finder/real-estate-services-reviews/" title="Other pros" class=""><span>Other pros</span></a>                        </li>
-                    </ul>
-                  </li>
-                  <li class="drawer-show-hide" id="yui_3_18_1_1_1496110537819_572"><a href="#" class="show-hide-link">See more</a></li>
-                </ul>
-              </li>
-              <li>
-                <header class="nav-sub-header"> I'm a pro </header>
-                <ul class="nav-link-section list-drawer drawer-closed" data-visible-count="1" data-show-more-text="See more"
-                  data-show-less-text="See less" id="yui_3_18_1_1_1496110537819_587">
-                  <li id="yui_3_18_1_1_1496110537819_615">
-                    <ul class="nav-link-list">
-                      <li id="yui_3_18_1_1_1496110537819_614"> <a href="https://www.zillow.com/agent-advertising/" title="Agent advertising" class=""><span>Agent advertising</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_612"> <a href="https://www.zillow.com/agent-resources/" title="Agent resource center" class=""><span>Agent resource center</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_610"> <a href="https://www.zillow.com/Home,$PageWrapper.$ui$TopNav2014.canonicalLinksService.joinDirectoryLink.sdirect?form:Home=ZH4sIAAAAAAAAALWQsUoDQRCG54SAgoJiYWtx9aLiE8Q0whGEMwimGu8m5yZ7O-vs3a2xEB_ER_BVLH0MfQArN42FhBTBlMPPfB____YJvXAEANsA-5YzfJpnjOVljRV5L3AwxQ6VQVupPrMhtO_H8vLx-v21Bckt9Do0LT06CLsAO_6ew0Bw0vgHeI7MME7gIr2KqBtB50hU2ur0mt0Qu7OT03NVoGWrCzSZtjOfk3S6IDVlbQdaqGhY5osEDuOv176hcgEbtvUdiQujf6Lv_dJzlsYFSiBfxcWy1jYe_VabMsbreuoERqs8TniiDa1hWr5XtTHf32azDS24tNcPBBUeO8MCAAA%7E"
-                          title="Join the Agent Directory" class=""><span>Join the Agent Directory</span></a> </li>
-                      <li id="yui_3_18_1_1_1496110537819_608">
-                      <a href="https://www.zillow.com/agents/" title="Access agent hub" class=""><span>Access agent hub</span></a>                        </li>
-                    </ul>
-                  </li>
-                  <li class="hide drawer-item" id="yui_3_18_1_1_1496110537819_606">
-                    <ul class="nav-link-list">
-                      <li id="yui_3_18_1_1_1496110537819_605"> <a href="https://www.zillow.com/agent-resources/content/real-estate-marketing-for-agents/" title="Real estate marketing guide"
-                          class=""><span>Real estate marketing guide</span></a> </li>
-                      <li id="yui_3_18_1_1_1496110537819_603">
-                      <a href="https://www.zillow.com/agent-resources/content/agent-email-scripts/" title="Agent email scripts"
-                          class=""><span>Agent email scripts</span></a> </li>
-                      <li id="yui_3_18_1_1_1496110537819_601"> <a href="https://www.zillow.com/agent-resources/content/real-estate-listing-flyer-templates/" title="Listing flyer templates"
-                          class=""><span>Listing flyer templates</span></a> </li>
-                    </ul>
-                  </li>
-                  <li class="drawer-show-hide" id="yui_3_18_1_1_1496110537819_599"><a href="#" class="show-hide-link">See more</a></li>
-                </ul>
-              </li>
-              </ul>
-          </section>
-          <section class="nav-section nav-dropdown nav-section_wide">
-            <header class="nav-header"> <a href="https://www.zillow.com/digs/" title="Home design" class=""><span>Home design</span></a> <span class="zsg-icon-expando-down"
-                role="button" aria-label="open or close section"></span> </header>
-            <ul class="nav-content" aria-hidden="true">
-              <li>
-                <header class="nav-sub-header"> Find design ideas </header>
-                <ul class="nav-link-section list-drawer drawer-closed" data-visible-count="1"
-                  data-show-more-text="See more" data-show-less-text="See less" id="yui_3_18_1_1_1496110537819_620">
-                  <li id="yui_3_18_1_1_1496110537819_646">
-                    <ul class="nav-link-list">
-                      <li id="yui_3_18_1_1_1496110537819_645"> <a href="https://www.zillow.com/digs/kitchens/" title="Kitchens" class=""><span>Kitchens</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_643"> <a href="https://www.zillow.com/digs/bathrooms/" title="Bathrooms" class=""><span>Bathrooms</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_641"> <a href="https://www.zillow.com/digs/bedrooms/" title="Bedrooms" class=""><span>Bedrooms</span></a>                        </li>
-                    </ul>
-                  </li>
-                  <li class="hide drawer-item" id="yui_3_18_1_1_1496110537819_639">
-                    <ul class="nav-link-list">
-                      <li id="yui_3_18_1_1_1496110537819_638"> <a href="https://www.zillow.com/digs/dining-rooms/" title="Dining rooms" class=""><span>Dining rooms</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_636"> <a href="https://www.zillow.com/digs/living-rooms/" title="Living rooms" class=""><span>Living rooms</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_634"> <a href="https://www.zillow.com/digs/" title="Explore Digs" class=""><span>See all spaces</span></a>                        </li>
-                    </ul>
-                  </li>
-                  <li class="drawer-show-hide" id="yui_3_18_1_1_1496110537819_632"><a href="#" class="show-hide-link">See more</a></li>
-                </ul>
-              </li>
-              <li>
-                <header class="nav-sub-header"> Popular styles </header>
-                <ul class="nav-link-section ">
-                  <li>
-                    <ul class="nav-link-list">
-                      <li> <a href="https://www.zillow.com/digs/contemporary/" title="Contemporary" class=""><span>Contemporary</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/digs/traditional/" title="Traditional" class=""><span>Traditional</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/digs/modern/" title="Modern" class=""><span>Modern</span></a> </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <header class="nav-sub-header"> Popular Features </header>
-                <ul class="nav-link-section list-drawer drawer-closed" data-visible-count="1"
-                  data-show-more-text="See more" data-show-less-text="See less" id="yui_3_18_1_1_1496110537819_651">
-                  <li id="yui_3_18_1_1_1496110537819_677">
-                    <ul class="nav-link-list">
-                      <li id="yui_3_18_1_1_1496110537819_676"> <a href="https://www.zillow.com/digs/wallpaper/" title="Wallpaper" class=""><span>Wallpaper</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_674"> <a href="https://www.zillow.com/digs/chandelier/" title="Chandelier" class=""><span>Chandelier</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_672"> <a href="https://www.zillow.com/digs/kitchens-cabinets/" title="Kitchen Cabinets" class=""><span>Kitchen Cabinets</span></a>                        </li>
-                    </ul>
-                  </li>
-                  <li class="hide drawer-item" id="yui_3_18_1_1_1496110537819_670">
-                    <ul class="nav-link-list">
-                      <li id="yui_3_18_1_1_1496110537819_669"> <a href="https://www.zillow.com/digs/patio-furniture/" title="Patio Furniture" class=""><span>Patio Furniture</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_667"> <a href="https://www.zillow.com/digs/bathroom-vanity/" title="Bathroom Vanities" class=""><span>Bathroom Vanities</span></a>                        </li>
-                      <li id="yui_3_18_1_1_1496110537819_665"> <a href="https://www.zillow.com/digs/area-rug/" title="Area Rugs" class=""><span>Area Rugs</span></a>                        </li>
-                    </ul>
-                  </li>
-                  <li class="drawer-show-hide" id="yui_3_18_1_1_1496110537819_663"><a href="#" class="show-hide-link">See more</a></li>
-                </ul>
-              </li>
-            </ul>
-          </section>
-          <section class="nav-section nav-dropdown nav-section_wide">
-            <header class="nav-header"> <a tabindex="0"><span>More</span>  </a> <span class="zsg-icon-expando-down" role="button" aria-label="open or close section"></span>              </header>
-            <ul class="nav-content" aria-hidden="true">
-              <li>
-                <header class="nav-sub-header"> Blogs </header>
-                <ul class="nav-link-section ">
-                  <li>
-                    <ul class="nav-link-list">
-                      <li> <a href="https://www.zillow.com/blog/" title="Zillow Porchlight" class=""><span>Zillow Porchlight</span></a>                        </li>
-                      <li> <a href="http://engineering.zillow.com/" title="Zillow engineering blog" class=""><span>Zillow engineering blog</span></a>                        </li>
-                      <li> <a href="https://www.zillow.com/research/" title="Zillow research" class=""><span>Zillow research</span></a>                        </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </section>
-        </div>
       </div>
-    </nav>
-    <!-- TODO: If conditional should be removed after ACT_REG_LOGIN_APP_DIALUP to 100% ACT-67. --><input type="hidden" id="react-auth-lightbox" value="{&quot;rawHTML&quot;:&quot;<div id=\&quot;reg-login-app\&quot;></div>&quot;,&quot;styleSheets&quot;:[&quot;https://www.zillowstatic.com/static-reg-login/LIVE/reg-login/css/reg-login-8ef8e8c5bb.css&quot;],&quot;config&quot;:&quot;RegProxiedReactAppGlobalConfig={\&quot;facebookAppId\&quot;:\&quot;172285552816089\&quot;,\&quot;isLightbox\&quot;:\&quot;true\&quot;,\&quot;abtests\&quot;:\&quot;{\\\&quot;ACT_SLA_BEACON\\\&quot;:\\\&quot;DIALUP\\\&quot;,\\\&quot;ACT_MobileHomepageRentalsPostingButton\\\&quot;:\\\&quot;TEST\\\&quot;,\\\&quot;ACT_REAL_ESTATE_FOOTER\\\&quot;:\\\&quot;DIALUP\\\&quot;,\\\&quot;ACT_REG_LOGIN_APP_DIALUP\\\&quot;:\\\&quot;DIALUP\\\&quot;}\&quot;,\&quot;authProcess\&quot;:\&quot;TopNav\&quot;}&quot;,&quot;scripts&quot;:[&quot;https://www.zillowstatic.com/static-reg-login/LIVE/overall-commons-7d412b378f.js&quot;,&quot;https://www.zillowstatic.com/static-reg-login/LIVE/reg-login/app-ce5eb4cf80.js&quot;]}">
-    <input
-      type="hidden" id="zillow-static-domain" value="https://www.zillowstatic.com/"></header>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Buy</a></li>
+        <li><a href="#">Rent</a></li>
+        <li><a href="#">Sell</a></li>
+        <li><a href="#">Agent finder</a></li>
+      </ul>
+      {% if request.session.current_user == null %}
+      <a href="{% url 'user_app:sign_in' %}">Sign in</a> or
+      <a href="{% url 'user_app:join' %}">Join</a>
+      {% else %}
+      <span>Welcome <a href="{% url 'user_app:user_page' user_id=user.id %}">{{user.first_name}}</a></span> |
+      <a href="{% url 'user_app:logout' %}">Logout</a>
+      {% endif %}
+    </div>
+  </nav>
 
-  <h4>Welcome!</h4>
-
-  {% if messages %} {% for message in messages %}
-  <p class="red">{{ message }}</p>
-  {% endfor %} {% endif %}
-
-  <div class="box">
-    <form action="/register" method="post">
-      <h4>Register</h4>
-      {% csrf_token %}
-      <label for="full_name">Name:</label>
-      <input type="text" name="full_name">
-      <br>
-      <br>
-      <label for="alias">Alias:</label>
-      <input type="text" name="alias">
-      <br>
-      <br>
-      <label for="email">Email Address:</label>
-      <input type="text" name="email">
-      <br>
-      <br>
-      <label for="password">Password:</label>
-      <input type="password" name="password">
-      <br>
-      <prompt>*Password should be at least 8 characters</prompt>
-      <label for="confirm_password">Confirm PW:</label>
-      <input type="password" name="confirm_password">
-
-      <label for="birthday">Birthday:</label>
-      <input type="text" id="datepicker" name="birthday" placeholder="birthday:">
-      <br>
-      <br>
-      <input class="button" type="submit" value="Register">
-    </form>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Find your way home</h1> 
+    </div>
+    <p>Find an agent View thousands of local, active, reviewed agents.</p> 
   </div>
 
-  <div class="box">
-    <form action="/login" method="post">
-      <h4>Login</h4>
-      {% csrf_token %}
-      <label for="email">Email Address:</label>
-      <input type="text" name="email">
-      <br>
-      <br>
-      <label for="password">Password:</label>
-      <input type="password" name="password">
-      <br>
-      <br>
-      <input class="button" type="submit" value="Login">
-    </form>
+  <div id="footer">
+    footer
   </div>
 
 </body>
