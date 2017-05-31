@@ -2,19 +2,31 @@ body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 5px;
 }
-
 /* Small sized screens */
 @media (max-width: 480px) {
-
+  .box{
+    width: 300px;
+  }
+  .button{
+    margin-left: 70px;
+  }
 }
 /* Medium sized screens */
 @media only screen and (min-width: 481px) {
-
+  .box{
+    width: 360px;
+  }
+  .button{
+    margin-left: 170px;
+  }
 }
 /* Large sized screens */
 @media only screen and (min-width: 1024px) {
-  #header{
-    height: 50px;
+  .box{
+    width: 360px;
+  }
+  .button{
+    margin-left: 170px;
   }
 }
 ul {
@@ -29,10 +41,8 @@ li {
 .container{
   border: 1px solid black;
 }
-
 .box{
   border: 1px solid black;
-  width: 360px;
   display: inline-block;
   vertical-align: top;
   padding: 5px;
@@ -42,7 +52,6 @@ label{
   width: 160px;
 }
 .button{
-  margin-left: 170px;
   width: 170px;
 }
 .red{

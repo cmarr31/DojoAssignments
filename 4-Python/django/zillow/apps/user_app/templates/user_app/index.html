@@ -28,15 +28,19 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Buy</a></li>
         <li><a href="#">Rent</a></li>
-        <li><a href="#">Sell</a></li>
+      {% if request.session.current_user != null %}
+        <li><a href="{% url 'listing_app:new_listing' %}">Sell</a></li>
+      {% else %}
+        <li><a href="{% url 'user_app:sign_in' %}">Sell</a></li>
+      {% endif %}
         <li><a href="#">Agent finder</a></li>
       </ul>
-      {% if request.session.current_user == null %}
+      {% if request.session.current_user != null %}
+      <span>Welcome <a href="{% url 'user_app:show_user' user_id=user.id %}">{{user.first_name}}</a></span> |
+      <a href="{% url 'user_app:logout' %}">Logout</a>
+      {% else %}
       <a href="{% url 'user_app:sign_in' %}">Sign in</a> or
       <a href="{% url 'user_app:join' %}">Join</a>
-      {% else %}
-      <span>Welcome <a href="{% url 'user_app:user_page' user_id=user.id %}">{{user.first_name}}</a></span> |
-      <a href="{% url 'user_app:logout' %}">Logout</a>
       {% endif %}
     </div>
   </nav>

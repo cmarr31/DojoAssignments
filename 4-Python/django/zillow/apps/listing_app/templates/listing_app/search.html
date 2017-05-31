@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Listing</title>
+  {% load staticfiles %}
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+  <link rel="stylesheet" href="{% static 'user_app/css/styles.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <a href="{% url 'user_app:logout' %}">Logout</a>
+  <h4>Welcome {{user.full_name}}!</h4>
+  <div class="box">
+    <h4>listings</h4>
+      {% for listing in listings %}
+      <form action="{% url 'listing_app::add_to_my_favorites' listing_id=listing.id %}" method="post">
+        {% csrf_token %}
+          <p>{{listing.author}}: {{listing.content}}</p>
+          <p>Posted by <a href="{% url 'listing_app::user_page' user_id=listing.user.id %}">{{listing.user.alias}}</a> <input type="submit" class="button" value="Add to My List"></p>  
+      </form>      
+      {% endfor %}
+  </div>
+  <div class="box">
+    <h4>Your Favorites</h4>
+    {% for listing in user.listings.all %}
+      <form action="{% url 'listing_app::remove_from_my_favorites' listing_id=listing.id %}" method="post">
+        {% csrf_token %}
+          <p>{{listing.author}}: {{listing.content}}</p>
+          <p>Posted by <a href="{% url 'listing_app::user_page' user_id=listing.user.id %}">{{listing.user.alias}}</a> <input type="submit" class="button" value="Remove from My List"></p>  
+      </form>      
+    {% endfor %}
+  </div>
+  <div class="box">
+    <h4>Contribute a listing</h4>
+    <form action="{% url 'listing_app:add_listing' %}" method="post">
+      {% csrf_token %}
+      <label for="author">listingd By:</label>
+      <input type="text" name="author" value="">
+      <label for="content">Message:</label>
+      <textarea name="content"></textarea>
+      <input class="button" type="submit">
+    </form>
+  </div>
+</body>
+</html>
