@@ -34,13 +34,14 @@ class ListingManager(models.Manager):
         session['sqft'] = data['sqft']
         session['beds'] = data['beds']
         session['baths'] = data['baths']
+        session['sell'] = data['sell']
         session['rent'] = data['rent']
         messages = []
         if len(data['description']) < 2:
-            messages.append("description must be at least 2 characters!")
+            messages.append("description must be at least 2 characters")
             error = True
         if len(data['address1']) < 2:
-            messages.append("address1 must be at least 2 characters!")
+            messages.append("address1 must be at least 2 characters")
             error = True
         else:
             try:
@@ -48,34 +49,54 @@ class ListingManager(models.Manager):
             except:
                 found_listing = False
             if found_listing:
-                messages.append("address1 is already registered!")
+                messages.append("address1 is already registered")
                 error = True
         if len(data['address2']) < 2:
-            messages.append("address2 must be at least 2 characters!")
+            messages.append("address2 must be at least 2 characters")
             error = True
         if len(data['zipcode']) != 5:
-            messages.append("zipcode must be 5 digits!")
+            messages.append("zipcode must be 5 digits")
             error = True
-        #elif not ZIPCODE_REGEX.match(data['email']):
-        #    messages.append("Please enter a valid email!")
+        #elif not ZIPCODE_REGEX.match(data['zipcode']):
+        #    messages.append("Please enter a valid zipcode")
         #    error = True
 
         if error:
             return {'result':"error", 'messages':messages}
-        '''
-        salt = bcrypt.gensalt()
-        hashed_password = bcrypt.hashpw(str(data['password']), str(salt))
-        User.objects.create(first_name=data['first_name'], last_name=data['last_name'], birthday=data['birthday'],email=data['email'], phone=data['phone'], password=hashed_password, salt=salt)
-        user = User.objects.get(email=data['email'])
-        session.pop('first_name')
-        session.pop('last_name')
-        session.pop('email')
-        session.pop('phone')
-        session.pop('password')
-        session.pop('confirm_password')
-        session.pop('birthday')
-        return {'result':"Successfully registered new user", 'messages':messages, 'user':user}
-        '''
+        
+        Listing.objects.create(address1=data['address1'], 
+        address2=data['address2'], 
+        zipcode=data['zipcode'], 
+        neighborhood=data['neighborhood'], 
+        city=data['city'], 
+        country=data['country'], 
+        description=data['description'], 
+        price=data['price'], 
+        sqft=data['sqft'], 
+        beds=data['beds'], 
+        baths=data['baths'], 
+        sell=data['sell'], 
+        rent=data['rent'], 
+        user = User.objects.get(pk=session['current_user']))
+
+        listing = Listing.objects.get(address1=data['address1'])
+        
+        session.pop('address1')
+        session.pop('address2')
+        session.pop('zipcode')
+        session.pop('neighborhood')
+        session.pop('city')
+        session.pop('country')
+        session.pop('description')
+        session.pop('price')
+        session.pop('sqft')
+        session.pop('beds')
+        session.pop('baths')
+        session.pop('sell')
+        session.pop('rent')
+
+        return {'result':"Successfully registered new listing", 'messages':messages, 'listing':listing}
+
 class Listing(models.Model):
     address1 = models.CharField(max_length=25)
     address2 = models.CharField(max_length=25)
@@ -88,7 +109,7 @@ class Listing(models.Model):
     sqft = models.IntegerField()
     beds = models.SmallIntegerField()
     baths = models.DecimalField(decimal_places=1, max_digits=5) # half ?
-    buy = models.BooleanField()
+    sell = models.BooleanField()
     rent = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

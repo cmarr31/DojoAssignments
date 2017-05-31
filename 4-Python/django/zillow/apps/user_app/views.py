@@ -9,15 +9,6 @@ from django.core.urlresolvers import reverse
 
 from .models import *
 
-def index(request):
-    context = {
-        'messages':get_messages(request)
-    }
-    if "current_user" in request.session.keys():
-        user = User.objects.get(pk=request.session['current_user'])
-        context['user'] = user
-    return render(request, "user_app/index.html", context)
-
 def join(request):
     context = {
         'messages':get_messages(request)
@@ -52,7 +43,7 @@ def create_user(request):
             if 'messages' in result.keys():
                 for message in result['messages']:
                     messages.success(request, message)
-    return redirect(reverse('user_app:index'))
+    return redirect(reverse('listing_app:index'))
 
 def login(request):
     if request.method == "POST":
@@ -68,11 +59,11 @@ def login(request):
             return redirect(reverse('user_app:sign_in'))
         if 'user' in login_result.keys():
             request.session['current_user'] = login_result['user'].id
-        return redirect(reverse('user_app:index'))
+        return redirect(reverse('listing_app:index'))
 
 def logout(request):
     request.session.clear()
-    return redirect(reverse('user_app:index'))
+    return redirect(reverse('listing_app:index'))
 
 def show_user(request, user_id):
     user = User.objects.get(pk=user_id)

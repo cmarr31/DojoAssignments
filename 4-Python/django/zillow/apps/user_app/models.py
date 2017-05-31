@@ -20,10 +20,10 @@ class UserManager(models.Manager):
             found_user = False
 
         if len(data['email']) < 1:
-            messages.append("Email cannot be left blank!")
+            messages.append("Email cannot be left blank")
             error = True
         elif not EMAIL_REGEX.match(data['email']):
-            messages.append("Please enter a valid email!")
+            messages.append("Please enter a valid email")
             error = True
         elif not found_user:
             messages.append("No user found with this email address. Please register new user.")
@@ -38,12 +38,12 @@ class UserManager(models.Manager):
         hashed_password = bcrypt.hashpw(str(data['password']), str(found_user.salt))
 
         if found_user.password != hashed_password:
-            messages.append("Incorrect password! Please try again")
+            messages.append("Incorrect password Please try again")
             error = True
 
         if error:
             return {'result':"error", 'messages':messages}
-        messages.append('Successfully logged in!')
+        messages.append('Successfully logged in')
         return {'result':'success', 'messages':messages, 'user':found_user}
 
     def create_user(self, data, session):
@@ -57,22 +57,22 @@ class UserManager(models.Manager):
         session['birthday'] = data['birthday']
         messages = []
         if len(data['first_name']) < 2:
-            messages.append("First name must be at least 2 characters!")
+            messages.append("First name must be at least 2 characters")
             error = True
         elif not NAME_REGEX.match(data['first_name']):
-            messages.append("First name can only contain letters or spaces!")
+            messages.append("First name can only contain letters or spaces")
             error = True
         if len(data['last_name']) < 2:
-            messages.append("Last name must be at least 2 characters!")
+            messages.append("Last name must be at least 2 characters")
             error = True
         elif not NAME_REGEX.match(data['last_name']):
-            messages.append("Last name can only contain letters or spaces!")
+            messages.append("Last name can only contain letters or spaces")
             error = True
         if len(data['email']) < 1:
-            messages.append("Email is required!")
+            messages.append("Email is required")
             error = True
         elif not EMAIL_REGEX.match(data['email']):
-            messages.append("Please enter a valid email!")
+            messages.append("Please enter a valid email")
             error = True
         else:
             try:
@@ -80,10 +80,10 @@ class UserManager(models.Manager):
             except:
                 found_user = False
             if found_user:
-                messages.append("This email is already registered!")
+                messages.append("This email is already registered")
                 error = True
         if len(data['password']) < 1:
-            messages.append("Password is required!")
+            messages.append("Password is required")
             error = True
         elif not PASSWORD_REGEX.match(data['password']):
             messages.append("Password must be at least 8 characters with at least 1 uppercase letter and 1 numeric value")
@@ -94,12 +94,12 @@ class UserManager(models.Manager):
 
         now = datetime.now()
         if len(data['birthday']) < 1:
-            messages.append("Birthday is required!")
+            messages.append("Birthday is required")
             error = True
         else:
             birthday = datetime.strptime(data['birthday'], '%Y-%m-%d') # '%m/%d/%Y' # '%Y-%-%d'
             if birthday >= now:
-                messages.append("Birthday is should be a date in the past!")
+                messages.append("Birthday is should be a date in the past")
                 error = True
 
         if error:

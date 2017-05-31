@@ -50,6 +50,9 @@
       <h1>Find your way home</h1> 
     </div>
     <p>Find an agent View thousands of local, active, reviewed agents.</p> 
+    {% for listing in listings %}
+    <p class="red">{{ listing.address1 }}</p>
+    {% endfor %} 
   </div>
 
   <div id="footer">

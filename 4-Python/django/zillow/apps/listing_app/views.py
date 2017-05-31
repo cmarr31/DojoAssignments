@@ -9,9 +9,22 @@ from django.core.urlresolvers import reverse
 
 from .models import *
 
+def index(request):
+    context = {
+        'messages':get_messages(request),
+        'listings':Listing.objects.all()
+    }
+    if "current_user" in request.session.keys():
+        user = User.objects.get(pk=request.session['current_user'])
+        context['user'] = user
+    return render(request, "listing_app/index.html", context)
+
 def new_listing(request):
     context = {
-        'messages':get_messages(request)
+        'messages':get_messages(request),
+        'neighborhoods':Neighborhood.objects.all(),
+        'citys':City.objects.all(),
+        'countrys':Country.objects.all()
     }
     if "current_user" in request.session.keys():
         user = User.objects.get(pk=request.session['current_user'])
@@ -29,28 +42,49 @@ def create_listing(request):
             'sqft':request.POST['sqft'],
             'beds':request.POST['beds'],
             'baths':request.POST['baths'],
-            'rent':request.POST['rent'],
             'user':request.POST['user']
         }
 
-        if "neighborhood" in request.POST.keys():
-            data['neighborhood']  = request.POST['neighborhood']
-        elif "new-neighborhood" in request.POST.keys():
-            data['neighborhood'] = request.POST['new-neighborhood']
+        if request.POST['buy'] == "on":
+            data['sell']  = True
+            data['rent']  = False
+        else:
+            data['rent']  = True
+            data['sell']  = False
+
+        if request.POST['neighborhood-select']:
+            data['neighborhood'] = Neighborhood.objects.get(id=request.POST['neighborhood-select'])
+        elif request.POST['new-neighborhood']:
+            try:
+                data['neighborhood'] = Neighborhood.objects.get(name=request.POST['new-neighborhood'])
+            except:
+                Neighborhood.objects.create(name=request.POST['new-neighborhood'])
+                data['neighborhood'] = Neighborhood.objects.get(name=request.POST['new-neighborhood'])
+                messages.success(request, "Created new Neighborhood")
         else:
             data['neighborhood'] = ""
 
-        if "city" in request.POST.keys():
-            data['city'] = request.POST['city']
-        elif "new-city" in request.POST.keys():
-            data['city'] = request.POST['new-city']
+        if request.POST['city-select']:
+            data['city'] = City.objects.get(id=request.POST['city-select'])
+        elif request.POST['new-city']:
+            try:
+                data['city'] = City.objects.get(name=request.POST['new-city'])
+            except:
+                City.objects.create(name=request.POST['new-city'])
+                data['city'] = City.objects.get(name=request.POST['new-city'])
+                messages.success(request, "Created new city")
         else:
             data['city'] = ""
         
-        if "country" in request.POST.keys():
-            data['country'] = request.POST['country']
-        elif "new-country" in request.POST.keys():
-            data['country'] = request.POST['new-country']
+        if request.POST['country-select']:
+            data['country'] = Country.objects.get(id=request.POST['country-select'])
+        elif request.POST['new-country']:
+            try:
+                data['country'] = Country.objects.get(name=request.POST['new-country'])
+            except:
+                Country.objects.create(name=request.POST['new-country'])
+                data['country'] = Country.objects.get(name=request.POST['new-country'])
+                messages.success(request, "Created new country")
         else:
             data['country'] = ""
 
