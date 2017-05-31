@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^logout$', views.logout, name='logout'),
     url(r'^create_user', views.create_user, name='create_user'),
     url(r'^user/(?P<user_id>\d+)$', views.show_user, name='show_user'),
+    url(r'^search_user$', views.search_user, name='search_user'),
 ]

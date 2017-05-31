@@ -10,6 +10,8 @@ from django.core.urlresolvers import reverse
 from .models import *
 
 def index(request):
+    #response = "hello world!"
+    #return HttpResponse(response)
     context = {
         'messages':get_messages(request),
         'listings':Listing.objects.all()
@@ -29,7 +31,7 @@ def new_listing(request):
     if "current_user" in request.session.keys():
         user = User.objects.get(pk=request.session['current_user'])
         context['user'] = user
-    return render(request, "listing_app/listing.html", context)
+    return render(request, "listing_app/new_listing.html", context)
 
 def create_listing(request):
     if request.method == "POST":
@@ -100,3 +102,27 @@ def create_listing(request):
                 for message in result['messages']:
                     messages.success(request, message)
     return redirect(reverse('listing_app:index'))
+
+def search_listing(request, sell):
+    context = {
+        'messages':get_messages(request),
+        'listings':Listing.objects.filter(sell=sell),
+        'sell':sell,
+    }
+    if "current_user" in request.session.keys():
+        user = User.objects.get(pk=request.session['current_user'])
+        context['user'] = user
+    return render(request, "listing_app/search_listing.html", context)
+    
+def show_listing(request, listing_id):
+    context = {
+        'messages':get_messages(request),
+        'neighborhoods':Neighborhood.objects.all(),
+        'citys':City.objects.all(),
+        'countrys':Country.objects.all(),
+        'listing':Listing.objects.get(id=listing_id)
+    }
+    if "current_user" in request.session.keys():
+        user = User.objects.get(pk=request.session['current_user'])
+        context['user'] = user
+    return render(request, "listing_app/listing.html", context)

@@ -71,3 +71,13 @@ def show_user(request, user_id):
         "user":user,
     }
     return render(request, "user_app/user.html", context)
+
+def search_user(request):
+    context = {
+        'messages':get_messages(request),
+        'users':User.objects.all()
+    }
+    if "current_user" in request.session.keys():
+        user = User.objects.get(pk=request.session['current_user'])
+        context['user'] = user
+    return render(request, "user_app/search_user.html", context)
