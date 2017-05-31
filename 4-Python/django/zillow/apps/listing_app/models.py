@@ -5,6 +5,10 @@ from django.db import models
 
 from ..user_app.models import *
 
+import bcrypt, re
+
+ZIPCODE_REGEX = re.compile(r'^\d+$')
+
 class Country(models.Model):
     name = models.CharField(max_length=25)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -37,9 +41,6 @@ class ListingManager(models.Manager):
         session['sell'] = data['sell']
         session['rent'] = data['rent']
         messages = []
-        if len(data['description']) < 2:
-            messages.append("description must be at least 2 characters")
-            error = True
         if len(data['address1']) < 2:
             messages.append("address1 must be at least 2 characters")
             error = True
@@ -57,9 +58,24 @@ class ListingManager(models.Manager):
         if len(data['zipcode']) != 5:
             messages.append("zipcode must be 5 digits")
             error = True
-        #elif not ZIPCODE_REGEX.match(data['zipcode']):
-        #    messages.append("Please enter a valid zipcode")
-        #    error = True
+        elif not ZIPCODE_REGEX.match(data['zipcode']):
+            messages.append("Please enter a valid zipcode")
+            error = True
+        if len(data['description']) < 5:
+            messages.append("description must be at least 5 characters")
+            error = True
+        if len(data['price']) < 4:
+            messages.append("price must be at least 4 characters")
+            error = True
+        if len(data['sqft']) < 3:
+            messages.append("sqft must be at least 3 characters")
+            error = True
+        if len(data['beds']) < 1:
+            messages.append("beds is a required field")
+            error = True
+        if len(data['baths']) < 1:
+            messages.append("baths is a required field")
+            error = True
 
         if error:
             return {'result':"error", 'messages':messages}
@@ -67,9 +83,9 @@ class ListingManager(models.Manager):
         Listing.objects.create(address1=data['address1'], 
         address2=data['address2'], 
         zipcode=data['zipcode'], 
-        neighborhood=data['neighborhood'], 
-        city=data['city'], 
-        country=data['country'], 
+        neighborhood=Neighborhood.objects.get(id=data['neighborhood']), 
+        city=City.objects.get(id=data['city']), 
+        country=Country.objects.get(id=data['country']),  
         description=data['description'], 
         price=data['price'], 
         sqft=data['sqft'], 

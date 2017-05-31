@@ -53,37 +53,37 @@ def create_listing(request):
             data['sell']  = False
 
         if request.POST['neighborhood-select']:
-            data['neighborhood'] = Neighborhood.objects.get(id=request.POST['neighborhood-select'])
+            data['neighborhood'] = request.POST['neighborhood-select']
         elif request.POST['new-neighborhood']:
             try:
-                data['neighborhood'] = Neighborhood.objects.get(name=request.POST['new-neighborhood'])
+                data['neighborhood'] = Neighborhood.objects.get(name=request.POST['new-neighborhood']).id
             except:
                 Neighborhood.objects.create(name=request.POST['new-neighborhood'])
-                data['neighborhood'] = Neighborhood.objects.get(name=request.POST['new-neighborhood'])
+                data['neighborhood'] = Neighborhood.objects.get(name=request.POST['new-neighborhood']).id
                 messages.success(request, "Created new Neighborhood")
         else:
             data['neighborhood'] = ""
 
         if request.POST['city-select']:
-            data['city'] = City.objects.get(id=request.POST['city-select'])
+            data['city'] = request.POST['city-select']
         elif request.POST['new-city']:
             try:
-                data['city'] = City.objects.get(name=request.POST['new-city'])
+                data['city'] = City.objects.get(name=request.POST['new-city']).id
             except:
                 City.objects.create(name=request.POST['new-city'])
-                data['city'] = City.objects.get(name=request.POST['new-city'])
+                data['city'] = City.objects.get(name=request.POST['new-city']).id
                 messages.success(request, "Created new city")
         else:
             data['city'] = ""
         
         if request.POST['country-select']:
-            data['country'] = Country.objects.get(id=request.POST['country-select'])
+            data['country'] = request.POST['country-select']
         elif request.POST['new-country']:
             try:
-                data['country'] = Country.objects.get(name=request.POST['new-country'])
+                data['country'] = Country.objects.get(name=request.POST['new-country']).id
             except:
                 Country.objects.create(name=request.POST['new-country'])
-                data['country'] = Country.objects.get(name=request.POST['new-country'])
+                data['country'] = Country.objects.get(name=request.POST['new-country']).id
                 messages.success(request, "Created new country")
         else:
             data['country'] = ""
@@ -99,4 +99,4 @@ def create_listing(request):
             if 'messages' in result.keys():
                 for message in result['messages']:
                     messages.success(request, message)
-    return redirect(reverse('user_app:index'))
+    return redirect(reverse('listing_app:index'))
