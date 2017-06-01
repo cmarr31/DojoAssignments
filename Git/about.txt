@@ -3,7 +3,6 @@ cd dojoassignments
 git add .
 git commit -m "update coding dojo assignments"
 git push -u origin master
-
 cd C:\Users\mau\Desktop\DojoAssignments\4-Python\django\zillow
 git add .
 git commit -m "new python django project"
@@ -285,4 +284,9 @@ cd C:\Users\mau\Desktop\DojoAssignments\4-Python\django\zillow
 git add .
 git commit -m "new python django project"
 *git remote add origin https://github.com/mruanova/zillow.git
+git push -u origin master
+
+git remote add origin https://github.com/mruanova/hello-world.git
+git add .
+git commit -m "new file about"
 git push -u origin master
