@@ -272,3 +272,11 @@ git push -u origin master
 git add .
 git commit -m "new file about"
 git push -u origin master
+
+
+cd C:\Users\mau\Desktop\DojoAssignments\4-Python\django\zillow
+git init
+git add .
+git commit -m "new python django project"
+git remote add origin https://github.com/mruanova/zillow.git
+git push -u origin master
