@@ -4,6 +4,12 @@ git add .
 git commit -m "update coding dojo assignments"
 git push -u origin master
 
+cd C:\Users\mau\Desktop\DojoAssignments\4-Python\django\zillow
+git add .
+git commit -m "new python django project"
+git push -u origin master
+
+
 WEB FUNDAMENTALS 
 GIT
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -275,8 +281,8 @@ git push -u origin master
 
 
 cd C:\Users\mau\Desktop\DojoAssignments\4-Python\django\zillow
-git init
+*git init
 git add .
 git commit -m "new python django project"
-git remote add origin https://github.com/mruanova/zillow.git
+*git remote add origin https://github.com/mruanova/zillow.git
 git push -u origin master
